@@ -1,0 +1,55 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_info = {+find_artefact_sercet_forest_start} sr_idle@wait_2
+
+[sr_idle@wait_2]
+on_actor_inside = sr_idle@start
+
+[sr_idle@start]
+on_actor_outside = sr_idle@wait_2
+on_game_timer = 10 | sr_idle@tip_1
+
+[sr_idle@tip_1]
+on_info = %=create_subtitles(st_actor_name:st_try_to_find_art_1)% sr_idle@tip_2
+
+[sr_idle@tip_2]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_try_to_find_art_2)% sr_idle@tip_end
+
+[sr_idle@tip_end]
+on_signal = sound_end | %=clear_subtitles() +try_to_find_art% sr_idle@after_art_1
+
+[sr_idle@after_art_1]
+on_info = {=actor_has_item(af_compass)} %=create_subtitles(st_voice:st_sf_kompass_1) =set_weather(default_secret_forest_foggy:true)% sr_idle@after_art_2
+
+[sr_idle@after_art_2]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_sf_kompass_2)% sr_idle@after_art_3
+
+[sr_idle@after_art_3]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_sf_kompass_3)% sr_idle@after_art_4
+
+[sr_idle@after_art_4]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_sf_kompass_4)% sr_idle@after_art_5
+
+[sr_idle@after_art_5]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_sf_kompass_5)% sr_idle@after_art_6
+
+[sr_idle@after_art_6]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_sf_kompass_6)% sr_idle@after_art_7
+
+[sr_idle@after_art_7]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_sf_kompass_7)% sr_idle@after_art_8
+
+[sr_idle@after_art_8]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_sf_kompass_8)% sr_idle@end
+
+[sr_idle@end]
+on_signal = sound_end | %=clear_subtitles() =give_task(charge_battery) +charge_battery_start =set_weather(default_secret_forest:true)% nil

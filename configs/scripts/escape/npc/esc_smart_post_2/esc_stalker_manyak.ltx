@@ -1,0 +1,41 @@
+[logic@esc_stalker_manyak] 
+suitable 					= {=check_npc_name(esc_stalker_manyak)} true
+prior 						= 200
+active 						= animpoint@base
+
+[animpoint@base]
+cover_name 			        = esc_smart_post_2_manyak
+avail_animations 	        = zat_b22_medic_turn_idle
+use_camp 				    = false
+meet 						= meet@trade
+combat_ignore_cond          = true
+on_info                     = {+cutscene_end} animpoint@cutscene_end
+
+[animpoint@cutscene_end]
+cover_name 			        = esc_smart_post_2_manyak
+avail_animations 	        = zat_b22_medic_turn_out
+use_camp 				    = false
+meet 						= meet@use
+combat_ignore_cond          = {+manyak_say_end} false, true
+
+[meet@trade]
+close_anim 			        = nil
+close_victim 			    = nil
+far_anim 					= nil
+far_victim 				    = nil
+close_distance  		    = 0
+far_distance 			    = 0
+use 						= false
+allow_break 			    = false
+meet_on_talking 	        = false
+
+[meet@use]
+close_anim 			        = nil
+close_victim 			    = nil
+far_anim 					= nil
+far_victim 				    = nil
+close_distance  		    = 0
+far_distance 			    = 0
+use 						= {+manyak_say_end} false, self
+allow_break 			    = false
+meet_on_talking 	        = false

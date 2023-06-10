@@ -1,0 +1,150 @@
+[logic@walker_1]
+active                      = walker@walker_1
+suitable 					= true
+prior 						= 100
+
+[logic@walker_2]
+active                      = walker@walker_2
+suitable 					= true
+prior 						= 100
+
+[logic@walker_3]
+active                      = walker@walker_3
+suitable 					= true
+prior 						= 100
+
+[logic@animpoint_1]
+active                      = animpoint@animpoint_1
+suitable 					= true
+prior 						= 100
+
+[logic@animpoint_2]
+active                      = animpoint@animpoint_2
+suitable 					= true
+prior 						= 100
+
+[logic@animpoint_3]
+active                      = animpoint@animpoint_3
+suitable 					= true
+prior 						= 100
+
+[logic@esc_scince_one]
+active                      = animpoint@esc_scince_one
+suitable 					= {=check_npc_name(esc_scince_one)} true
+prior 						= 200
+
+[logic@esc_scince_two]
+active                      = animpoint@esc_scince_two
+suitable 					= {=check_npc_name(esc_scince_two)} true
+prior 						= 200
+
+[logic@esc_bandit_leader]
+active                      = walker@esc_bandit_leader
+suitable 					= {=check_npc_name(esc_bandit_leader)} true
+prior 						= 200
+
+; ќжидание
+
+[animpoint@esc_scince_one]
+cover_name 			        = esc_smart_post_4_science_1
+avail_animations 	        = prisoner
+invulnerable                = true
+combat_ignore_cond          = true
+use_camp 				    = false
+gather_items_enabled        = false
+corpse_detection_enabled    = false
+meet 						= meet@prisoner
+on_info                     = {+bandits_is_dead} animpoint@esc_scince_one_wait
+
+[animpoint@esc_scince_one_wait]
+cover_name 			        = esc_smart_post_4_science_1
+avail_animations 	        = wait
+invulnerable                = true
+combat_ignore_cond          = true
+use_camp 				    = false
+gather_items_enabled        = false
+corpse_detection_enabled    = false
+meet 						= meet@prisoner
+
+[animpoint@esc_scince_two]
+cover_name 			        = esc_smart_post_4_science_2
+avail_animations 	        = prisoner
+invulnerable                = true
+combat_ignore_cond          = true
+use_camp 				    = false
+gather_items_enabled        = false
+corpse_detection_enabled    = false
+meet 						= no_meet
+on_info                     = {+bandits_is_dead} animpoint@esc_scince_two_wait
+
+[animpoint@esc_scince_two_wait]
+cover_name 			        = esc_smart_post_4_science_2
+avail_animations 	        = wait
+invulnerable                = true
+combat_ignore_cond          = true
+use_camp 				    = false
+gather_items_enabled        = false
+corpse_detection_enabled    = false
+meet 						= no_meet
+
+[walker@esc_bandit_leader]
+path_walk                   = main_bandit_walk
+path_look                   = main_bandit_look
+combat_ignore_cond          = {+bandit_leader_hi} false, true
+use_camp 				    = false
+meet 						= meet@start
+on_info                     = {=dist_to_actor_le(50)} %+bandit_see_actor%
+
+[meet@start]
+close_anim 			        = nil
+close_victim 			    = nil
+far_anim 					= nil
+far_victim 				    = nil
+close_distance  		    = 0
+far_distance 			    = 0
+use 						= {=actor_enemy +bandit_leader_hi} false, true
+allow_break 			    = false
+meet_on_talking 	        = false
+
+[meet@prisoner]
+close_anim 			        = nil
+close_victim 			    = nil
+far_anim 					= nil
+far_victim 				    = nil
+close_distance  		    = 0
+far_distance 			    = 0
+use 						= {=actor_enemy} false, {+bandits_is_dead} true, false
+allow_break 			    = false
+meet_on_talking 	        = false
+gather_items_enabled        = false
+
+; ќсновные анимпоинты и вейпоинты
+
+[animpoint@animpoint_1]
+cover_name 			        = esc_smart_post_4_animpoint_1
+combat_ignore_cond          = {+bandit_leader_hi} false, true
+use_camp 				    = false
+
+[animpoint@animpoint_2]
+cover_name 			        = esc_smart_post_4_animpoint_2
+combat_ignore_cond          = {+bandit_leader_hi} false, true
+use_camp 				    = false
+
+[animpoint@animpoint_3]
+cover_name 			        = esc_smart_post_4_animpoint_3
+combat_ignore_cond          = {+bandit_leader_hi} false, true
+use_camp 				    = false
+
+[walker@walker_1]
+path_walk                   = walker_1_walk
+path_look                   = walker_1_look
+combat_ignore_cond          = {+bandit_leader_hi} false, true
+
+[walker@walker_2]
+path_walk                   = walker_2_walk
+path_look                   = walker_2_look
+combat_ignore_cond          = {+bandit_leader_hi} false, true
+
+[walker@walker_3]
+path_walk                   = walker_3_walk
+combat_ignore_cond          = {+bandit_leader_hi} false, true

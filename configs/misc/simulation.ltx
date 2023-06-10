@@ -1,0 +1,69 @@
+[sim_faction]
+GroupControlSection		            = 
+$spawn 							    = "ai\DO_NOT_USE"
+class								= SCRIPTZN
+;script_binding				        = bind_faction.bind
+
+shape_transp_color		            = 0, 0, 255, 60 ;0x1800FF00
+shape_edge_color			        = 32, 32, 32, 255 ;0xFF202020
+
+[smart_terrain]
+GroupControlSection		            = 
+$spawn 							    = "ai\smart_terrain"
+;$prefetch 						    = 4
+$def_sphere					        = 2
+class								= SMRTTRRN
+script_binding					    = bind_smart_terrain.bind
+
+shape_transp_color		            = 100, 100, 180, 60 ;0x1800FF00
+shape_edge_color			        = 32, 32, 32, 255 ;0xFF202020
+
+[smart_terrain_stay_time]
+quick  								= 2,  5
+medium  							= 6,  8
+long    							= 12, 14
+default 							= 10000, 10001
+
+; [start_position_location]
+;;;;;;;;;;;;;;;;;;;;;; FINAL ESCAPE ;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[start_position_escape]
+monster_predatory_day_1_squad 								    = esc_smart_mutants_1
+monster_vegetarian_2_squad 										= esc_smart_mutants_2
+monster_vegetarian_3_squad 										= esc_smart_mutants_3
+monster_vegetarian_4_squad 								        = esc_smart_mutants_4
+; monster_vegetarian_5_squad 										= esc_smart_mutants_5
+monster_vegetarian_6_squad 										= esc_smart_mutants_6
+
+esc_smart_novice_base_mech_squad							    = esc_smart_novice_base
+esc_smart_novice_base_medic_squad						        = esc_smart_novice_base
+esc_smart_novice_base_filin_squad							    = esc_smart_novice_base
+esc_smart_novice_base_barmen_squad						        = esc_smart_novice_base
+esc_smart_novice_base_horse_squad							    = esc_smart_novice_base
+esc_smart_novice_base_shapito_squad						        = esc_smart_novice_base
+esc_smart_novice_base_lider_squad							    = esc_smart_novice_base
+esc_smart_novice_base_patrol_squad							    = esc_smart_novice_base
+
+esc_smart_post_1_squad										    = esc_smart_post_1
+
+esc_smart_stalker_base_bar_squad								= esc_smart_stalker_base
+esc_smart_stalker_base_tyan_squad								= esc_smart_stalker_base
+esc_smart_stalker_alcohol_squad	                                = esc_smart_stalker_base
+esc_smart_stalker_mechanic_squad                                = esc_smart_stalker_base
+esc_smart_stalker_secret_squad                                  = esc_smart_stalker_base
+
+esc_smart_elevator_sim_squad                                    = esc_smart_elevator
+esc_smart_post_5_squad                                          = esc_smart_post_5
+esc_smart_post_6_squad                                          = esc_smart_post_6
+esc_smart_post_7_squad                                          = esc_smart_post_7
+; esc_smart_post_8_squad                                          = esc_smart_post_8
+
+[start_position_secret_forest]
+sf_stalker_ded_squad                                            = sf_smart_house
+
+[start_position_bunker]
+bun_monolith_1_squad                                            = bun_smart_monolit
+bun_monolith_2_squad                                            = bun_smart_monolit_2
+; bun_monolith_3_squad                                             = bun_smart_monolit_3
+; bun_monolith_4_squad                                             = bun_smart_monolit_4
+bun_monolith_5_squad                                            = bun_smart_monolit_5

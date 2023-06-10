@@ -1,0 +1,158 @@
+[esc_main_quest]
+icon 			= ui_inGame2_MainQuest
+prior 			= 200
+storyline 		= true
+title 			= esc_main_quest_name
+descr 			= esc_main_quest_text
+condlist_0 	    = {+esc_main_quest_end} complete
+
+[esc_storyline_search]
+icon 			= ui_inGame2_LookAtKPP
+prior 			= 110
+storyline 		= true
+title 			= {+esc_storyline_search_part_1} esc_storyline_search_name_2, {+radio_start} esc_storyline_search_name_3, esc_storyline_search_name
+descr 			= {+esc_storyline_search_part_1} esc_storyline_search_name_2, {+radio_start} esc_storyline_search_name_3, esc_storyline_search_text
+target 			= {+esc_storyline_search_part_1} esc_army_trader, {+radio_start} esc_transiver, esc_1_spot
+condlist_0 	    = {+esc_storyline_search_end} complete
+
+[esc_sidor_talk]
+icon 			= ui_inGame2_SidorTalk
+prior 			= 110
+storyline 		= true
+title 			= {+sidor_info} esc_sidor_talk_name_2, {+patrol_hi} esc_sidor_talk_name_1, esc_sidor_talk_name
+descr 			= {+sidor_info} esc_sidor_talk_text_2, {+patrol_hi} esc_sidor_talk_text_1, esc_sidor_talk_text
+target 			= {+sidor_info} nil, {+patrol_hi} escape_trader, esc_2_spot
+condlist_0 	    = {+esc_sidor_talk_end} complete
+
+[esc_family_gun]
+icon 			= ui_inGame2_FamilyGun
+prior 			= 100
+storyline 		= false
+title 			= {+spawn_dog_is_dead} esc_family_gun_6_name, {+create_dogs} esc_family_gun_5_name, {+stalker_alcohol_hi} esc_family_gun_4_name, {+barmen_toz_quest} esc_family_gun_3_name, {+barmen_novice_about_toz} esc_family_gun_2_name, esc_family_gun_name
+descr 			= {+spawn_dog_is_dead} esc_family_gun_6_text, {+create_dogs} esc_family_gun_5_text, {+stalker_alcohol_hi} esc_family_gun_4_text, {+barmen_toz_quest} esc_family_gun_3_text, {+barmen_novice_about_toz} esc_family_gun_2_text, esc_family_gun_text
+target 			= {+stalker_alcohol_hi} esc_stalker_toz_prizrak, {+barmen_toz_quest} esc_stalker_alcohol, {+barmen_novice_about_toz} esc_stalker_barmen, esc_stalker_novice_barmen
+condlist_0 	    = {+toz_quest_end} complete
+condlist_1      = {+spawn_in_forest} fail
+
+[sidor_quest]
+icon 			= ui_inGame2_BanditsATP
+prior 			= 100
+storyline 		= true
+title 			= {+stalker_lider_thanks} sidor_quest_6_name, {+atp_end} sidor_quest_5_name, {+atp_atack_end} sidor_quest_4_name, {+atp_start} sidor_quest_3_name, sidor_quest_2_name
+descr 			= {+stalker_lider_thanks} sidor_quest_6_text, {+atp_end} sidor_quest_5_text, {+atp_atack_end} sidor_quest_4_text, {+atp_start} sidor_quest_3_text, sidor_quest_2_text
+condlist_0 	    = {+sidor_quest_end} complete
+target			= {+stalker_lider_thanks} escape_trader, {+atp_end} esc_stalker_novice_lider, {+atp_atack_end} esc_stalker_novice_atp_help, {+atp_start} esc_smart_atp_bandit_squad, esc_5_spot
+
+[manyak]
+icon 			= ui_inGame2_ManyakStart
+prior 			= 110
+storyline 		= true
+title 			= {+filin_dead_found} manyak_4_name, {+stalker_lider_about_filin} manyak_3_name, {+filin_dead} manyak_2_name, manyak_1_name
+descr 			= {+filin_dead_found} manyak_4_text, {+stalker_lider_about_filin} manyak_3_text, {+filin_dead} manyak_2_text, manyak_1_text
+condlist_0 	    = {+stalker_lider_filin_dead} complete
+target			= {+filin_dead_found} esc_stalker_novice_lider, {+stalker_lider_about_filin} nil, {+filin_dead} esc_stalker_novice_lider, filin_restr_id
+
+[ulika_1_manyak]
+icon 			= ui_inGame2_Ulika_1
+prior 			= 110
+storyline 		= true
+title 			= ulika_1_manyak_1_name
+descr 			= ulika_1_manyak_1_text
+condlist_0 	    = {+dead_1_note} complete
+target			= ulika_1_manyak_spot
+
+[ulika_2_manyak]
+icon 			= ui_inGame2_Ulika_2
+prior 			= 110
+storyline 		= true
+title 			= ulika_2_manyak_1_name
+descr 			= ulika_2_manyak_1_text
+condlist_0 	    = {+dead_2_note} complete
+target			= ulika_2_manyak_spot
+
+[manyak_end]
+icon 			= ui_inGame2_ManyakEnd
+prior 			= 110
+storyline 		= true
+title 			= {+stalker_horse_pda} manyak_end_7_name, {+stalker_hourse_help} manyak_end_6_name, {+manyak_hit} manyak_end_5_name, {+manyak_was_founded =is_night} manyak_end_4_name, {+manyak_was_founded} manyak_end_3_name, {+mech_shapito_pda} manyak_end_2_2_name, {+actor_has_pad_shapito} manyak_end_2_name, manyak_end_1_name
+descr 			= {+stalker_horse_pda} manyak_end_7_text, {+stalker_hourse_help} manyak_end_6_text, {+manyak_hit} manyak_end_5_text, {+manyak_was_founded =is_night} manyak_end_4_text, {+manyak_was_founded} manyak_end_3_text, {+mech_shapito_pda} manyak_end_2_2_text, {+actor_has_pad_shapito} manyak_end_2_text, manyak_end_1_text
+condlist_0 	    = {+sidor_tyan_quest} complete
+target			= {+stalker_horse_pda} escape_trader, {+stalker_hourse_help} esc_stalker_novice_horse, {+manyak_was_founded =is_night} manyak_restr_id, {+manyak_was_founded !is_night} nil, {+mech_shapito_pda} esc_stalker_novice_shapito, {+actor_has_pad_shapito} esc_stalker_novice_mech, esc_2_spot
+
+[save_the_scince]
+icon 			= ui_inGame2_SaveScience
+prior 			= 110
+storyline 		= true
+title 			= {+tyan_talk_about_wtf} save_the_scince_8_name, {+tyan_can_talk} save_the_scince_7_name, {+tyan_save_science_wtf} save_the_scince_6_name, {+science_hi} save_the_scince_5_name, {+bandits_is_dead} save_the_scince_4_name, {+bandit_leader_hi} save_the_scince_3_name, {+tyan_quest_start} save_the_scince_2_name, save_the_scince_1_name
+descr 			= {+tyan_talk_about_wtf} save_the_scince_8_text, {+tyan_can_talk} save_the_scince_7_text, {+tyan_save_science_wtf} save_the_scince_6_text, {+science_hi} save_the_scince_5_text, {+bandits_is_dead} save_the_scince_4_text, {+bandit_leader_hi} save_the_scince_3_text, {+tyan_quest_start} save_the_scince_2_text, save_the_scince_1_text
+condlist_0 	    = {+science_quest_start} complete
+target			= {+tyan_talk_about_wtf} esc_scince_one, {+science_hi} esc_stalker_tyan, {+bandits_is_dead} esc_scince_squad_id, {+bandit_leader_hi} esc_bandits_for_scince_squad_id, {+tyan_quest_start} esc_smart_post_4, esc_stalker_tyan
+
+[search_teleport]
+icon 			= ui_inGame2_SearchTeleport
+prior 			= 110
+storyline 		= true
+title 			= {+go_to_the_forest} search_teleport_4_name, {+ready_to_go} search_teleport_3_name, {+scanner_was_spawned} search_teleport_2_name, search_teleport_1_name
+descr 			= {+go_to_the_forest} search_teleport_4_text, {+ready_to_go} search_teleport_3_text, {+scanner_was_spawned} search_teleport_2_text, search_teleport_1_text
+condlist_0 	    = {+search_teleport_end} complete
+target			= {+go_to_the_forest} esc_teleport_light, {+ready_to_go} esc_scince_one, {+scanner_was_spawned} nil, spawn_scanner_restr
+
+[save_tyan_sister]
+icon 			= ui_inGame2_SaveSister
+prior 			= 110
+storyline 		= false
+target          = {+stalker_tyan_sister_thanks} esc_stalker_mechanic, {+save_the_tyan_sister} esc_8_spot, esc_stalker_mechanic
+title 			= {+stalker_tyan_sister_thanks} save_tyan_sister_7_name, {+open_door_bandits} save_tyan_sister_6_name, {=actor_has_item(bandits_key) +bandits_tyan_is_dead} save_tyan_sister_5_name, {+bandits_tyan_is_dead} save_tyan_sister_4_name, {+bad_bandits_end_cutscene} save_tyan_sister_3_name, {+save_the_tyan_sister} save_tyan_sister_2_name, save_tyan_sister_1_name
+descr 			= {+stalker_tyan_sister_thanks} save_tyan_sister_7_text, {+open_door_bandits} save_tyan_sister_6_text, {=actor_has_item(bandits_key) +bandits_tyan_is_dead} save_tyan_sister_5_text, {+bandits_tyan_is_dead} save_tyan_sister_4_text, {+bad_bandits_end_cutscene} save_tyan_sister_3_text, {+save_the_tyan_sister} save_tyan_sister_2_text, save_tyan_sister_1_text
+condlist_0 	    = {+stalker_sister_save_end} complete
+condlist_1      = {+spawn_in_forest} fail
+
+[search_secret]
+icon 			= ui_inGame2_SecretIcon
+prior 			= 110
+storyline 		= false
+; target          = {+secret_5_info} esc_secret_quest_5, {+secret_4_info} esc_secret_quest_4, {+secret_3_info} esc_secret_quest_3, {+secret_2_info} esc_secret_quest_2, {+secret_1_info} esc_secret_quest_1, nil
+title 			= {+secret_5_info} search_secret_5_name, {+secret_4_info} search_secret_4_name, {+secret_3_info} search_secret_3_name, {+secret_2_info} search_secret_2_name, {+secret_1_info} search_secret_1_name, search_secret_start_name
+descr 			= search_secret_text
+condlist_0 	    = {+search_secret_end} complete
+condlist_1      = {+spawn_in_forest} fail 
+
+[vodka_side_quest]
+icon 			= ui_inGame2_VodkaQuest
+prior 			= 110
+storyline 		= false 
+target          = {+vodka_all_done} esc_vodka_box, {+vodka_side_quest_art_end +monster_vegetarian_5_squad_is_dead +esc_smart_elevator_squad_is_dead} esc_stalker_vodka, {+stalker_vodka_quest_about} nil, esc_stalker_vodka
+title 			= {+vodka_all_done} vodka_side_quest_4_name, {+vodka_side_quest_art_end +monster_vegetarian_5_squad_is_dead +esc_smart_elevator_squad_is_dead} vodka_side_quest_3_name, {+stalker_vodka_quest_about} vodka_side_quest_2_name, vodka_side_quest_1_name
+descr 			= {+vodka_all_done} vodka_side_quest_4_text, {+vodka_side_quest_art_end +monster_vegetarian_5_squad_is_dead +esc_smart_elevator_squad_is_dead} vodka_side_quest_3_text, {+stalker_vodka_quest_about} vodka_side_quest_2_text, vodka_side_quest_1_text
+condlist_0 	    = {+vodka_end} complete
+condlist_1      = {+spawn_in_forest} fail
+
+[vodka_side_quest_art]
+icon 			= ui_inGame2_SearchArtefacts
+prior 			= 110
+storyline 		= false
+target          = {=actor_has_item(af_quest_found)} esc_stalker_vodka, esc_10_spot
+title 			= {=actor_has_item(af_quest_found)} vodka_side_quest_art_2_name, vodka_side_quest_art_1_name
+descr 			= {=actor_has_item(af_quest_found)} vodka_side_quest_art_2_text, vodka_side_quest_art_1_text
+condlist_0 	    = {+vodka_side_quest_art_end} complete
+condlist_1      = {+spawn_in_forest} fail
+
+[vodka_side_quest_mutants]
+icon 			= ui_inGame2_KillMutants
+prior 			= 110
+storyline 		= false
+target          = monster_vegetarian_5_squad
+title 			= vodka_side_quest_mutants_1_name
+descr 			= vodka_side_quest_mutants_1_text
+condlist_0 	    = {+monster_vegetarian_5_squad_is_dead} complete
+condlist_1      = {+spawn_in_forest} fail
+
+[vodka_side_quest_bandits]
+icon 			= ui_inGame2_KillElevator
+prior 			= 110
+storyline 		= false
+target          = esc_smart_elevator_squad
+title 			= vodka_side_quest_bandits_1_name
+descr 			= vodka_side_quest_bandits_1_text
+condlist_0 	    = {+esc_smart_elevator_squad_is_dead} complete
+condlist_1      = {+spawn_in_forest} fail

@@ -1,0 +1,31 @@
+<w>
+    <file name="ui\sg_levels_pictures">
+		<texture id="sg_levels_pictures_background" x="0" y="1816" width="323" height="232" />
+		
+	    <texture id="sg_levels_pictures_dc" x="0" y="0" width="300" height="255" />
+		<texture id="sg_levels_pictures_yantar" x="300" y="0" width="300" height="255" />
+		<texture id="sg_levels_pictures_escape" x="600" y="0" width="300" height="255" />
+		<texture id="sg_levels_pictures_bar" x="900" y="0" width="300" height="255" />
+		<texture id="sg_levels_pictures_wt" x="1200" y="0" width="300" height="255" />
+		<texture id="sg_levels_pictures_lab" x="1500" y="0" width="300" height="255" />
+		<texture id="sg_levels_pictures_agr" x="0" y="256" width="300" height="255" />
+
+		<texture id="sg_levels_btn_d" x="932" y="1553" width="306" height="261" />
+		<texture id="sg_levels_btn_e" x="0" y="1553" width="306" height="261" />
+		<texture id="sg_levels_btn_h" x="312" y="1553" width="306" height="261" />
+		<texture id="sg_levels_btn_t" x="626" y="1553" width="306" height="261" />		
+		
+		<texture id="sg_levels_cost_1" x="0" y="1445" width="100" height="100" />
+		<texture id="sg_levels_cost_2" x="100" y="1445" width="100" height="100" />
+		<texture id="sg_levels_cost_3" x="200" y="1445" width="100" height="100" />
+		<texture id="sg_levels_cost_4" x="300" y="1445" width="100" height="100" />
+		<texture id="sg_levels_cost_5" x="400" y="1445" width="100" height="100" />
+	
+		<texture id="sg_levels_cost_no_1" x="0" y="1316" width="100" height="100" />
+		<texture id="sg_levels_cost_no_2" x="100" y="1316" width="100" height="100" />
+		<texture id="sg_levels_cost_no_3" x="200" y="1316" width="100" height="100" />
+		<texture id="sg_levels_cost_no_4" x="300" y="1316" width="100" height="100" />
+		<texture id="sg_levels_cost_no_5" x="400" y="1316" width="100" height="100" />
+	
+	</file>	
+</w>

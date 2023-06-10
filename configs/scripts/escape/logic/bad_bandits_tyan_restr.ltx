@@ -1,0 +1,25 @@
+[logic]
+active = sr_idle@start
+
+[sr_idle@start]
+on_info = {+save_the_tyan_sister} %=create_squad(esc_smart_tyan_for_cutscene_squad:esc_smart_hutor) =create_squad(esc_smart_bandits_tyan_squad:esc_smart_hutor)% sr_idle@wait
+
+[sr_idle@wait]
+on_actor_inside = %+bad_bandits_start =run_postprocess(fade_in_out) =disable_ui% sr_idle@wait_for_spawn
+
+[sr_idle@wait_for_spawn]
+on_game_timer = 10 | sr_cutscene
+
+[sr_cutscene]
+point = bad_bandits_actor_walk
+look = bad_bandits_actor_look
+cam_effector = tyan_bandits_2
+on_game_timer = 55 | {-start_to_talk} %+start_to_talk%
+global_cameffect = true
+on_signal = cameff_end | %=remove_squad(esc_smart_tyan_for_cutscene_squad) =run_postprocess(fade_in_out) =enable_ui% sr_idle@timer 
+
+[sr_idle@timer]
+on_game_timer = 5 | %+bad_bandits_end_cutscene% sr_idle@wait_for_open_door
+
+[sr_idle@wait_for_open_door]
+on_info = {=actor_has_item(bandits_key) +bandits_tyan_is_dead} %=create_squad(esc_smart_stalker_base_sister_squad:esc_smart_hutor)% nil

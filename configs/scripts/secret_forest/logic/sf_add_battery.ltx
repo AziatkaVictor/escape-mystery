@@ -1,0 +1,12 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_info = {=actor_has_item(battery_for_forest) +charge_battery +brother_hi} sr_idle@start
+
+[sr_idle@start]
+on_actor_inside = %=run_tutorial(add_battery)% sr_idle@start_tutroial
+
+[sr_idle@start_tutroial]
+on_actor_outside = %=stop_tutorial(add_battery)% sr_idle@start
+on_info = {+charge_battery_end} %=stop_tutorial(add_battery)% nil

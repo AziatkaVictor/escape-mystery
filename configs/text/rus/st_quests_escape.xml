@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="esc_main_quest_name">
+		<text>Расследовать исчезновение Военных</text>
+	</string>
+	<string id="esc_main_quest_text">
+		<text>С КПП пропали Военные, я должен узнать, почему и куда они пропали... Самое странное, не похоже, чтобы их перестреляли и убрали тела. Они же не стали бы отмывать КПП от крови...</text>
+	</string>
+	
+	<string id="esc_storyline_search_name">
+		<text>Осмотреть Южный блокпост</text>
+	</string>
+	<string id="esc_storyline_search_text">
+		<text>Думаю, мне стоит сначала осмотреть блокпост, может, я смогу найти что-то, какие-то записи.</text>
+	</string>
+	<string id="esc_storyline_search_name_2">
+		<text>Поговорить с Капитаном Кольским</text>
+	</string>
+	<string id="esc_storyline_search_text_2">
+		<text>Я осмотрел блокпост и проверил рацию, она в порядке. Так же я нашел несколько интересных записей. Теперь следует поговорить с Кольским, на счет того, что делать дальше.</text>
+	</string>
+	<string id="esc_storyline_search_name_3">
+		<text>Проверить рацию на работоспособность</text>
+	</string>
+	<string id="esc_storyline_search_text_3">
+		<text>Следует проверить рацию, может она неисправна?</text>
+	</string>
+	
+	<string id="esc_sidor_talk_name">
+		<text>Идти в деревню</text>
+	</string>
+	<string id="esc_sidor_talk_text">
+		<text>Думаю, пора выдвигаться в деревню, там обитают местные сталкеры и мой информатор.</text>
+	</string>
+	<string id="esc_sidor_talk_name_2">
+		<text>Поговорить с Вожатым</text>
+	</string>
+	<string id="esc_sidor_talk_text_2">
+		<text>Я должен расспросить здешнего "главного", знаю, что сталкеры военных не очень любят, но они могут что-то знать.</text>
+	</string>
+	<string id="esc_sidor_talk_name_1">
+		<text>Поговорить с Сидоровичем</text>
+	</string>
+	<string id="esc_sidor_talk_text_1">
+		<text>Как я знаю, мой информатор - Сидорович. Лично не виделись, однако по Зоне ходят разные слухи о нём.</text>
+	</string>
+	
+	<string id="esc_family_gun_name">
+		<text>Узнать о странном дробовике</text>
+	</string>
+	<string id="esc_family_gun_text">
+		<text>На чердаке блокпоста я нашел дробовик. Когда взял его в руки, со мной произошло нечто странное. В рапорте указано, что владелец сбежал в сторону деревни. Думаю стоит спросить кого-то там, где много народу.</text>
+	</string>
+	<string id="esc_family_gun_2_name">
+		<text>Расспросить бармена на Ферме</text>
+	</string>
+	<string id="esc_family_gun_2_text">
+		<text>Как будет возможность, следует поспрашивать у бармена на Ферме на счет ТОЗ-а, который я нашел.</text>
+	</string>
+	<string id="esc_family_gun_3_name">
+		<text>Поговорить с пьяным сталкером</text>
+	</string>
+	<string id="esc_family_gun_3_text">
+		<text>Мне подсказал Адвокат, что я могу узнать о ТОЗ-е, от сталкера, который сейчас напился и стоит за столиком в углу.</text>
+	</string>
+	<string id="esc_family_gun_4_name">
+		<text>Пойти к месту, где закопали сталкера</text>
+	</string>
+	<string id="esc_family_gun_4_text">
+		<text>Собрат рассказал мне, что владельцем ТОЗ-а был его друг. Он помер и его закопали в лесу, сталкеры обходят то место стороной, но мне кажется, что я смогу найти там ответы.</text>
+	</string>
+	<string id="esc_family_gun_5_name">
+		<text>Отбиться от собак</text>
+	</string>
+	<string id="esc_family_gun_5_text">
+		<text>Чёрт! Собаки!</text>
+	</string>
+	<string id="esc_family_gun_6_name">
+		<text>Поговорить с Магнатом</text>
+	</string>
+	<string id="esc_family_gun_6_text">
+		<text>Фух... Собак перестреляли, хорошо что Магнат мне помог, надо сказать ему спасибо.</text>
+	</string>
+	
+	<string id="sidor_quest_2_name">
+		<text>Поговорить со Сталкером на АТП</text>
+	</string>
+	<string id="sidor_quest_2_text">
+		<text>Как я и думал, Вожатый не смог мне отказать, он отправил меня на так званое АТП, где находиться Сталкер, который и скажет, в чем заключается моё задание.</text>
+	</string>
+	<string id="sidor_quest_3_name">
+		<text>Отбить атаку Бандитов</text>
+	</string>
+	<string id="sidor_quest_3_text">
+		<text>Надеюсь, я выйду из этой перестрелки живым...</text>
+	</string>
+	<string id="sidor_quest_4_name">
+		<text>Поговорить с Петрухой</text>
+	</string>
+	<string id="sidor_quest_4_text">
+		<text>Фух... Мы отбились! Бандитов было много, но мы смогли одержать над ними победу.</text>
+	</string>
+	<string id="sidor_quest_5_name">
+		<text>Поговорить с Вожатым</text>
+	</string>
+	<string id="sidor_quest_5_text">
+		<text>Теперь, когда я помог Петрухе и Сталкерам, мне следует отчитаться перед Вожатым, может после этого они станут ко мне доверчивее? Насколько они могут быть доверчивыми, в реалиях Зоны...</text>
+	</string>
+	<string id="sidor_quest_6_name">
+		<text>Поговорить с Сидоровичем</text>
+	</string>
+	<string id="sidor_quest_6_text">
+		<text>Ого, я конечно надеялся на одобрение моих действий, но не думал, что Вожатый меня чем-то наградит. Теперь следует узнать у Сидоровича, как обстоят дела с информацией о пропавших Военных.</text>
+	</string>
+	
+	<string id="manyak_1_name">
+		<text>Поговорить с Филином</text>
+	</string>
+	<string id="manyak_1_text">
+		<text>Сидорович рассказал мне про Филина, сталкера, что дежурил в ночь, когда пропали солдаты. Следует проведать его.</text>
+	</string>
+	<string id="manyak_2_name">
+		<text>Поговорить с Вожатым</text>
+	</string>
+	<string id="manyak_2_text">
+		<text>Филина на месте не оказалось, надо спросить у Вожатого, куда тот подевался.</text>
+	</string>
+	<string id="manyak_3_name">
+		<text>Найти Филина</text>
+	</string>
+	<string id="manyak_3_text">
+		<text>Вожатый сказал, что Филин пошел в лесок, напротив Деревни.</text>
+	</string>
+	<string id="manyak_4_name">
+		<text>Рассказать обо всем Вожатому</text>
+	</string>
+	<string id="manyak_4_text">
+		<text>Филин мёртв, уго убили, я уверен. Тип ранений не похож на пулевые, но это точно не мутанты или аномалия, это явно следы от ножа.</text>
+	</string>
+
+	<string id="ulika_1_manyak_1_name">
+		<text>Осмотреть место №1</text>
+	</string>
+	<string id="ulika_1_manyak_1_text">
+		<text>Вожатый дал мне пару мест, где были найдены трупы, надо осмотреть их, там могут быть подсказки на то, как Маньяк действует.</text>
+	</string>
+
+	<string id="ulika_2_manyak_1_name">
+		<text>Осмотреть место №2</text>
+	</string>
+	<string id="ulika_2_manyak_1_text">
+		<text>Вожатый дал мне пару мест, где были найдены трупы, надо осмотреть их, там могут быть подсказки на то, как Маньяк действует.</text>
+	</string>
+
+	<string id="manyak_end_1_name">
+		<text>Расспросить сталкеров</text>
+	</string>
+	<string id="manyak_end_1_text">
+		<text>Трупы я осмотрел, очевидно, что это дело рук Маньяка. Думаю, что он либо скрывается среди сталкеров, либо у него есть сообщник. Надо расспросить новичков, вдруг замечали кого-то подозрительного.</text>
+	</string>
+	<string id="manyak_end_2_name">
+		<text>Поговорить с Васяном</text>
+	</string>
+	<string id="manyak_end_2_text">
+		<text>Я нашел ПДА Шапито, конечно, лучше было бы его вернуть, но я лучше отнесу его Васяну, здешнему технарю. Надо посмотреть, не скрывает ли клоун чего.</text>
+	</string>
+	<string id="manyak_end_2_2_name">
+		<text>Поговорить с Шапито</text>
+	</string>
+	<string id="manyak_end_2_2_text">
+		<text>Эта клоунская рожа попалась. Он сливал какому-то сталкеру передвижения всех новичков, помечая каждого словами "Да" или "Нет". Видимо, это какой-то сигнал.</text>
+	</string>
+	<string id="manyak_end_3_name">
+		<text>Дождаться ночи</text>
+	</string>
+	<string id="manyak_end_3_text">
+		<text>Шапито признался и рассказал, где находиться место обитания Маньяка, но для того, чтобы проверить это, нужно дождаться ночи.</text>
+	</string>
+	<string id="manyak_end_4_name">
+		<text>Проверить место под мостом</text>
+	</string>
+	<string id="manyak_end_4_text">
+		<text>Пора отправляться в логово Маньяка.</text>
+	</string>
+	<string id="manyak_end_5_name">
+		<text>Выбраться</text>
+	</string>
+	<string id="manyak_end_5_text">
+		<text>...</text>
+	</string>
+	<string id="manyak_end_6_name">
+		<text>Поговорить с Конём</text>
+	</string>
+	<string id="manyak_end_6_text">
+		<text>Я чудом смог выбраться, следует поговорить с Конём и поблагодарить его за то, что спас меня.</text>
+	</string>
+	<string id="manyak_end_7_name">
+		<text>Поговорить с Сидоровичем</text>
+	</string>
+	<string id="manyak_end_7_text">
+		<text>Думаю, пора наведаться к Сидоровичу, узнать за учёных.</text>
+	</string>
+
+	<string id="save_the_scince_1_name">
+		<text>Поговорить с Торговцем</text>
+	</string>
+	<string id="save_the_scince_1_text">
+		<text>Сидорович сказал, что учёных, которые могут помочь мне с поиском военных, взяли в плен бандиты. Мне надо идти на Ферму, что за мостом, и поговорить торговцем.</text>
+	</string>
+	<string id="save_the_scince_2_name">
+		<text>Отнести кейс бандитам</text>
+	</string>
+	<string id="save_the_scince_2_text">
+		<text>Я конечно разное в Зоне видел, то этим торговцем оказалась женщина! Впрочем, неважно. Она мне сказала, что договорилась с бандитами и я должен передать кейс с деньгами.</text>
+	</string>
+	<string id="save_the_scince_3_name">
+		<text>Разобраться с бандитами</text>
+	</string>
+	<string id="save_the_scince_3_text">
+		<text>Естественно, все пошло не по плану, кейс оказался абсолютно пуст. Я уверен, эта баба меня подставила!</text>
+	</string>
+	<string id="save_the_scince_4_name">
+		<text>Поговорить с учёными</text>
+	</string>
+	<string id="save_the_scince_4_text">
+		<text>Бандитов я убил, теперь надо поговорить с учёными и отправиться на базу.</text>
+	</string>
+	<string id="save_the_scince_5_name">
+		<text>Поговорить с Хозяйкой</text>
+	</string>
+	<string id="save_the_scince_5_text">
+		<text>Ну что же, пора поговорить с Хозяйкой. Интересно, что она скажет по поводу этой ситуации.</text>
+	</string>
+	<string id="save_the_scince_6_name">
+		<text>Следовать за Хозяйкой</text>
+	</string>
+	<string id="save_the_scince_6_text">
+		<text>Хозяйка готова мне что-то рассказать, надо пройти в укромное местечко, где она мне всё объяснит.</text>
+	</string>
+	<string id="save_the_scince_7_name">
+		<text>Поговорить с Хозяйкой</text>
+	</string>
+	<string id="save_the_scince_7_text">
+		<text>Ну, тут хорошее место, теперь можно и поговорить.</text>
+	</string>
+	<string id="save_the_scince_8_name">
+		<text>Поговорить с Учёными</text>
+	</string>
+	<string id="save_the_scince_8_text">
+		<text>Я оказался прав, Хозяйка меня подставила. Я бы хотел ей высказаться, но это уже не важно. Ладно, надо поговорить с Учеными, они должны мне помочь с поиском пропавших военных.</text>
+	</string>
+
+	<string id="search_teleport_1_name">
+		<text>Установить сканер</text>
+	</string>
+	<string id="search_teleport_1_text">
+		<text>Учёные дали мне сканер, который должен помочь узнать, что произошло на блокпосте.</text>
+	</string>
+	<string id="search_teleport_2_name">
+		<text>Дождаться окончания анализа данных</text>
+	</string>
+	<string id="search_teleport_2_text">
+		<text>Сканер установлен, осталось дождаться, пока учёные закончат анализ данных. Как они сказали, это займет сутки, лучше бы закончить все дела, если у меня они остались.</text>
+	</string>
+	<string id="search_teleport_3_name">
+		<text>Поговорить с учёными</text>
+	</string>
+	<string id="search_teleport_3_text">
+		<text>Анализ закончен, пора наведаться к ученым.</text>
+	</string>
+	<string id="search_teleport_4_name">
+		<text>Прыгнуть в "Пузырь"</text>
+	</string>
+	<string id="search_teleport_4_text">
+		<text>Что же, пора прыгать в "Пузырь" и искать Военных. Надеюсь, чудо-устройство учёных действительно работает. Да... Послушай себя, говоришь как главный герой какого-то рассказа.</text>
+	</string>
+
+	<string id="search_secret_start_name">
+		<text>Прочитать наводку</text>
+	</string><string id="search_secret_1_name">
+		<text>Найти первый тайник</text>
+	</string>
+	<string id="search_secret_2_name">
+		<text>Найти второй тайник</text>
+	</string>
+	<string id="search_secret_3_name">
+		<text>Найти третий тайник</text>
+	</string>
+	<string id="search_secret_4_name">
+		<text>Найти четвёртый тайник</text>
+	</string>
+	<string id="search_secret_5_name">
+		<text>Найти пятый тайник</text>
+	</string>
+	<string id="search_secret_text">
+		<text>Я купил у Бревна наводку на тайник, следует разгадать загадку и узнать их местоположение.</text>
+	</string>
+
+	<string id="vodka_side_quest_1_name">
+		<text>Вернуться к Перщику</text>
+	</string>
+	<string id="vodka_side_quest_1_text">
+		<text>Твою мать... Как болит голова... Надо вернуться к Перщику... Стоп, где мои вещи?!</text>
+	</string>
+	<string id="vodka_side_quest_2_name">
+		<text>Выполнить все задания Перщика</text>
+	</string>
+	<string id="vodka_side_quest_2_text">
+		<text>Я проспорил Порщику все свои вещи, однако мы договорились, что если я выполню задания, который он сказал, то он все вернет. Не знаю верить ему или нет, но выбора у меня все-равно нету.</text>
+	</string>
+	<string id="vodka_side_quest_3_name">
+		<text>Поговорить с Перщиком по поводу своих вещей</text>
+	</string>
+	<string id="vodka_side_quest_3_text">
+		<text>Вроде все выполнил, теперь надо идти к Перщику и требовать обратно свои вещи.</text>
+	</string>
+	<string id="vodka_side_quest_4_name">
+		<text>Забрать вещи из сейфа</text>
+	</string>
+	<string id="vodka_side_quest_4_text">
+		<text>Перщик сказал, что вещи в сейфе, в другой части фермы.</text>
+	</string>
+	
+	<string id="vodka_side_quest_art_1_name">
+		<text>Найти артефакт Зарница</text>
+	</string>
+	<string id="vodka_side_quest_art_1_text">
+		<text>Этот артефакт должен быть в тоннеле с эллектрами.</text>
+	</string>
+	<string id="vodka_side_quest_art_2_name">
+		<text>Принести артефакт Перщику</text>
+	</string>
+	<string id="vodka_side_quest_art_2_text">
+		<text>Артефакт достал, теперь надо его принести Перщику на ферме.</text>
+	</string>
+	
+	<string id="vodka_side_quest_mutants_1_name">
+		<text>Зачистить лагерь мутантов</text>
+	</string>
+	<string id="vodka_side_quest_mutants_1_text">
+		<text>Надо убить мутантов, что находятся за фермой, в сторону перехода на Болота.</text>
+	</string>
+
+	<string id="vodka_side_quest_bandits_1_name">
+		<text>Убить бандитов</text>
+	</string>
+	<string id="vodka_side_quest_bandits_1_text">
+		<text>Надо убить шайку бандитов, что засела на Элеваторе.</text>
+	</string>
+
+	<string id="save_tyan_sister_1_name">
+		<text>Поговорить с Хвостом</text>
+	</string>
+	<string id="save_tyan_sister_1_text">
+		<text>Со мной связался Хвост, сказал, что есть какое-то дело. Интересно, что ему нужно?</text>
+	</string>
+	<string id="save_tyan_sister_2_name">
+		<text>Идти на разваленный хутор</text>
+	</string>
+	<string id="save_tyan_sister_2_text">
+		<text>Хвост сказал, что ему нужна помощь с делом, которое касается Хозяйки. Не люблю эту особу, но раз такое дело, то проследую за ней в сторону разваленно хутора. Думаю, там все не так просто.</text>
+	</string>
+	<string id="save_tyan_sister_3_name">
+		<text>Убить бандитов</text>
+	</string>
+	<string id="save_tyan_sister_3_text">
+		<text>Видимо, эта шайка шантажирует Хозяйку какой-то девушкой. Следует перебить падонков.</text>
+	</string>
+	<string id="save_tyan_sister_4_name">
+		<text>Осмотреть бандитов</text>
+	</string>
+	<string id="save_tyan_sister_4_text">
+		<text>Шайку перебил, следует осмотреть трупы, может найду чего ценного.</text>
+	</string>
+	<string id="save_tyan_sister_5_name">
+		<text>Открыть дверь на чердаке</text>
+	</string>
+	<string id="save_tyan_sister_5_text">
+		<text>Нашел ключ, думаю он открывает дверь на чердаке, стоит посмотреть, что там.</text>
+	</string>
+	<string id="save_tyan_sister_6_name">
+		<text>Поговорить с девушкой</text>
+	</string>
+	<string id="save_tyan_sister_6_text">
+		<text>На чердаке запертой держали девушку, видимо сестра Хозяйки. Не представляю, что эти твари могли с ней делать.</text>
+	</string>
+	<string id="save_tyan_sister_7_name">
+		<text>Поговорить с Хвостом</text>
+	</string>
+	<string id="save_tyan_sister_7_text">
+		<text>Ну, я задачу выполнил. Теперь Хозяйка будет спать спокойно. Следует поговорить с Хвостом, расскажать как всё было.</text>
+	</string>
+
+</string_table>

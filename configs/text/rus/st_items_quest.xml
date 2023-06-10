@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="note_desc">
+		<text>Используйте, чтобы прочитать...</text>
+	</string>
+	<string id="note_info">
+		<text>Неизвестная записка</text>
+	</string>
+	
+	<string id="quest_note_desc">
+		<text>Лично от: полковник Ворошень А.С\n\nИспользуйте, чтобы прочитать...</text>
+	</string>
+	<string id="quest_note_info">
+		<text>Аккуратное письмо от начальства</text>
+	</string>
+
+	<string id="st_af_girls_heart_name">
+		<text>Девичье сердце</text>
+	</string>
+	<string id="st_af_girls_heart_descr">
+		<text>Пока данный артефакт в зоне не находили. Вы внимательно прислушались к артефакту и услышали приятный женский голос, который что-то напевает.</text>
+	</string>
+
+	<string id="st_af_quest_found_name">
+		<text>Зарница</text>
+	</string>
+	<string id="st_af_quest_found_descr">
+		<text>Артефакт способен выводить радиацию из тела, взамен сильно утомляя владельца. Относительно полезен, однако из-за своего негативного свойства, не пользуется популярностью среди сталкеров.</text>
+	</string>
+
+	<string id="ulika_1_item_desc">
+		<text>Аптечка, вся в крови. Видимо, она не спасла того, кто пытался ею воспользоваться.</text>
+	</string>
+	<string id="ulika_1_item_info">
+		<text>Аптечка (Улика)</text>
+	</string>
+	<string id="ulika_2_item_desc">
+		<text>Тупой нож, весь в крови, видимо владельцу было все-равно на его эффективность, явно не принадлежит обычному сталкеру.</text>
+	</string>
+	<string id="ulika_2_item_info">
+		<text>Тупой нож (Улика)</text>
+	</string>
+
+	<string id="usb_for_horse_desc">
+		<text>Заблокирован. Видимо, Шапито его обронил.</text>
+	</string>
+	<string id="usb_for_horse_info">
+		<text>ПДА Шапито</text>
+	</string>
+	
+	<string id="money_for_bandits_desc">
+		<text>Кейс для бандитов, который мне дала Хозяйка.</text>
+	</string>
+	<string id="money_for_bandits_info">
+		<text>Кейс с деньгами</text>
+	</string>
+	
+	<string id="teleport_scanner_descr">
+		<text>Сканер, который мне дали учёные, он должен помочь разобраться, что произошло той ночью, когда пропали военные.</text>
+	</string>
+	<string id="teleport_scanner_info">
+		<text>Сканер учёных</text>
+	</string>
+	
+	<string id="battery_for_forest_desc">
+		<text>Запасная батарея, нужна чтобы запитать электросеть телепорта.</text>
+	</string>
+	<string id="battery_for_forest_info">
+		<text>Батарея</text>
+	</string>
+	
+	<string id="bandits_key_desc">
+		<text>Ключ от двери сверху.</text>
+	</string>
+	<string id="bandits_key_info">
+		<text>Ключ</text>
+	</string>
+	
+	<string id="device_from_scince_desc">
+		<text>Вещица, которая должна мне помочь в Пространственном пузыре. Не знаю каким образом, но всяко лучше, чем ничего.</text>
+	</string>
+	<string id="device_from_scince_info">
+		<text>Прибор для Пузыря</text>
+	</string>
+	
+	<string id="bunkers_door_key_info">
+		<text>Ключ</text>
+	</string>
+	<string id="bunkers_door_key_descr">
+		<text>Вроде как, этот ключ должен открывать металлические двери.</text>
+	</string>
+	
+	<string id="main_quest_item_info">
+		<text>Кейс с документами</text>
+	</string>
+	<string id="main_quest_item_desc">
+		<text>Важный кейс. Внутри лежат документация об установке, которая бы позволила телепортировать бы людей. С одной стороны страшно представить, что случиться, попади это в плохие руки, но с другой, я должен выполнить задание и думать о своей шкуре, а не судьбе мира.</text>
+	</string>
+</string_table>

@@ -1,0 +1,18 @@
+[logic]
+active = sr_idle@start
+
+[sr_idle@start]
+on_actor_inside = sr_idle@wait
+
+[sr_idle@wait]
+on_game_timer = 10 | sr_idle@tip_1 %=create_subtitles(st_random_stalker_1:st_derevnya_bar_talk_1)%
+on_actor_outside = sr_idle@start
+
+[sr_idle@tip_1]
+on_game_timer = 30 | sr_idle@tip_2 %=create_subtitles(st_random_stalker_2:st_derevnya_bar_talk_2)%
+
+[sr_idle@tip_2]
+on_signal = sound_end | sr_idle@tip_3 %=create_subtitles(st_random_stalker_1:st_derevnya_bar_talk_3)%
+
+[sr_idle@tip_3]
+on_game_timer = 50 | %=clear_subtitles +derevnya_bar_talk% nil

@@ -1,0 +1,463 @@
+
+
+local items_collected = false
+local items_sections = {
+	'ar_serum', 
+	'syringes', 
+	'dry_med', 
+	'cloth', 
+	'powder', 
+	'cartridge_automat', 
+	'cartridge_pistol',
+	'cartridge_shotgun',
+	'capsule_automat',
+	'capsule_shotgun',
+	'capsule_pistol',
+	'bullet_automat',
+	'bullet_shotgun',
+	'bullet_pistol',
+	'armor_plates',
+	'sg_cr_i_rezina',
+	'sg_cr_i_electro',
+	'sg_x14_diary',
+	'sg_x14_medicament_ingr_2',
+	'sg_x14_medicament_ingr_3',
+	'sg_x14_medicament_ingr_4'
+}
+
+local items_always_tracking = {
+	'sg_x14_diary'
+}
+
+-- Какие типы вещей отслеживаются по выбору игрока. section = true/false
+local tracking_table = {}
+
+local items = {}
+
+local boxes = {}
+local old_boxes = {}
+
+local stalkers = {}
+local old_stalkers = {}
+
+local mark_type_and_text_prefix = 'sg_ingr_tracker_'
+local mark_text_start = 'sg_ingr_tracker_text'
+
+local tracking_distance = xr_logic.pstor_retrieve(db.actor, "sg_craft_ingr_tracker_distance", 4900)
+
+local pause = false
+
+
+local function add_to_items(obj_id)
+	local t = {
+		['id'] = obj_id,
+		['marked'] = false
+	}
+	table.insert(items,t)
+end
+
+local function get_item_in_list_by_id(id)
+	for k,v in pairs(items) do
+		if (v['id'] == id) then 
+			return k
+		end
+	end
+	return nil
+end
+
+local function box_empty(box_id)
+	local res = true
+	for k,v in pairs(boxes[box_id]) do
+		if (v  > 0) then 
+			res = false
+		end
+	end
+	return res
+end
+
+-- sqr
+local function getDistByCoord(x1,y1,z1,x2,y2,z2)	
+	return (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1) + (z2-z1)*(z2-z1)	
+end
+
+local function delete_all_marks(obj_id)
+	for k,v in pairs(items_sections) do
+		if (level.map_has_object_spot(obj_id, mark_type_and_text_prefix .. v) ~= 0) then
+			level.map_remove_object_spot(obj_id, mark_type_and_text_prefix .. v)
+		end
+	end
+end
+
+local function has_some_mark(obj_id)
+	for k,v in pairs(items_sections) do
+		if (level.map_has_object_spot(obj_id, mark_type_and_text_prefix .. v) ~= 0) then
+			return true
+		end
+	end
+	return false
+end
+
+local function get_container_mark_type(items_list)
+	-- Поставим метку того, чего больше в контейнере
+	local maximum = -1
+	local section 
+	
+	for k,v in pairs(items_list) do
+		if (v > maximum) then
+			maximum = v
+			section = k
+		end
+	end
+	
+	return mark_type_and_text_prefix .. section
+end
+
+local function get_container_mark_text(items_list)
+	local text = game.translate_string(mark_text_start)
+
+	for k,v in pairs(items_list) do
+		if (v > 0) then
+			if (v > 1) then
+				text = text .. game.translate_string(mark_type_and_text_prefix .. k) .. ' x' .. tostring(v)
+			else
+				text = text .. game.translate_string(mark_type_and_text_prefix .. k)
+			end
+		end
+	end
+	
+	return text
+end
+
+local function update()
+	local act = db.actor:position()
+	
+	boxes = {}
+	stalkers = {}
+	
+	for k,v in pairs(items) do
+		
+		local obj_id = v['id']
+		local obj = alife():object(obj_id)
+		
+		if (obj ~= nil) then
+			local obj_section = obj:section_name()
+			
+
+			
+			if (tracking_table[obj_section] == true) then
+						
+				local mark_id = mark_type_and_text_prefix .. obj_section	
+				local mark_text = game.translate_string(mark_text_start) .. game.translate_string(mark_type_and_text_prefix .. obj_section)
+				
+				local parent_id = obj['parent_id']	
+				local obj_parent = alife():object(parent_id)
+				
+				-- Если находится в ящике/на трупе
+				if (obj_parent ~= nil) then
+				
+					parent_id = obj_parent['id']
+					local parent_section = obj_parent:section_name()
+					local is_stalker = IsStalker(obj_parent)
+					
+					-- В ящике
+					if (parent_section == 'inventory_box') then					
+						local obj_pos = obj['position']
+						local dist = getDistByCoord(act.x,act.y,act.z,obj_pos.x,obj_pos.y,obj_pos.z)
+
+						-- Если достаточно близко
+						if (dist < tracking_distance) then							
+								if (t.contains_key(boxes, parent_id) == false) then
+									boxes[parent_id] = {}
+								end
+								
+								if (t.contains_key(boxes[parent_id], obj_section) == false) then
+									boxes[parent_id][obj_section] = 1
+								else
+									boxes[parent_id][obj_section] = boxes[parent_id][obj_section] + 1
+								end							
+						end	
+					elseif (is_stalker == true and obj_parent:alive() == false) then
+						
+						local obj_pos = obj['position']
+						local dist = getDistByCoord(act.x,act.y,act.z,obj_pos.x,obj_pos.y,obj_pos.z)
+
+						-- Если достаточно близко
+						if (dist < tracking_distance) then							
+								if (t.contains_key(stalkers, parent_id) == false) then
+									stalkers[parent_id] = {}
+								end
+								
+								if (t.contains_key(stalkers[parent_id], obj_section) == false) then
+									stalkers[parent_id][obj_section] = 1
+								else
+									stalkers[parent_id][obj_section] = stalkers[parent_id][obj_section] + 1
+								end							
+						end
+											
+					else
+						-- Удалить метку, если имеет parent, не являющийся сталкером или ящиком
+						delete_all_marks(obj_id)							
+						v['marked'] = false	
+					end
+				else 
+					-- Если просто валяется на земле
+					local obj_pos = obj['position']
+					local dist = getDistByCoord(act.x,act.y,act.z,obj_pos.x,obj_pos.y,obj_pos.z)		
+			
+					-- Если достаточно близко
+					if (dist < tracking_distance) then 
+						if (v['marked'] == false) then 											
+								level.map_add_object_spot(obj_id, mark_id, mark_text)
+								v['marked'] = true
+						end
+					else
+						-- Если отошли далеко
+						if (v['marked'] == true) then
+							v['marked'] = false							
+							level.map_remove_object_spot(obj_id, mark_id)							
+						end
+					end			
+				end
+			else
+				-- Если предмет не отслеживается по желанию игрока, то удалить метку
+				
+				v['marked'] = false
+				
+				local parent_id = obj['parent_id']	
+				local obj_parent = alife():object(parent_id)
+
+				if (obj_parent == nil) then
+					delete_all_marks(obj_id)
+				else
+					local mark_id = mark_type_and_text_prefix .. obj_section
+					
+					if (level.map_has_object_spot(parent_id, mark_id) ~= 0) then
+						level.map_remove_object_spot(parent_id, mark_id)
+					end
+				end
+			end
+		else
+			-- Если сейчас объект == nil, удалим его из обработки
+			table.remove(items,k)
+		end
+	end
+	
+	-- Удалим метки ящиков с предыдущей проверки
+	for k,v in pairs(old_boxes) do
+		delete_all_marks(v)
+	end
+	
+	old_boxes = {}
+	
+	-- Отдельно обновим ящики - на данном этапе уже имеем выборку по distance
+	for k,v in pairs(boxes) do
+		local box_id = k
+		local box_content = v
+		
+		if (t.length(box_content) ~= 0) then
+			level.map_add_object_spot(box_id, get_container_mark_type(box_content), get_container_mark_text(box_content))	
+		end
+		
+		table.insert(old_boxes, box_id)
+	end
+	
+	-- Удалим метки сталкеров с предыдущей проверки
+	for k,v in pairs(old_stalkers) do
+		delete_all_marks(v)
+		level.map_add_object_spot(v, 'deadbody_location', '')
+	end
+	
+	old_stalkers = {}	
+	
+	--news_manager.send_tip(db.actor, "Stalkers Items " .. tostring(t.length(stalkers)), nil, nil, 6000)
+	
+	-- Отдельно обновим трупы сталкеров
+	for k,v in pairs(stalkers) do
+		local stalker_id = k
+		local stalker_content = v
+		
+		if (t.length(stalker_content) ~= 0) then
+		
+			if (level.map_has_object_spot(stalker_id, 'deadbody_location') ~= 0) then
+				level.map_remove_object_spot(stalker_id, 'deadbody_location')
+			end		
+			
+			level.map_add_object_spot(stalker_id, get_container_mark_type(stalker_content), get_container_mark_text(stalker_content))	
+		end
+		
+		table.insert(old_stalkers, stalker_id)
+	end	
+	
+end
+
+local function need_to_track(target)
+	for k,v in pairs(items_sections) do 
+		if (target == v) then 
+			return true
+		end 
+	end
+	return false
+end
+
+local function check_box(id)
+	for k,v in pairs(boxes) do 
+		if (k == id) then 
+			return true
+		end 
+	end
+	return false
+end
+
+local function collect_items()
+	--xr_effects.spawn_test_loot()
+
+	local i
+	local current_level_name = level.name()
+	
+	local current_level_min_gvid	
+	local current_level_max_gvid
+	local found = false
+	
+	for k,v in pairs(sg_levels_min_gvid.get()) do
+		if (found == true) then
+			if (v > current_level_min_gvid) then
+				current_level_max_gvid = v - 1
+				break
+			end
+		end
+		if (k == current_level_name) then
+			current_level_min_gvid = v
+			current_level_max_gvid = v + 5000
+			found = true
+		end	
+	end
+
+	for i = 1, 65534 do
+			local obj = alife():object(i)
+			
+			if (obj ~= nil) then
+				
+				local name = obj:name()
+				local section = obj:section_name()
+				local gvid = obj['m_game_vertex_id']
+				local id = obj['id']
+				
+				if (gvid >= current_level_min_gvid and gvid <= current_level_max_gvid) then
+					if (need_to_track(section) == true) then	
+						add_to_items(id)
+					end
+				end
+			end
+	end
+	
+	--news_manager.send_tip(db.actor, "Items Collected " .. tostring(#items), nil, nil, 6000)
+end
+
+------------------------ Функции для вызова из других скриптов
+
+function bind()
+	local tracking_something = xr_logic.pstor_retrieve(db.actor, "sg_craft_ingr_tracker_check", true)
+	
+	if (tracking_something == true and pause == false) then 
+				
+		if (items_collected == false) then
+			collect_items()
+			items_collected = true;
+		end
+		
+		for k,v in pairs(items_sections) do
+			tracking_table[v] = xr_logic.pstor_retrieve(db.actor, "sg_craft_ingr_tracker_item_"..v, false)
+			--console_log({'sg_craft_ingr_tracker_item_' .. v, tracking_table[v]},{'key','value'})
+			--if (v == 'ar_serum') then
+				--news_manager.send_tip(db.actor, "Items [" .. tostring(v) .. "] Tracking [" .. tostring(tracking_table[v]) .. "]", nil, nil, 6000)
+			--end
+		end
+		for k,v in pairs(items_always_tracking) do
+			tracking_table[v] = true
+		end
+		
+		
+		--news_manager.send_tip(db.actor, "Items Update " .. tostring(#items), nil, nil, 6000)
+		update()		
+	end
+	
+end
+
+function stop()
+	pause = true
+end
+
+function start()
+	pause = false
+end
+
+function take_item_callback(obj)
+	local obj_id = obj:id()
+	local obj_section = obj:section()
+	if (need_to_track(obj_section) == true) then
+		
+		local index = get_item_in_list_by_id(obj_id)
+		
+		if (index ~= nil) then
+			delete_all_marks(obj_id)
+			items[index]['marked'] = false
+		end
+	end
+end
+
+function drop_item_callback(obj)
+	local obj_id = obj:id()
+	local obj_section = obj:section()
+	if (need_to_track(obj_section) == true) then
+		
+		local index = get_item_in_list_by_id(obj_id)
+		local mark_id = mark_type_and_text_prefix .. obj_section
+		local mark_text = game.translate_string(mark_text_start) .. game.translate_string(mark_type_and_text_prefix .. obj_section)
+		
+		if (index ~= nil) then
+			level.map_add_object_spot(obj_id, mark_id, mark_text)
+			items[index]['marked'] = true
+		end
+	end
+end
+
+function take_item_from_box_callback(box, obj)
+
+	-- Требуется проверка. Был вылет на nil в строке
+	-- boxes[box_id][obj_section] = boxes[box_id][obj_section] - 1
+
+	if (box ~= nil and obj ~= nil) then
+		local box_id = box:id()
+		local obj_id = obj:id()
+		local obj_section = obj:section()
+		if (check_box(box_id) == true) then
+			if (need_to_track(obj_section) == true) then
+				if (boxes[box_id][obj_section] ~= nil) then
+					boxes[box_id][obj_section] = boxes[box_id][obj_section] - 1
+					
+					delete_all_marks(box_id)
+					
+					if (box_empty(box_id) == false) then
+						level.map_add_object_spot(box_id, get_container_mark_type(boxes[box_id]), get_container_mark_text(boxes[box_id]))
+					end
+				end
+			end
+		end
+	end
+end
+
+function add_item(obj)
+	local obj_id = obj['id']
+	local obj_section = obj:section_name()
+	if (need_to_track(obj_section) == true) then
+		add_to_items(obj_id)
+	end
+end
+
+function get_sections_list()
+	return items_sections;
+end
+
+function get_tracking_distance()
+	return tracking_distance;
+end

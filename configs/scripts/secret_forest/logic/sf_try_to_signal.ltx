@@ -1,0 +1,51 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_actor_inside = sr_idle@start
+
+[sr_idle@start]
+on_actor_outside = sr_idle@wait
+on_game_timer = 20 | sr_idle@tip_1
+
+; TODO: Добавить анимацию камеры
+[sr_idle@tip_1]
+on_info = %=create_subtitles(st_actor_name:st_try_to_signal_1) =disable_ui% sr_idle@tip_2
+
+[sr_idle@tip_2]
+on_signal = sound_end | %=create_subtitles(st_esc_scince_one:st_try_to_signal_2)% sr_idle@tip_3
+
+[sr_idle@tip_3]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_try_to_signal_3)% sr_idle@tip_4
+
+[sr_idle@tip_4]
+on_signal = sound_end | %=create_subtitles(st_esc_scince_one:st_try_to_signal_4)% sr_idle@tip_5
+
+[sr_idle@tip_5]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_try_to_signal_5)% sr_idle@tip_end
+
+[sr_idle@tip_end]
+on_signal = sound_end | %=clear_subtitles() +try_to_signal_end =remove_item(device_from_scince)% sr_idle@see_1
+
+[sr_idle@see_1]
+on_game_timer = 10 | %=create_subtitles(st_actor_name:st_see_1)% sr_idle@see_2
+
+[sr_idle@see_2]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_see_2)% sr_idle@see_3
+
+[sr_idle@see_3]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_see_3)% sr_idle@see_4
+
+[sr_idle@see_4]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_see_4)% sr_idle@see_5
+
+[sr_idle@see_5]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_see_5)% sr_idle@see_nil
+
+[sr_idle@see_nil]
+on_signal = sound_end | %=clear_subtitles() =enable_ui% sr_idle@task
+
+; Если мы не начали поиск документов, выдаём задание "дойти до комплекса"
+[sr_idle@task]
+on_info = {-start_search_documents} %=give_task(go_to_complex)% nil
+on_info2 = {+start_search_documents} nil

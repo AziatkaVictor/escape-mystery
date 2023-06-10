@@ -1,0 +1,14 @@
+[logic]
+active = sr_idle@text_1
+
+[sr_idle@text_1] 
+on_actor_inside = %=create_subtitles(st_actor_name:st_sf_start_quests_1)% sr_idle@text_2
+
+[sr_idle@text_2]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_sf_start_quests_2)% sr_idle@text_3
+
+[sr_idle@text_3]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_sf_start_quests_3)% sr_idle@end
+
+[sr_idle@end]
+on_signal = sound_end | %=clear_subtitles =give_task(try_to_signal)% nil

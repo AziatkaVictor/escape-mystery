@@ -1,0 +1,15 @@
+[logic]
+active = sr_idle@start
+
+[sr_idle@start]
+on_info = %=play_sound(sidor_song)% ph_button@on
+
+[ph_button@on]
+anim = idle
+on_press = %=stop_sound(sidor_song)% ph_button@off
+tooltip = st_radio_off
+
+[ph_button@off]
+anim = idle
+on_press = %=play_sound(sidor_song)% ph_button@on
+tooltip = st_radio_on

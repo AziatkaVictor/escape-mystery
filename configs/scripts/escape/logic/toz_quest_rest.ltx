@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_info = {+toz_quest_end} sr_idle@delete
+
+[sr_idle@delete]
+on_game_timer = 5 | %=run_postprocess(blink:10) =remove_squad(esc_smart_post_3_stalker_toz_prizrak_id) =give_item(af_girls_heart:actor)% nil

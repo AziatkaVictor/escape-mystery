@@ -1,0 +1,36 @@
+[logic@sf_brother]
+active                      = animpoint@guard
+suitable 					= {=check_npc_name(sf_brother)} true, false
+prior 						= 200
+
+[animpoint@base]
+cover_name                  = sf_brother_animpoint
+invulnerable                = {+brother_hi} false, true
+combat_ignore_cond          = true
+meet                        = meet@trade
+
+[animpoint@guard]:animpoint@base
+avail_animations            = wait
+on_info                     = {+brother_hi} %=stop_animation% remark@suiside
+
+[remark@suiside]
+anim                        = zat_b22_medic_suicide
+on_signal                   = anim_end | remark@suiside_shot
+meet                        = no_meet
+
+[remark@suiside_shot]
+anim                        = zat_b22_medic_suicide
+on_game_timer               = 10 | nil %=kill_npc +brother_dead%
+meet                        = no_meet
+
+[meet@trade]
+close_anim 			        = nil
+close_victim 			    = nil
+far_anim 					= nil
+far_victim 				    = nil
+close_snd_hello 		    = nil
+close_snd_bye 		        = nil
+close_distance  		    = 0
+far_distance 			    = 0
+use 						= true
+allow_break 			    = false

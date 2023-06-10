@@ -1,0 +1,18 @@
+[logic]
+active = sr_idle@start
+
+[sr_idle@start]
+on_info = %=disable_ui =run_postprocess(fade_out) +search_teleport_end% sr_idle@wait
+
+[sr_idle@wait]
+on_game_timer = 60 | sr_cutscene
+
+[sr_cutscene]
+point = sf_actor_start_position_walk
+look = sf_actor_start_position_look
+cam_effector = secret_forest_start
+global_cameffect = true
+on_signal = cameff_end | %=enable_ui +ded_can_talk% sr_idle@wait_for_compass
+
+[sr_idle@wait_for_compass]
+on_info = {=actor_has_item(af_compass) -actor_has_compass} %+actor_has_compass%

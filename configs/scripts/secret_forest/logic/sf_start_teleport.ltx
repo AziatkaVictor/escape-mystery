@@ -1,0 +1,18 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_info = {+find_artefact_sercet_forest_end +charge_battery_end} sr_idle@start
+
+[sr_idle@start]
+on_actor_inside = %=run_tutorial(start_teleport)% sr_idle@start_tutorial
+
+[sr_idle@start_tutorial]
+on_actor_outside = %=stop_tutorial(start_teleport)% sr_idle@start
+on_info = {+start_teleport} %=stop_tutorial(start_teleport)% sr_idle@tip
+
+[sr_idle@tip]
+on_game_timer = 10 | %=create_subtitles(st_actor_name:st_start_teleport_from_forest)% sr_idle@tip_end
+
+[sr_idle@tip_end]
+on_signal = sound_end | %=clear_subtitles()% nil

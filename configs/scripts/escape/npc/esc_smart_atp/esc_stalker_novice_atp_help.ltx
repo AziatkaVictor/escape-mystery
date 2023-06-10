@@ -1,0 +1,26 @@
+[logic@esc_stalker_novice_atp_help] 
+suitable 					= {=check_npc_name(esc_stalker_novice_atp_help)} true
+prior 						= 200
+active 						= animpoint@base
+
+[animpoint@base]
+cover_name 			    = esc_smart_atp_help_anim
+avail_animations 	    = guard
+invulnerable 			= true
+use_camp 				= false
+meet 					= meet@trade
+hit                     = hit
+
+[hit]
+on_info                 = {=hit_by_actor} nil
+
+[meet@trade]
+close_anim 			    = nil
+close_victim 			= nil
+far_anim 				= nil
+far_victim 				= nil
+close_distance  		= 0
+far_distance 			= 0
+use 					= {=actor_enemy} false, true
+allow_break 			= false
+meet_on_talking 	    = false

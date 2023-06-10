@@ -1,0 +1,12 @@
+[logic]
+active = sr_idle@init
+
+[sr_idle@init]
+on_info = %=turn_off(sf_teleport_light)% sr_idle@wait
+
+[sr_idle@wait]
+on_info = {+start_teleport} %=turn_on(sf_teleport_light)% sr_teleport
+ 
+[sr_teleport]
+point1 = sf_teleport_walk
+look1 = sf_teleport_look

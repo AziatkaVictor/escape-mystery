@@ -1,0 +1,27 @@
+[logic]
+active = ph_button@wait
+
+[ph_button@wait]
+anim_blend  = true
+anim        = idle
+tooltip     = bunker_main_button_wait
+on_info     = {+button_1_pressed +button_2_pressed +button_3_pressed} ph_button@idle
+
+[ph_button@idle]
+anim_blend  = true
+anim        = idle
+tooltip     = bunker_main_button_end_press
+on_press    = ph_button@off %+good_ending =disable_ui =run_cam_effector(earthquake) =run_postprocess(alcohol) =play_sound(surge_earthquake_sound)%
+
+[ph_button@off]
+anim_blend  = true
+anim        = off
+on_game_timer = 100 | sr_idle@hit
+
+[sr_idle@hit]
+on_info = %=hit_gg% sr_idle@start
+
+[sr_idle@start]
+on_game_timer = 30 | %=run_tutorial(outro_game)% sr_idle@stop
+
+[sr_idle@stop]

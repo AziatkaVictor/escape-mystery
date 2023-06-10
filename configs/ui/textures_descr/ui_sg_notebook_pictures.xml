@@ -1,0 +1,32 @@
+<w>
+    <file name="ui\sg_notebook_pictures">
+
+    <texture id="sidor" x="0" y="0" width="352" height="477" />
+	
+	<texture id="sg_notebook_picture_repair" x="352" y="0" width="352" height="477" />
+	<texture id="sg_notebook_picture_craft" x="704" y="0" width="352" height="477" />
+	
+	<texture id="sg_notebook_picture_peley_dead" x="1056" y="0" width="352" height="477" />
+	<texture id="sg_notebook_picture_peley_alive" x="1408" y="0" width="352" height="477" />
+
+	<texture id="sg_notebook_picture_sokolov_alive" x="1056" y="477" width="352" height="477" />	
+	<texture id="sg_notebook_picture_sokolov_dead" x="1408" y="477" width="352" height="477" />
+	
+	<texture id="sg_notebook_picture_burbon_alive" x="352" y="477" width="352" height="477" />	
+	<texture id="sg_notebook_picture_burbon_dead" x="704" y="477" width="352" height="477" />
+	
+	<texture id="sg_notebook_picture_dead_village" x="0" y="477" width="352" height="477" />	
+	
+	<texture id="sg_notebook_picture_hermit" x="0" y="954" width="352" height="477" />		
+	
+	<texture id="sg_notebook_picture_unity" x="352" y="954" width="352" height="477" />	
+	
+	<texture id="sg_notebook_picture_jelob_good" x="704" y="954" width="352" height="477" />
+	<texture id="sg_notebook_picture_jelob_bad" x="1056" y="954" width="352" height="477" />
+	
+	<texture id="sg_notebook_picture_voronin" x="1408" y="954" width="352" height="477" />
+	<texture id="sg_notebook_picture_lukash" x="0" y="1431" width="352" height="477" />
+	
+	<texture id="sg_notebook_picture_compass" x="361" y="1582" width="337" height="220" />
+	</file>	
+</w>

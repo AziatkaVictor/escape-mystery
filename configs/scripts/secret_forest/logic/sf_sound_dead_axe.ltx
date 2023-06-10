@@ -1,0 +1,14 @@
+[logic]
+active = sr_idle@spawn
+
+[sr_idle@spawn]
+on_info = %=spawn_corpse(dog_weak:sf_corpse_dog_way_1) =spawn_corpse(dog_weak:sf_corpse_dog_way_2) =spawn_corpse(dog_weak:sf_corpse_dog_way_3) =spawn_corpse(dog_weak:sf_corpse_dog_way_4) =spawn_corpse(dog_weak:sf_corpse_dog_way_5) =spawn_corpse(sf_axe:sf_corpse_axe_way_1)% sr_idle@wait
+
+[sr_idle@wait]
+on_actor_inside = %=create_subtitles(st_actor_name:st_dead_axe_1)% sr_idle@tip_2
+
+[sr_idle@tip_2]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_dead_axe_2)% sr_idle@end
+
+[sr_idle@end]
+on_signal = sound_end | %=clear_subtitles% nil 

@@ -1,0 +1,21 @@
+[logic@esc_stalker_alcohol] 
+suitable 					= {=check_npc_name(esc_stalker_alcohol)} true
+prior 						= 200
+active 						= animpoint@base
+
+[animpoint@base]
+cover_name 			        = esc_smart_stalker_base_alcohol_stalker
+use_camp 				    = false
+meet 						= meet@trade
+invulnerable 			    = true
+
+[meet@trade]
+close_anim 			        = nil
+close_victim 			    = nil
+far_anim 					= nil
+far_victim 				    = nil
+close_distance  		    = 0
+far_distance 			    = 0
+use 						= {=actor_enemy} false, true
+allow_break 			    = false
+meet_on_talking 	        = false

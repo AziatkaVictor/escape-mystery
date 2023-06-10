@@ -1,0 +1,221 @@
+function note_lider()
+
+end
+
+function lider_stalker_award(first_speaker, second_speaker)
+	dialogs.relocate_item_section(second_speaker, "af_vyvert", "in")
+end
+
+function sidor_award()
+	
+end
+
+function give_secret(first_speaker, second_speaker)
+	if has_alife_info("secret_skidka") then 
+		dialogs.relocate_money(second_speaker, 7000, "out") 
+	else
+		dialogs.relocate_money(second_speaker, 10000, "out") 
+	end
+	dialogs.relocate_item_section(second_speaker, "secret_1", "in")
+	task_manager.get_task_manager():give_task("search_secret")
+end
+
+function is_actor_has_money_for_secret()
+	if has_alife_info("secret_skidka") then 
+		return db.actor:money() >= 7000
+	else
+		return db.actor:money() >= 10000
+	end
+end
+
+function create_dogs()
+	db.actor:give_info_portion("create_dogs")
+	xr_effects.create_squad(nil, nil, {"esc_smart_post_3_spawn_dog_squad","esc_smart_post_3"})
+end
+
+function create_prizrak_toz()
+	xr_effects.create_squad(nil, nil, {"esc_smart_post_3_stalker_toz_prizrak","esc_smart_post_3"})
+end
+
+function give_the_scanner(first_speaker, second_speaker)
+	task_manager.get_task_manager():give_task("search_teleport")
+	dialogs.relocate_item_section(second_speaker, "teleport_scanner", "in")
+end
+
+function find_filin()
+	xr_effects.spawn_corpse(nil, nil, {"esc_stalker_novice_filin","dead_filin"})		-- Спавним труп, а "shron_filina" это название схрона
+	xr_effects.spawn_object_in(nil, nil, {"stalker_outfit_top","shron_filina"})
+end
+
+function start_quest_atp()
+	task_manager.get_task_manager():give_task("sidor_quest")
+	xr_effects.create_squad(nil, nil, {"esc_smart_atp_squad","esc_smart_atp"})
+end
+
+function spawn_dead_stalkers()
+	xr_effects.spawn_corpse(nil, nil, {"esc_stalker_dead_one", "dead_body_one"})
+	xr_effects.spawn_corpse(nil, nil, {"esc_stalker_dead_two", "dead_body_two"})
+
+	xr_effects.spawn_object(nil, nil, {"ulika_1_item","dead_body_one"})
+	xr_effects.spawn_object(nil, nil, {"ulika_2_item","dead_body_two"})
+
+	xr_effects.create_squad(nil, nil, {"esc_smart_dead_2_bloodsucker","esc_smart_dead_2"})
+	xr_effects.create_squad(nil, nil, {"esc_smart_dead_1_dogs","esc_smart_dead_1"})
+	--xr_effects.create_squad(nil, nil, {"esc_smart_post_1_squad","esc_smart_post_1"})
+	
+	task_manager.get_task_manager():give_task("ulika_1_manyak")
+	task_manager.get_task_manager():give_task("ulika_2_manyak")
+end
+
+function tyan_quest_start()
+	xr_effects.create_squad(nil, nil, {"esc_scince_squad","esc_smart_post_4"})
+	xr_effects.create_squad(nil, nil, {"esc_bandits_for_scince_squad","esc_smart_post_4"})
+	xr_effects.set_squads_friends(nil, nil, {"esc_scince_squad_id","esc_bandits_for_scince_squad_id"})
+	xr_effects.set_squad_neutral_to_actor(nil, nil, {"esc_bandits_for_scince_squad_id"})
+end
+
+function bandit_angry()
+	xr_effects.set_squad_enemy_to_actor(nil, nil, {"esc_bandits_for_scince_squad_id"})
+end
+
+function give_case(first_speaker, second_speaker)
+	dialogs.relocate_item_section(second_speaker, "money_for_bandits", "in")
+end
+
+function give_artefact(first_speaker, second_speaker)
+	xr_effects.remove_item(nil, nil, {"af_quest_found"})
+end
+
+function give_case_to_bandit()
+	xr_effects.remove_item(nil, nil, {"money_for_bandits"})
+end
+
+function start_vodkas_quest()
+	xr_effects.run_postprocess(nil, nil, {"fade_in_out"})
+	xr_effects.relocate_actor_inventory_to_box(db.actor, nil, {"esc_vodka_box"})
+	xr_effects.teleport_actor(nil, nil, {"tp_actor_after_vodka_walk", "tp_actor_after_vodka_look"})
+	task_manager.get_task_manager():give_task("vodka_side_quest")
+
+	xr_effects.give_item(nil, nil, {"medkit", "actor"})
+	xr_effects.give_item(nil, nil, {"medkit", "actor"})
+	xr_effects.give_item(nil, nil, {"vodka", "actor"})
+	xr_effects.give_item(nil, nil, {"vodka", "actor"})
+	xr_effects.give_item(nil, nil, {"wpn_pb", "actor"})
+	xr_effects.give_item(nil, nil, {"ammo_9x18_fmj", "actor"})
+	xr_effects.give_item(nil, nil, {"ammo_9x18_fmj", "actor"})
+	xr_effects.give_item(nil, nil, {"ammo_9x18_fmj", "actor"})
+	xr_effects.give_item(nil, nil, {"conserva", "actor"})
+	xr_effects.give_item(nil, nil, {"conserva", "actor"})
+end
+
+function eat_vodka_script()
+	xr_effects.give_item(nil, nil, {"vodka", "actor"})
+	db.actor:eat(db.actor:object("vodka"))
+end
+
+function start_vodkas_side_quests()
+	xr_effects.spawn_object(nil, nil, {"af_quest_found", "esc_spawn_art_found"})
+	xr_effects.remove_squad(actor, npc, {"esc_smart_elevator_sim_squad"})
+	xr_effects.create_squad(nil, nil, {"esc_smart_elevator_squad","esc_smart_elevator"})
+	xr_effects.create_squad(nil, nil, {"monster_vegetarian_5_squad","esc_smart_mutants_5"})
+
+	task_manager.get_task_manager():give_task("vodka_side_quest_art")
+	task_manager.get_task_manager():give_task("vodka_side_quest_mutants")
+	task_manager.get_task_manager():give_task("vodka_side_quest_bandits")
+end
+
+function spawn_shapito_dead()
+	xr_effects.spawn_corpse(nil, nil, {"esc_stalker_novice_shapito", "esc_shapito_dead"})
+	xr_effects.spawn_object(nil, nil, {"shapito_note", "esc_shapito_dead"})
+end
+
+function reward_sister(first_speaker, second_speaker)
+	dialogs.relocate_item_section(second_speaker, "wpn_protecta", "in")
+end	
+
+function go_to_base()
+	xr_effects.run_postprocess(nil, nil, {"fade_in_out"})
+	xr_effects.teleport_actor(nil, nil, {"esc_end_quest_bandirs_walk", "esc_end_quest_bandirs_look"})
+	xr_effects.teleport_squad(nil, nil, {"esc_scince_squad_id", "science_spawn"})
+end
+
+function go_to_base_with_sister()
+	xr_effects.run_postprocess(nil, nil, {"fade_in_out"})
+	xr_effects.create_squad(nil, nil, {"esc_smart_stalker_base_tyan_squad", "esc_smart_stalker_base"})
+	xr_effects.teleport_actor(nil, nil, {"esc_end_quest_bandirs_walk", "esc_end_quest_bandirs_look"})
+	xr_effects.teleport_squad(nil, nil, {"esc_smart_stalker_base_sister_squad", "teleport_sister"})
+end
+
+function add_science_device()
+	xr_effects.give_item(nil, nil, {"device_from_scince", "actor"})
+end
+
+function remove_pda_shapito()
+	xr_effects.remove_item(nil, nil, {"usb_for_horse"})
+end
+
+function has_shapito_pda(first_speaker, second_speaker)
+	return first_speaker:object("usb_for_horse") ~= nil
+end
+
+function remove_usb(first_speaker, second_speaker)
+	dialogs.relocate_item_section(second_speaker, "wpn_abakan", "in")
+	dialogs.relocate_item_section(second_speaker, "wpn_addon_scope", "in")
+end
+
+function manyak_quest()
+	local iTimer = time_global() + 2000
+	
+	local function check_timer()
+		return time_global() > iTimer
+    end
+
+    level.add_call(check_timer, action_timer)
+end
+
+function action_timer()
+	task_manager.get_task_manager():give_task("manyak")
+end
+
+function atp_end()
+	xr_effects.remove_squad(nil, nil, {"esc_smart_novice_base_filin_squad"})		-- Удаляем Филина
+end
+
+function spawn_scaner(actor)
+	db.actor:give_info_portion("scanner_was_spawned")
+	xr_effects.remove_squad(nil, nil, {"esc_smart_stalker_base_tyan_squad"})
+	xr_effects.spawn_object(nil, nil, {"esc_ph_scanner", "esc_spawn_scanner"}) 
+	xr_effects.remove_item(nil, nil, {"teleport_scanner"})
+end
+
+function add_artefact()
+	xr_effects.remove_item(nil, nil, {"af_compass"})
+	db.actor:give_info_portion("find_artefact_sercet_forest_end")
+end
+
+function add_battery()
+	xr_effects.remove_item(nil, nil, {"battery_for_forest"})
+	db.actor:give_info_portion("charge_battery_end")
+end
+
+function charge_battery()
+	db.actor:give_info_portion("charge_battery")
+end
+
+function scan_location()
+	db.actor:give_info_portion("scan_location_end")
+end
+
+function start_teleport()
+	db.actor:give_info_portion("start_teleport")
+end
+
+function spawn_himera()
+	xr_effects.create_squad(nil, nil, {"sf_himera_squad", "sf_smart_himera"})
+end
+
+function idiot_give_items(first_speaker, second_speaker)
+	xr_effects.give_item(nil, nil, {"battery_for_forest", "actor"})
+	xr_effects.give_item(nil, nil, {"docs_3", "actor"})
+	xr_effects.kill_npc(nil, nil, {"sf_idiot"})
+end

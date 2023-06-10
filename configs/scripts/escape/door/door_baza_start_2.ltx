@@ -1,0 +1,26 @@
+[logic]
+active = ph_door@locked
+
+[ph_door@closed]
+closed = true
+locked = false
+on_use = ph_door@open 
+snd_open_start = wood_large_open_start
+snd_close_start = wood_large_close_start
+snd_close_stop = wood_large_close_stop
+ 
+[ph_door@open]
+closed = false
+locked = false
+on_use = ph_door@closed
+snd_open_start = wood_large_open_start
+snd_close_start = wood_large_close_start
+snd_close_stop = wood_large_close_stop
+
+[ph_door@locked]
+closed = true
+locked = true
+snd_open_start = wood_large_open_start
+snd_close_start = wood_large_close_start
+snd_close_stop = wood_large_close_stop
+on_info = {+sidor_tyan_quest} ph_door@closed

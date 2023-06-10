@@ -1,0 +1,8 @@
+<w>
+    <file name="ui\sg_dialog_icons">
+
+	    <texture id="sg_dialog_icon_nemo" x="0" y="0" width="165" height="108" />
+		<texture id="sg_dialog_icon_dolg" x="165" y="216" width="165" height="108" />
+
+	</file>	
+</w>

@@ -1,0 +1,10 @@
+<w>
+    <file name="ui\sg_choice_icons">
+
+	    <texture id="sg_choice_icon_test_1" x="0" y="0" width="165" height="108" />
+		<texture id="sg_choice_icon_test_2" x="165" y="0" width="165" height="108" />
+		
+		<texture id="sg_x14_choice_icon_medicament" x="329" y="0" width="165" height="108" />
+		<texture id="sg_x14_choice_icon_battle" x="0" y="108" width="165" height="108" />
+	</file>	
+</w>

@@ -1,0 +1,100 @@
+[logic@walker_1]
+active                              = walker@walker_1
+suitable 					        = true
+prior 						        = 100
+
+[logic@walker_2]
+active                              = walker@walker_2
+suitable 					        = true
+prior 						        = 100
+
+[logic@walker_3]
+active                              = walker@walker_3
+suitable 					        = true
+prior 						        = 100
+
+[logic@esc_bandit_leader_tyan]
+active                              = animpoint@esc_bandit_leader_tyan
+suitable 					        = {=check_npc_name(esc_bandit_leader_tyan)} true
+prior 						        = 200
+
+[logic@esc_stalker_tyan_for_cutscene]
+active                              = walker@esc_stalker_tyan_for_cutscene
+suitable 					        = {=check_npc_name(esc_stalker_tyan_for_cutscene)} true
+prior 						        = 200
+
+[logic@esc_stalker_tyan_sister]
+active                              = animpoint@esc_stalker_tyan_sister
+suitable 					        = {=check_npc_name(esc_stalker_tyan_sister)} true
+prior 						        = 200
+
+[animpoint@esc_bandit_leader_tyan]
+cover_name 			                = esc_smart_hutor_leader
+combat_ignore_cond                  = {+bad_bandits_end_cutscene} false, true
+invulnerable                        = {+bad_bandits_end_cutscene} false, true
+use_camp 				            = false
+gather_items_enabled                = false
+meet 						        = no_meet
+
+[walker@esc_stalker_tyan_for_cutscene]
+path_walk                           = tyan_walk
+path_look                           = tyan_look
+invulnerable                        = true
+combat_ignore_cond                  = true
+combat_ignore_keep_when_attacked    = true
+use_camp 				            = false
+gather_items_enabled                = false
+meet 						        = no_meet
+on_info                             = {+bad_bandits_talk_end} walker@esc_stalker_tyan_end
+
+[walker@esc_stalker_tyan_end]
+path_walk                           = tyan_2_walk
+path_look                           = tyan_2_look
+invulnerable                        = true
+combat_ignore_cond                  = true
+combat_ignore_keep_when_attacked    = true
+use_camp 				            = false
+gather_items_enabled                = false
+meet 						        = no_meet
+
+[meet@trade]
+close_anim 			                = nil
+close_victim 			            = nil
+far_anim 					        = nil
+far_victim 				            = nil
+close_snd_hello 		            = nil
+close_snd_bye 		                = nil
+close_distance  		            = 0
+far_distance 			            = 0
+use 						        = {=actor_enemy} false, true
+allow_break 			            = false
+
+[animpoint@esc_stalker_tyan_sister]
+cover_name 			                = esc_smart_hutor_tyan_sister
+invulnerable                        = true
+combat_ignore_cond                  = true
+combat_ignore_keep_when_attacked    = true
+use_camp 				            = false
+gather_items_enabled                = false
+meet 						        = {+bandits_tyan_is_dead} meet@trade, no_meet
+
+[walker@walker_1]
+path_walk                           = walker_1_walk
+path_look                           = walker_1_look
+use_camp 				            = false
+combat_ignore_cond                  = {+bad_bandits_end_cutscene} false, true
+combat_ignore_keep_when_attacked    = {+bad_bandits_end_cutscene} false, true
+
+[walker@walker_2]
+path_walk                           = walker_2_walk
+path_look                           = walker_2_look
+use_camp 				            = false
+combat_ignore_cond                  = {+bad_bandits_end_cutscene} false, true
+combat_ignore_keep_when_attacked    = {+bad_bandits_end_cutscene} false, true
+
+[walker@walker_3]
+path_walk                           = walker_3_walk
+path_look                           = walker_3_look
+use_camp 				            = false
+combat_ignore_cond                  = {+bad_bandits_end_cutscene} false, true
+combat_ignore_keep_when_attacked    = {+bad_bandits_end_cutscene} false, true

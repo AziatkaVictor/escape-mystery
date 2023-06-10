@@ -1,0 +1,45 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_info = {+cry_info +army_one_info +army_note_2_info +army_note_3_info} sr_idle@tip_start
+
+[sr_idle@tip_start]
+on_game_timer = 20 | %=create_subtitles(st_actor_name:radio_text_start)% sr_idle@start
+
+[sr_idle@start]
+on_signal = sound_end | %+radio_start =clear_subtitles()% ph_button@press
+
+[ph_button@press]
+anim = idle
+on_press = %=create_subtitles(st_actor_name:st_transiver_check_text)% ph_button@off
+tooltip = st_transiver_check
+
+[ph_button@off]
+anim = idle
+tooltip =
+on_info = sr_idle@tip
+
+[sr_idle@tip]
+on_signal = sound_end | %=create_subtitles(st_actor_name:radio_text_1)% sr_idle@tip_2
+
+[sr_idle@tip_2]
+on_signal = sound_end | %=create_subtitles(st_actor_name:radio_text_2)% sr_idle@tip_3
+
+[sr_idle@tip_3]
+on_signal = sound_end | %=create_subtitles(st_actor_name:radio_text_3)% sr_idle@tip_4
+
+[sr_idle@tip_4]
+on_signal = sound_end | %=create_subtitles(st_actor_name:radio_text_4)% sr_idle@tip_5
+
+[sr_idle@tip_5]
+on_signal = sound_end | %=create_subtitles(st_main_army:radio_text_5)% sr_idle@tip_6
+
+[sr_idle@tip_6]
+on_signal = sound_end | %+esc_storyline_search_part_1 =clear_subtitles() =create_squad(esc_army_trader_squad:esc_smart_army_base_start) =create_squad(esc_army_mech_squad:esc_smart_army_base_start) =create_squad(esc_army_medic_squad:esc_smart_army_base_start)% sr_idle@wait_2
+
+[sr_idle@wait_2]
+on_info = {+esc_storyline_search_end} sr_idle@wait_3
+
+[sr_idle@wait_3]
+on_game_timer = 20 | %=give_task(esc_sidor_talk) =give_task(esc_main_quest)% nil

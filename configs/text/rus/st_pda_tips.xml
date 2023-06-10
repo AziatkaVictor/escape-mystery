@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>	
+	
+	<string id="st_esc_1_spot">
+		<text>Южный КПП</text>
+	</string>
+	<string id="st_esc_2_spot">
+		<text>Деревня Новичков (База сталкеров)</text>
+	</string>
+	<string id="st_esc_3_spot">
+		<text>Свалка (Химическая аномалия)</text>
+	</string>
+	<string id="st_esc_4_spot">
+		<text>Элеватор</text>
+	</string>
+	<string id="st_esc_5_spot">
+		<text>АТП</text>
+	</string>
+	<string id="st_esc_6_spot">
+		<text>Лес (Гравитационная аномалия)</text>
+	</string>
+	<string id="st_esc_7_spot">
+		<text>Ферма (База сталкеров)</text>
+	</string>
+	<string id="st_esc_8_spot">
+		<text>Разваленный хутор</text>
+	</string>
+	<string id="st_esc_9_spot">
+		<text>Северный КПП</text>
+	</string>
+	<string id="st_esc_10_spot">
+		<text>Туннель (Электрическая аномалия)</text>
+	</string>
+
+	<string id="st_radio_off">
+		<text>Включить ($$ACTION_USE$$)</text>
+	</string>
+	<string id="bunker_main_button_press">
+		<text>Отключить ($$ACTION_USE$$)</text>
+	</string>
+	<string id="bunker_main_button_end_press">
+		<text>Запустить протокол самоуничтожения ($$ACTION_USE$$)</text>
+	</string>
+	<string id="bunker_main_button_wait">
+		<text>Ожидается отключения предохранителей</text>
+	</string>
+	<string id="st_radio_on">
+		<text>Выключить ($$ACTION_USE$$)</text>
+	</string>
+	<string id="st_kill_rei">
+		<text>Плюшевая Рей! ($$ACTION_USE$$)</text>
+	</string>
+	<string id="st_transiver_check">
+		<text>Проверить на исправность ($$ACTION_USE$$)</text>
+	</string>
+
+	<string id="st_main_army">
+		<text>Военный канал</text>
+	</string>
+	<string id="st_atp_bandit">
+		<text>Бандит</text>
+	</string>
+	<string id="st_random_stalker_1">
+		<text>Неизвестный сталкер №1</text>
+	</string>
+	<string id="st_random_stalker_2">
+		<text>Неизвестный сталкер №2</text>
+	</string>
+	<string id="st_voice">
+		<text>Неизвестный голос</text>
+	</string>
+
+	<!-- Начало игры -->
+	
+	<string id="st_start_game_1">
+		<text>Приём. Прибыл на место, прошу дальнейших указаний!</text> <!-- ГОТОВО -->
+	</string>
+	<string id="st_start_game_2">
+		<text>Майор Суворов, осмотрите КПП и доложите о ситуации.</text> <!-- ГОТОВО -->
+	</string>
+	<string id="st_start_game_3">
+		<text>Вас понял, приступаю.</text> <!-- ГОТОВО -->
+	</string>
+	
+	<!-- Сцена в баре -->
+
+	<string id="st_derevnya_bar_talk_1">
+		<text>Какие же вы все твари...</text>
+	</string>
+	<string id="st_derevnya_bar_talk_2">
+		<text>Я понимаю, что ты хочешь еще водки, но для начала надо заплатить, понимаешь?</text> <!-- Озвучивает Vekamaru -->
+	</string>
+	<string id="st_derevnya_bar_talk_3">
+		<text>Да иди ты, пойду к себе...</text>
+	</string>
+
+	<!-- Все фразы ГГ -->
+	
+	<string id="st_found_pda_1">
+		<text>Хм... ПДА Шапито, отнесу-ка я его технику, может найду чего интересного.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+	
+	<string id="st_family_gun_start">
+		<text>Что за... Почему потухли лампы?</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+	
+	<string id="st_stop_teleport">
+		<text>Я не могу уйти сейчас, я не всё осмотрел.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+
+	<string id="st_transiver_check_text">
+		<text>Радиостанция старая, но работает исправно.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+	<string id="radio_text_start">
+		<text>Думаю, что не смогу найти тут еще что-то. Следует проверить радиостанцию.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+
+	<string id="st_filin_dead_1_found_1">
+		<text>Пострадавший так и не смог воспользоваться бинтом, или не успел.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+	<string id="st_filin_dead_1_found_2">
+		<text>У него не было шансов...</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+
+	<string id="st_filin_dead_2_found_1">
+		<text>Похоже на орудие убийства. Не очень то и острый, этот нож.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+	<string id="st_filin_dead_2_found_2">
+		<text>Страшно представить какие муки испытывал тот сталкер, когда его резали им.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+
+	<string id="st_filin_dead_all_found_1">
+		<text>Всё это дело рук человека, без сомнений. Из обоих сталкеров выпустили очень много крови.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+	<string id="st_filin_dead_all_found_2">
+		<text>При чем оба не пересекали моста, значит скорее всего они совсем новички.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+	<string id="st_filin_dead_all_found_3">
+		<text>Есть 2 варианта - либо Маньяк скрывается среди новичков, либо у него есть сообщник. Следует расспросить сталкеров в деревне.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+
+	<string id="st_filin_dead">
+		<text>Хм... Филина на месте нету, спрошу Вожатого, думаю, он может знать, куда он пропал.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+	<string id="st_filin_dead_found_1">
+		<text>Единственный свидетель оказался убит, подозрительно.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+	<string id="st_filin_dead_found_2">
+		<text>Всё тело изрезано, его что, пытали? Это определенно следы от ножа.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+
+	<!-- Активация рации -->
+	
+	<string id="radio_text_1">
+		<text>Приём, это майор Суворов, докладываю. Объект взят под наш контроль.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+	<string id="radio_text_2">
+		<text>Личный состав блокпоста на месте не обнаружен, следов борьбы или нападения нет.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+	<string id="radio_text_3">
+		<text>Блокпост отдаю под командование капитана Кольского с его людьми.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+	<string id="radio_text_4">
+		<text>Продолжаю дальнейшее расследование в соответствии с пунктом плана 8.2.1. Приём.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+	<string id="radio_text_5">
+		<text>Принято. Остальным мы займемся сами. Вы знаете что делать. Конец связи.</text> <!-- ГОТОВО -->
+	</string>
+
+	<!-- Сообщение от Сидоровича -->
+
+	<string id="st_sidor_start_text_1">
+		<text>Привет, ты это, проходи ко мне в бункер. На счет сталкеров не переживай, я предупредил их о твоём визите.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+
+	<!-- Сообщение от Хвоста -->
+	
+	<string id="st_save_sister_tip">
+		<text>Суворов, верно? Есть просьба с глазу на глаз, срочная. С наградой не обижу.</text> <!-- ГОТОВО -->
+	</string>
+
+	<!-- Сценка на АТП -->
+	
+	<string id="st_atp_tip_1">
+		<text>Мля, пацаны, что-то тихо тут...</text> <!-- Озвучивает stalkerShepard -->
+	</string>
+	<string id="st_atp_tip_2">
+		<text>Сидим тихо, ждем, не шелестим.</text> <!-- Озвучивает Vekamaru -->
+	</string>
+	<string id="st_atp_tip_3">
+		<text>Внатуре, эти фраера свалили. Нечего с братвой тягаться!</text> <!-- Озвучивает stalkerShepard -->
+	</string>
+	<string id="st_atp_tip_4">
+		<text>Огонь!</text> <!-- Озвучивает Vekamaru -->
+	</string>
+	
+	<!-- Сценка в Баре на Ферме -->
+
+	<string id="st_bar_talk_1">
+		<text>Смотри! Кажется это тот вояка...</text> <!-- Озвучивает Vekamaru -->
+	</string>
+	<string id="st_bar_talk_2">
+		<text>Тише! Поговаривают, что он с Петрухой отбил атаку бандитов на АТП.</text> <!-- Озвучивает stalkerShepard -->
+	</string>
+	<string id="st_bar_talk_3">
+		<text>Забей, чушь все это! Любят некоторые выдумывать.</text> <!-- Озвучивает Vekamaru -->
+	</string>
+
+	<!-- Сценка с Хозяйкой на Ферме -->
+
+	<string id="st_tyan_talk_1">
+		<text>Прости пожалуйста! Грузик задерживается, должен приехать на днях.</text>
+	</string>
+	<string id="st_tyan_talk_2">
+		<text>Я это понимаю, но ты мне это говоришь уже 3 раз.</text> <!-- ГОТОВО -->
+	</string>
+	<string id="st_tyan_talk_3">
+		<text>Ну, на этот раз честно-честно. Не злись, пожалуйста, коть.</text>
+	</string>
+	<string id="st_tyan_talk_4">
+		<text>Ах... Ладно, подожду еще немного.</text> <!-- ГОТОВО -->
+	</string>
+
+	<!-- Сценка с Хозяйкой на Разваленном хуторе -->
+
+	<string id="bad_bandits_talk_1">
+		<text>Ну что, принесла, Домо-Хозяйка?</text> <!-- Озвучивает Vekamaru -->
+	</string>
+	<string id="bad_bandits_talk_2">
+		<text>Да, вот плата за эту неделю.</text>
+	</string>
+	<string id="bad_bandits_talk_3">
+		<text>Хе-хе, отлично. Но ты не спеши, мы хоти еше поразвлекаться с твоей сестрёнкой.</text> <!-- Озвучивает Vekamaru -->
+	</string>
+	<string id="bad_bandits_talk_4">
+		<text>Тц... Как ска...</text>
+	</string>
+	<string id="bad_bandits_talk_5">
+		<text>Что-то не так?</text> <!-- Озвучивает Vekamaru -->
+	</string>
+	<string id="bad_bandits_talk_6">
+		<text>Да нет, все нормально. Я пойду.</text>
+	</string>
+
+	<!-- Встреча с бандитами на КПП -->
+
+	<string id="st_bandits_see_actor_1">
+		<text>Эй, фраер. Куда путь держишь?</text> <!-- Озвучивает stalkerShepard -->
+	</string>
+	<string id="st_bandits_see_actor_2">
+		<text>Я от Хозяйки, деньги при мне.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+
+	<!-- После возращения с КПП на Ферму -->
+
+	<string id="st_science_wait_1">
+		<text>Спасибо вам, Суворов. Я слышал, вам от нас что-то нужно, да?</text>
+	</string>
+	<string id="st_science_wait_2">
+		<text>Верно, но я сначала поговорю с одной мадам и подойду к вам.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+
+	<!-- Установка сканера -->
+
+	<string id="st_science_scanner_was_spawned_1">
+		<text>Приём. Это Майор Суворов, сканер установлен.</text> <!-- Озвучивает Ghoul_RUS -->
+	</string>
+	<string id="st_science_scanner_was_spawned_2">
+		<text>Приём. Всё отлично, сигнал получаем. Вы можете пока закончить всё свои дела, если они у вас остались. По времени анализ займет где-то сутки.</text>
+	</string>
+
+	<!-- Закончен анализ данных сканера -->
+
+	<string id="st_science_ready_to_go">
+		<text>Суворов, мы закончили анализ данных со сканера. Подойдите, когда вам будет удобно.</text>
+	</string>
+
+	<!--       			-->
+	<!-- ВТОРАЯ ЛОКАЦИЯ -->
+	<!--       			-->
+
+	<!-- Братья пришли в церковь -->
+
+	<string id="st_jesus_1">
+		<text>И нахрена мы сюда припёрлись? Решил помолиться на удачу?</text>
+	</string>
+	<string id="st_jesus_2">
+		<text>Идиот... Тебя не смущает где мы?.</text>
+	</string>
+	<string id="st_jesus_3">
+		<text>Ну, церковь.</text>
+	</string>
+	<string id="st_jesus_4">
+		<text>Да, и с её верхушки можно осмотреть окрестности.</text>
+	</string>
+	<string id="st_jesus_5">
+		<text>А! Ну ты голова, братан!</text>
+	</string>
+	<string id="st_jesus_6">
+		<text>Ох... Я уже не первый раз с тобой это делаю, мог бы и запомнить.</text>
+	</string>
+
+	<!-- Братья попали в телепорт -->
+
+	<string id="st_brothers_spawn_1">
+		<text>Ой, мля... Башка... Это чё, мы уже пришли?..</text>
+	</string>
+	<string id="st_brothers_spawn_2">
+		<text>Нет! Идиот... Я же говорил тебе - будь внимательнее!</text>
+	</string>
+	<string id="st_brothers_spawn_3">
+		<text>Сука! Я и так был дофига "внимателеным"!</text>
+	</string>
+	<string id="st_brothers_spawn_4">
+		<text>Как нас тогда в телепорт занесло? Болты разучился кидать?</text>
+	</string>
+	<string id="st_brothers_spawn_5">
+		<text>Так надо было кидать болты или быть внимательным?</text>
+	</string>
+	<string id="st_brothers_spawn_6">
+		<text>Идиот!</text>
+	</string>
+
+	<!-- Братья возле автобуса -->
+
+	<string id="st_avtobus_text_1">
+		<text>Братан, смотри. Помнишь, ездили на таких? Красавец, сфоткать бы.</text>
+	</string>
+	<string id="st_avtobus_text_2">
+		<text>Думаю, будь у тебя фотоапарат, звали бы тебя "Саня Фотограф".</text>
+	</string>
+	<string id="st_avtobus_text_3">
+		<text>Так у меня он был!</text>
+	</string>
+	<string id="st_avtobus_text_4">
+		<text>Конечно был... Месяц назад. Ты его в карты проиграл.</text>
+	</string>
+	<string id="st_avtobus_text_5">
+		<text>Так эта сука жульничала! Реально!</text>
+	</string>
+
+	<!-- Братья возле речки -->
+
+	<string id="st_brich_text_1">
+		<text>Красивая речка. Так и прыгнул бы сейчас с мостика.</text>
+	</string>
+	<string id="st_brich_text_2">
+		<text>Идиот... Тут столько радиации, что ты лишь себе все облучишь.</text>
+	</string>
+	<string id="st_brich_text_3">
+		<text>А знаешь... Нахрена мы сюда пришли?</text>
+	</string>
+	<string id="st_brich_text_4">
+		<text>В Зону? За лючшей жизнью, конечно.</text>
+	</string>
+	<string id="st_brich_text_5">
+		<text>"За лучшей жизнью"? А может та житуха не такая уж и плохая была?</text>
+	</string>
+	<string id="st_brich_text_6">
+		<text>Может и так, нету смысла думать о том, что прошло. Мы кейс отнесли, долю получили.</text>
+	</string>
+	<string id="st_brich_text_7">
+		<text>Если найдем выход - придем в Бар. Ты там напьешься, а я продам наш хабар. Все будет как обычно.</text>
+	</string>
+
+	<!-- Братья возле лагеря -->
+
+	<string id="st_lager_text_1">
+		<text>Жрать охота, Братан... Вот бы сейчас консерв каких-то...</text>
+	</string>
+	<string id="st_lager_text_2">
+		<text>Еда в Баре теперь не кажеться тебе такой ужасной, правда?</text>
+	</string>
+	<string id="st_lager_text_3">
+		<text>Да нафиг! Я скорее умру, чем к этому притронусь. Давай уже достаним нашу хавку!</text>
+	</string>
+	<string id="st_lager_text_4">
+		<text>Идиот... Нет. Я не знаю, сколько мы здесь будем, поэтому есть следует реже. Идём.</text>
+	</string>
+
+	<!-- Братья пришли в комплекс, где лежит документ о Компасе на мосту -->
+
+	<string id="st_brothers_doc_1_1">
+		<text>Думаю, здесь можно попробовать найти документы.</text>
+	</string>
+	<string id="st_brothers_doc_1_2">
+		<text>И где мы их тут найдем, Братан?</text>
+	</string>
+	<string id="st_brothers_doc_1_3">
+		<text>Идиот... Капелька внимательности и ты Стрелка бы переплюнул. На столе что лежит?</text>
+	</string>
+	<string id="st_brothers_doc_1_4">
+		<text>Нифига себе, Братан! Сразу нашел что надо. Ну, чё там?</text>
+	</string>
+	<string id="st_brothers_doc_1_5">
+		<text>Ага... Значит аномалия на мосту... Ну, хоть какая-то зацепка.</text>
+	</string>
+
+	<!-- Братья искали Компасс -->
+
+	<string id="st_sf_kompass_1">
+		<text>Фух, Братан... Ну и вылазка у нас...</text>
+	</string>
+	<string id="st_sf_kompass_2">
+		<text>Давай быстрее, где этот арт?</text>
+	</string>
+	<string id="st_sf_kompass_3">
+		<text>Чёт я его не вижу... Ну, не повезло.</text>
+	</string>
+	<string id="st_sf_kompass_4">
+		<text>Сука, Идиот! Это не "не повезло", это жопа, в которую мы попали из-за тебя!</text>
+	</string>
+	<string id="st_sf_kompass_5">
+		<text>Если бы ты слушал меня хоть раз, было бы в 100 раз лучше!</text>
+	</string>
+	<string id="st_sf_kompass_6">
+		<text>А, да? А кто решил арт поискать, когда мы почти к Бару припёрлись?</text>
+	</string>
+	<string id="st_sf_kompass_7">
+		<text>Я, но это же ты рукожоп! Раз такой умный, то иди и ищи выход сам.</text>
+	</string>
+	<string id="st_sf_kompass_8">
+		<text>Да я "в 100 раз" быстрее без тебя его найду. Батерую я сам заряжу, меня хоть обсирать за чужие ошибки не будут!</text>
+	</string>
+
+	<!-- Второй документ -->
+
+	<string id="st_brothers_doc_2_1">
+		<text>Братан, смотри! Кажись, это... Как там его...</text>
+	</string>
+	<string id="st_brothers_doc_2_2">
+		<text>Важный документ, Идиот.</text>
+	</string>
+	<string id="st_brothers_doc_2_3">
+		<text>В точку, он самый.</text>
+	</string>
+	<string id="st_brothers_doc_2_4">
+		<text>Ну, хоть в чем-то мы с тобой согласны.</text>
+	</string>
+	<string id="st_brothers_doc_2_5">
+		<text>Так... Ага... Надо будет проверить здешний склад, Идиот. Нам кое-что понадобиться оттуда.</text>
+	</string>
+
+	<!-- Третий документ -->
+
+	<string id="st_brothers_doc_3_1">
+		<text>Судя по всему, этот контейнер нам и нужен. Держи, Идиот.</text>
+	</string>
+	<string id="st_brothers_doc_3_2">
+		<text>Братан! Почему все смое тяжелое постоянно ношу я?</text>
+	</string>
+	<string id="st_brothers_doc_3_3">
+		<text>Потому что ты сильнее меня. Если тащить буду я, то это нас замедлит.</text>
+	</string>
+	<string id="st_brothers_doc_3_4">
+		<text>Ладно, хватит болтать. Нам еще предстоит поработать. Идём.</text>
+	</string>
+
+	<!-- Четвёртый документ -->
+
+	<string id="st_brothers_doc_4_1">
+		<text>Ага... Значит это оно...</text>
+	</string>
+	<string id="st_brothers_doc_4_2">
+		<text>Братан? Что за "оно"? Не вижу разницы от того, что мы видели на складе.</text>
+	</string>
+	<string id="st_brothers_doc_4_3">
+		<text>Именно, Идиот. Они не сильно, но отличаются. Это были старые версии.</text>
+	</string>
+	<string id="st_brothers_doc_4_4">
+		<text>Думаю, я смогу заставить это работать. Это наш билет на свободу.</text>
+	</string>
+
+	<!-- Зов о помощи от Идиота -->
+
+	<string id="st_help_idiot">
+		<text>Братан! Сорян, я был не прав... Я на Ферме... Помоги... Пожалуйста...</text>
+	</string>
+
+	<!-- Фразы ГГ -->
+
+	<string id="st_kill_text_1">
+		<text>Твою мать! Это что, была просто галлюцинация? Или нет?</text>
+	</string>
+
+	<string id="st_dead_axe_1">
+		<text>Ну и бойня... Видимо этот смельчак решил, что с ТОЗ-ом сможет победить стаю собак.</text>
+	</string>
+	<string id="st_dead_axe_2">
+		<text>Н-да... Не вышло... Ну, хоть с топором на них не пошел.</text>
+	</string>
+
+	<string id="st_try_to_signal_1">
+		<text>Приём. Это Майор Суворов. Кто-то меня слышит?</text>
+	</string>
+	<string id="st_try_to_signal_2">
+		<text>...</text>
+	</string>
+	<string id="st_try_to_signal_3">
+		<text>Приём. Это Майор Суворов. Профессор, вы меня слышите?</text>
+	</string>
+	<string id="st_try_to_signal_4">
+		<text>...</text>
+	</string>
+	<string id="st_try_to_signal_5">
+		<text>Твою мать, ну конечно, эта рухлядь не работает. Ах... Как же я ненавижу учёных.</text>
+	</string>
+
+	<string id="st_see_1">
+		<text>Ладно, спокойно. Раз уж я тут, стоит изучить местность.</text>
+	</string>
+	<string id="st_see_2">
+		<text>Так, вижу комплекс.</text>
+	</string>
+	<string id="st_see_3">
+		<text>Ага... Электро-аномалия возле упавшего вертолёта...</text>
+	</string>
+	<string id="st_see_4">
+		<text>Далее... Аномалия на мосту, гравитационная. А за ней ферма.</text>
+	</string>
+	<string id="st_see_5">
+		<text>Ну что же, пора за работу.</text>
+	</string>
+
+	<string id="st_try_to_find_art_1">
+		<text>Ага, дайте угадаю... Мне надо залезть на самый верх, верно?</text>
+	</string>
+	<string id="st_try_to_find_art_2">
+		<text>Если это шутка, то я надеюсь, что тот, кто её придумал, вдоволь насмеётся, смотря на мои страдания.</text>
+	</string>
+
+	<string id="st_start_teleport_from_forest">
+		<text>Действительно работает. Что же, надеюсь все пройдет гладко. Хотя... Такого никогда не было.</text>
+	</string>
+
+	<string id="st_sf_start_quests_1">
+		<text>Этот дед... Он явно больной... Или это Зона надо мной так шутит?</text>
+	</string>
+	<string id="st_sf_start_quests_2">
+		<text>Ладно, это не важно, мне следует выйти на связь с учёными.</text>
+	</string>
+	<string id="st_sf_start_quests_3">
+		<text>Где будет хорошая связь... О! Та церковь отлично подойдет, надо забраться на её верхушку. Заодно хоть осмотрюсь.</text>
+	</string>
+
+	<string id="st_search_documents_1">
+		<text>Ага... Значит, научный комплекс.</text>
+	</string>
+	<string id="st_search_documents_2">
+		<text>Надо осмотреть здания, стоит сосредоточиться на бумагах. Они могут быть полезны.</text>
+	</string>
+	<string id="st_search_documents_3">
+		<text>Надеюсь, найду способ свалить отсюда.</text>
+	</string>
+
+	<!--       			-->
+	<!--  ЛАБОРАТОРИЯ	-->
+	<!--       			-->
+
+	<string id="st_start_bunker_1">
+		<text>Твою мать, где я оказался? Это что, склад?</text>
+	</string>
+	<string id="st_start_bunker_2">
+		<text>Стоит оглядеться. Но мне не по себе от этого места.</text>
+	</string>
+
+	<string id="st_found_docs_1">
+		<text>Да ну нафиг... Серьезно? Что тут забыл кейс, который мне было положено найти?</text>
+	</string>
+	<string id="st_found_docs_2">
+		<text>Ладно, нашел и нашел, остальное не важно. Стоит проверить содержимое, на всякий случай.</text>
+	</string>
+	<string id="st_found_docs_3">
+		<text>Что за?.. Да ну, бред какой-то... Машина для Телепортации? Монолит? Что за чушь?</text>
+	</string>
+	<string id="st_found_docs_4">
+		<text>Не знаю, правда ли это... Но если да, то мне стоит решить, что делать с этим. Но для начала, стоит найти выход отсюда.</text>
+	</string>
+
+	<string id="st_enter_main_lab_1">
+		<text>А вот и оно, главное помещение... Так, надо определиться.</text>
+	</string>
+	<string id="st_enter_main_lab_2">
+		<text>Либо я сейчас уничтожаю установку, либо сваливаю. Как же мне поступить?</text>
+	</string>
+
+	<string id="st_found_dead_soldiers_1">
+		<text>Твою мать... А вот и военные, это же кто их так...</text>
+	</string>
+	<string id="st_found_dead_soldiers_2">
+		<text>Они точно с КПП... Еще не хватало, чтобы я не кончил так же.</text>
+	</string>
+
+</string_table>

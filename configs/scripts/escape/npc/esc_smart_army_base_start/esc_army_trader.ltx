@@ -1,0 +1,21 @@
+[logic@esc_army_trader] 
+suitable 					= {=check_npc_name(esc_army_trader)} true
+prior 						= 200
+active 						= walker@esc_army_trader
+
+[walker@esc_army_trader]
+path_walk 				    = army_lider_walk
+path_look 				    = army_lider_look
+meet 						= meet@trade
+invulnerable                = true
+
+[meet@trade]
+close_anim 			        = nil
+close_victim 			    = nil
+far_anim 					= nil
+far_victim 				    = nil
+close_distance  		    = 0
+far_distance 			    = 0
+use 						= {=actor_enemy} false, true
+allow_break 			    = false
+meet_on_talking 	        = false

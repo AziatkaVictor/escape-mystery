@@ -1,0 +1,27 @@
+<w>
+    <file name="ui\sg_choice">
+
+    <texture id="ui_sg_choice_main_background" x="31" y="25" width="954" height="457" />
+	
+    <texture id="ui_sg_choice_button_d" x="0" y="0" width="1" height="1" />
+    <texture id="ui_sg_choice_button_e" x="554" y="532" width="254" height="55" />
+    <texture id="ui_sg_choice_button_h" x="16" y="532" width="254" height="55" />
+    <texture id="ui_sg_choice_button_t" x="284" y="532" width="254" height="55" />	
+
+    <texture id="ui_sg_dialog_pseudo_button_d" x="0" y="0" width="1" height="1" />
+    <texture id="ui_sg_dialog_pseudo_button_e" x="490" y="596" width="28" height="28" />
+    <texture id="ui_sg_dialog_pseudo_button_h" x="456" y="596" width="28" height="28" />
+    <texture id="ui_sg_dialog_pseudo_button_t" x="524" y="596" width="28" height="28" />
+
+    <texture id="ui_sg_notebook_button_forvard_d" x="0" y="0" width="1" height="1" />
+    <texture id="ui_sg_notebook_button_forvard_e" x="468" y="670" width="161" height="100" />
+    <texture id="ui_sg_notebook_button_forvard_h" x="645" y="670" width="161" height="100" />
+    <texture id="ui_sg_notebook_button_forvard_t" x="813" y="670" width="161" height="100" />	
+	
+    <texture id="ui_sg_notebook_button_back_d" x="0" y="0" width="1" height="1" />
+    <texture id="ui_sg_notebook_button_back_e" x="466" y="790" width="161" height="100" />
+    <texture id="ui_sg_notebook_button_back_h" x="645" y="790" width="161" height="100" />
+    <texture id="ui_sg_notebook_button_back_t" x="813" y="790" width="161" height="100" />	
+	
+	</file>	
+</w>

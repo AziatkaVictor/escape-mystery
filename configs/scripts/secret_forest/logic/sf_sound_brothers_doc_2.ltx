@@ -1,0 +1,28 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_actor_inside = %=run_postprocess(blink)% sr_idle@start
+
+[sr_idle@start]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_game_timer = 10 | %=create_subtitles(st_voice:st_brothers_doc_2_1)% sr_idle@tip_2
+
+[sr_idle@tip_2]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_brothers_doc_2_2)% sr_idle@tip_3
+
+[sr_idle@tip_3]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_brothers_doc_2_3)% sr_idle@tip_4
+
+[sr_idle@tip_4]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_brothers_doc_2_4)% sr_idle@tip_5
+
+[sr_idle@tip_5]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_brothers_doc_2_5)% sr_idle@tip_end
+
+[sr_idle@tip_end]
+on_signal = sound_end | %=clear_subtitles =run_postprocess(blink) =set_weather(default_secret_forest:true) +docs_2% nil

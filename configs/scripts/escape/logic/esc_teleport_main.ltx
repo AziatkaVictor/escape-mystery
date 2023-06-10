@@ -1,0 +1,10 @@
+[logic]
+active = sr_idle@start
+
+[sr_idle@start]
+on_actor_inside = %=create_subtitles(st_actor_name:st_stop_teleport:teleport_stop) =run_postprocess(blink) =teleport_actor(main_teleport_walk:main_teleport_look)% sr_idle@timer
+on_info = {+esc_storyline_search_end} nil
+
+[sr_idle@timer]
+on_signal = sound_end | sr_idle@start %=clear_subtitles()%
+on_actor_inside = %=teleport_actor(main_teleport_walk:main_teleport_look) =run_postprocess(blink)%

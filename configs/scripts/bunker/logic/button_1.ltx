@@ -1,0 +1,12 @@
+[logic]
+active = ph_button@idle
+
+[ph_button@idle]
+anim_blend  = true
+anim        = idle
+tooltip     = bunker_main_button_press
+on_press    = ph_button@off %+button_1_pressed =run_cam_effector(earthquake) =play_sound(surge_earthquake_sound)%
+
+[ph_button@off]
+anim_blend  = true
+anim        = off

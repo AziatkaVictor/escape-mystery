@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_actor_inside = {+charge_battery_start} %=create_subtitles(st_voice:st_help_idiot)% sr_idle@end
+
+[sr_idle@end]
+on_signal = sound_end | %=clear_subtitles =give_task(help_idiot) =create_squad(sf_stalker_idiot_squad:sf_smart_himera)% nil

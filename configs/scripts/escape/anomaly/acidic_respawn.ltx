@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle@timer
+
+[sr_idle@timer]
+on_game_timer = 1800 | %=spawn_arts% sr_idle@again
+
+[sr_idle@again]
+on_info = sr_idle@timer

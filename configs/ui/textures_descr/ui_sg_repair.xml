@@ -1,0 +1,12 @@
+<w>
+    <file name="ui\sg_repair">
+
+    <texture id="ui_sg_repair_background" x="0" y="0" width="779" height="436" />
+    
+	<texture id="ui_sg_newUI_common_background_tabs" x="0" y="466" width="779" height="44" />
+	<texture id="ui_sg_newUI_label_List_background" x="0" y="516" width="349" height="50" />
+	
+
+	
+	</file>	
+</w>

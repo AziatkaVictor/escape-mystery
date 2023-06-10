@@ -1,0 +1,25 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_info = {+manyak_was_founded =is_night} sr_idle@start
+
+[sr_idle@start]
+on_actor_inside = sr_idle@start_timer
+on_info = {=is_day} sr_idle@wait
+
+[sr_idle@start_timer]
+on_game_timer = 20 | %+manyak_hit =hit_gg =relocate_actor_inventory_to_box(esc_manyak_loot)% sr_idle@timer_npc
+
+[sr_idle@timer_npc]
+on_game_timer = 40 | %=run_tutorial(manyak) =forward_game_time(2:30) =spawn_corpse(esc_stalker_novice_shapito:esc_shapito_dead) =spawn_object(shapito_note:esc_shapito_dead) =remove_squad(esc_smart_novice_base_shapito_squad)% sr_idle@wait_end
+
+[sr_idle@wait_end]
+on_info = {+manyak_video_end} %+stalker_hourse_help +door_open =run_postprocess(fade_in_out:11)% sr_cutscene@end
+
+[sr_cutscene@end]
+point = manyak_end_walk
+look = manyak_end_look
+cam_effector = manyak_end
+global_cameffect = true
+on_signal = cameff_end | %+medic_info% nil

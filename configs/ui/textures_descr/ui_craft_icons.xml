@@ -1,0 +1,139 @@
+<w>
+    <file name="ui\ui_icon_equipment">
+
+	<!-- Иконки ингридиентов для создания предметов -->
+    <texture id="ui_new_craft_clean_medbox" x="1150" y="50" width="50" height="50" />
+    <texture id="ui_new_craft_dirty_medbox" x="1200" y="50" width="50" height="50" />
+    <texture id="ui_new_craft_med_spirt" x="1300" y="50" width="50" height="50" />
+    <texture id="ui_new_craft_dry_med" x="1300" y="100" width="50" height="50" />
+    <texture id="ui_new_craft_syringes" x="1250" y="100" width="50" height="50" />
+    <texture id="ui_new_craft_ar_serum" x="1200" y="100" width="50" height="50" />	
+    <texture id="ui_new_craft_armor_plates" x="1100" y="200" width="50" height="50" />
+    <texture id="ui_new_craft_cloth" x="1100" y="250" width="50" height="50" />
+    <texture id="ui_new_craft_sg_cr_i_rezina" x="1300" y="250" width="50" height="50" />
+	<texture id="ui_new_craft_sg_cr_i_electro" x="1350" y="250" width="50" height="50" />	
+
+	<!-- Медикаменты -->
+    <texture id="ui_new_craft_bandage" x="1350" y="200" width="50" height="50" />
+    <texture id="ui_new_craft_medkit" x="300" y="700" width="50" height="50" />
+    <texture id="ui_new_craft_medkit_army" x="500" y="500" width="50" height="50" />
+	<texture id="ui_new_craft_medkit_scientic" x="600" y="450" width="50" height="50" />
+	<texture id="ui_new_craft_antirad" x="1250" y="250" width="50" height="50" />
+	
+	<!-- Броня -->
+    <texture id="ui_new_craft_novice_outfit" x="0" y="900" width="100" height="100" />
+    <texture id="ui_new_craft_stalker_outfit" x="1450" y="50" width="100" height="100" />
+	<texture id="ui_new_craft_svoboda_light_outfit" x="1550" y="50" width="100" height="100" />
+	<texture id="ui_new_craft_dolg_outfit" x="1650" y="50" width="100" height="100" />
+	<texture id="ui_new_craft_scientific_outfit" x="1650" y="150" width="100" height="100" />
+	<texture id="ui_new_craft_cs_heavy_outfit" x="1550" y="150" width="100" height="100" />
+	<texture id="ui_new_craft_svoboda_heavy_outfit" x="1450" y="250" width="100" height="100" />
+	<texture id="ui_new_craft_specops_outfit" x="1550" y="250" width="100" height="100" />
+	<texture id="ui_new_craft_military_outfit" x="1650" y="250" width="100" height="100" />
+	<texture id="ui_new_craft_dolg_heavy_outfit" x="1650" y="350" width="100" height="100" />
+	<texture id="ui_new_craft_exo_outfit" x="1450" y="150" width="100" height="100" />	
+	
+	<!-- Шлемы -->
+	<texture id="ui_new_craft_helm_respirator" x="200" y="900" width="100" height="100" />
+	<texture id="ui_new_craft_helm_hardhat" x="300" y="1000" width="100" height="100" />
+	<texture id="ui_new_craft_helm_protective" x="200" y="1000" width="100" height="100" />
+	<texture id="ui_new_craft_helm_tactic" x="100" y="1000" width="100" height="100" />
+	<texture id="ui_new_craft_helm_battle" x="0" y="1000" width="100" height="100" />
+		
+	<!-- Создание патронов -->
+    <texture id="ui_new_craft_powder" x="1300" y="300" width="50" height="50" />	
+    <texture id="ui_new_craft_cartridge_automat" x="1150" y="200" width="50" height="50" />	
+    <texture id="ui_new_craft_cartridge_pistol" x="1200" y="200" width="50" height="50" />	
+    <texture id="ui_new_craft_cartridge_shotgun" x="1250" y="200" width="50" height="50" />
+    <texture id="ui_new_craft_capsule_automat" x="1150" y="250" width="50" height="50" />
+    <texture id="ui_new_craft_capsule_shotgun" x="1200" y="250" width="50" height="50" />	
+    <texture id="ui_new_craft_capsule_pistol" x="1300" y="200" width="50" height="50" />		
+    <texture id="ui_new_craft_bullet_automat" x="1250" y="150" width="50" height="50" />	
+    <texture id="ui_new_craft_bullet_shotgun" x="1200" y="150" width="50" height="50" />
+    <texture id="ui_new_craft_bullet_pistol" x="1300" y="150" width="50" height="50" />
+	
+	<!-- Еда -->
+	<texture id="ui_new_craft_bread" x="550" y="450" width="50" height="50" />
+    <texture id="ui_new_craft_vodka" x="250" y="100" width="50" height="50" />
+	<texture id="ui_new_craft_conserva" x="450" y="650" width="50" height="50" />
+    <texture id="ui_new_craft_kolbasa" x="950" y="600" width="50" height="50" />
+	<texture id="ui_new_craft_energy_drink" x="550" y="0" width="50" height="50" />
+	
+	<!-- Гранаты -->
+	<texture id="ui_new_craft_ammo_m209" x="250" y="650" width="50" height="50" />
+	<texture id="ui_new_craft_ammo_vog-25" x="950" y="450" width="50" height="50" />
+    <texture id="ui_new_craft_ammo_vog-25p" x="950" y="500" width="50" height="50" />
+	<texture id="ui_new_craft_grenade_f1" x="450" y="450" width="50" height="50" />
+	<texture id="ui_new_craft_grenade_rgd5" x="500" y="450" width="50" height="50" />
+	
+	<!-- Артефакты -->
+	<texture id="ui_new_craft_af_medusa" x="450" y="200" width="50" height="50" />
+	<texture id="ui_new_craft_af_cristall_flower" x="550" y="200" width="50" height="50" />	
+	<texture id="ui_new_craft_af_night_star" x="500" y="200" width="50" height="50" />
+	<texture id="ui_new_craft_af_vyvert" x="700" y="0" width="50" height="50" />
+	<texture id="ui_new_craft_af_gravi" x="750" y="0" width="50" height="50" />
+	<texture id="ui_new_craft_af_gold_fish" x="800" y="0" width="50" height="50" />
+	<texture id="ui_new_craft_af_cristall" x="700" y="200" width="50" height="50" />
+	<texture id="ui_new_craft_af_fireball" x="650" y="200" width="50" height="50" />
+	<texture id="ui_new_craft_af_dummy_glassbeads" x="800" y="50" width="50" height="50" />
+	<texture id="ui_new_craft_af_eye" x="600" y="200" width="50" height="50" />
+	<texture id="ui_new_craft_af_fire" x="550" y="50" width="50" height="50" />
+	<texture id="ui_new_craft_af_blood" x="850" y="0" width="50" height="50" />
+	<texture id="ui_new_craft_af_mincer_meat" x="900" y="800" width="50" height="50" />
+	<texture id="ui_new_craft_af_soul" x="950" y="800" width="50" height="50" />
+	<texture id="ui_new_craft_af_fuzz_kolobok" x="850" y="50" width="50" height="50" />
+	<texture id="ui_new_craft_af_baloon" x="600" y="0" width="50" height="50" />
+	<texture id="ui_new_craft_af_glass" x="650" y="0" width="50" height="50" />
+	<texture id="ui_new_craft_af_electra_sparkler" x="250" y="200" width="50" height="50" />
+	<texture id="ui_new_craft_af_electra_flash" x="500" y="50" width="50" height="50" />
+	<texture id="ui_new_craft_af_electra_moonlight" x="250" y="150" width="50" height="50" />
+	<texture id="ui_new_craft_af_dummy_battery" x="400" y="200" width="50" height="50" />
+	<texture id="ui_new_craft_af_dummy_dummy" x="950" y="300" width="50" height="50" />
+	<texture id="ui_new_craft_af_ice" x="650" y="50" width="50" height="50" />
+	<texture id="ui_new_craft_af_compass" x="600" y="50" width="50" height="50" />
+	<texture id="ui_new_craft_af_oasis_heart" x="300" y="200" width="50" height="50" />
+	<texture id="ui_new_craft_jup_b1_half_artifact" x="350" y="200" width="50" height="50" />
+	<texture id="ui_new_craft_af_quest_b14_twisted" x="450" y="50" width="50" height="50" />
+	
+	<!-- Фрагменты артефактов -->
+    <texture id="ui_new_craft_af_el_flash_fragment" x="1350" y="150" width="50" height="50" />
+    <texture id="ui_new_craft_af_gravi_fragment" x="1350" y="100" width="50" height="50" />
+    <texture id="ui_new_craft_af_cr_fl_fragment" x="1350" y="50" width="50" height="50" />
+	<texture id="ui_new_craft_af_baloon_fragment" x="1200" y="300" width="50" height="50" />
+	
+	
+    <texture id="ui_new_craft_nothing" x="700" y="2000" width="50" height="50" />	
+	<texture id="ui_craft_ingr_texture" x="1050" y="50" width="41" height="38" />
+	<texture id="ui_craft_icons" x="0" y="0" width="2000" height="2000" />
+
+	
+	<!-- Иконки комбинезонов и шлемов для ремонта -->
+    <texture id="novice_outfit_sg_repair_texture" x="0" y="900" width="100" height="100" />	
+	<texture id="stalker_outfit_sg_repair_texture" x="300" y="750" width="100" height="150" />
+	<texture id="svoboda_light_outfit_sg_repair_texture" x="600" y="650" width="100" height="150" />
+	<texture id="dolg_outfit_sg_repair_texture" x="600" y="800" width="100" height="150" />
+	<texture id="scientific_outfit_sg_repair_texture" x="700" y="800" width="100" height="150" />
+	<texture id="cs_heavy_outfit_sg_repair_texture" x="400" y="950" width="100" height="150" />
+	<texture id="svoboda_heavy_outfit_sg_repair_texture" x="400" y="750" width="100" height="150" />
+	<texture id="specops_outfit_sg_repair_texture" x="500" y="650" width="100" height="150" />
+	<texture id="military_outfit_sg_repair_texture" x="900" y="850" width="100" height="150" />
+	<texture id="dolg_heavy_outfit_sg_repair_texture" x="800" y="800" width="100" height="150" />
+	<texture id="exo_outfit_sg_repair_texture" x="700" y="650" width="100" height="150" />
+
+	<texture id="helm_respirator_sg_repair_texture" x="200" y="900" width="100" height="100" />	
+	<texture id="helm_hardhat_sg_repair_texture" x="300" y="1000" width="100" height="100" />	
+	<texture id="helm_protective_sg_repair_texture" x="200" y="1000" width="100" height="100" />	
+	<texture id="helm_tactic_sg_repair_texture" x="100" y="1000" width="100" height="100" />	
+	<texture id="helm_battle_sg_repair_texture" x="0" y="1000" width="100" height="100" />
+
+	<texture id="stalker_outfit_barge_sg_repair_texture" x="300" y="750" width="100" height="150" />
+	<texture id="helm_hardhat_snag_sg_repair_texture" x="300" y="1000" width="100" height="100" />
+	<texture id="helm_respirator_joker_sg_repair_texture" x="200" y="900" width="100" height="100" />
+	
+	<texture id="ui_new_craft_sg_x14_medicament_ingr_1" x="1300" y="400" width="50" height="50" />
+	<texture id="ui_new_craft_sg_x14_medicament_ingr_2" x="1100" y="550" width="50" height="50" />
+	<texture id="ui_new_craft_sg_x14_medicament_ingr_3" x="1150" y="550" width="50" height="50" />
+	<texture id="ui_new_craft_sg_x14_medicament_ingr_4" x="1200" y="550" width="50" height="50" />
+	
+	</file>	
+</w>

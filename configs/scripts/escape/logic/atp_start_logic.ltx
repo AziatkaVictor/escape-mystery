@@ -1,0 +1,21 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_info = {+atp_start} %=run_postprocess(fade_in_out:1) =disable_ui =create_squad(esc_smart_atp_bandit_squad:esc_smart_atp)% sr_idle@one
+
+[sr_idle@one]
+on_game_timer = 5 | %=remove_squad(esc_smart_atp_squad)% sr_cutscene@one
+
+[sr_cutscene@one]
+point = actor_atp_walk
+look = actor_atp_look
+cam_effector = bandit_start
+global_cameffect = true
+on_signal = cameff_end | %=run_postprocess(fade_in_out) =disable_ui % sr_idle@start
+
+[sr_idle@start]
+on_game_timer = 30 | %=create_squad(esc_smart_atp_squad:esc_smart_atp)% sr_idle@teleport
+
+[sr_idle@teleport]
+on_info = %=stop_postprocess(1) =enable_ui =teleport_npc_by_story_id(esc_stalker_novice_atp_help:atp_teleport_leader) =teleport_npc_by_story_id(esc_bandit_atp_1:atp_teleport_bandits_2) =teleport_npc_by_story_id(esc_bandit_atp_2:atp_teleport_bandits_2) =teleport_npc_by_story_id(esc_bandit_atp_3:atp_teleport_bandits_1) =teleport_npc_by_story_id(esc_bandit_atp_4:atp_teleport_bandits_1) =teleport_npc_by_story_id(esc_bandit_atp_5:atp_teleport_bandits_1)% nil

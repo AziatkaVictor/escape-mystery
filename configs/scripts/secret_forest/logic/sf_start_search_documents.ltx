@@ -1,0 +1,17 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_actor_inside = sr_idle@start
+
+[sr_idle@start]
+on_game_timer = 10 | %=create_subtitles(st_actor_name:st_search_documents_1)% sr_idle@tip_2
+
+[sr_idle@tip_2]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_search_documents_2)% sr_idle@tip_3
+
+[sr_idle@tip_3]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_search_documents_3)% sr_idle@tip_end
+
+[sr_idle@tip_end]
+on_signal = sound_end | %=clear_subtitles() =give_task(escape_from_the_forest) +start_search_documents% nil

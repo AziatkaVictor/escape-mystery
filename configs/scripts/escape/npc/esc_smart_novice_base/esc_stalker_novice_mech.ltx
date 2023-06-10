@@ -1,0 +1,30 @@
+[logic@esc_stalker_novice_mech] 
+suitable 				= {=check_npc_name(esc_stalker_novice_mech)} true
+prior 					= 200
+active 					= animpoint@start
+level_spot 				= mechanic
+invulnerable 			= true
+
+[animpoint@start]
+cover_name 			    = esc_smart_novice_base_mech_talk
+use_camp 				= false
+meet 					= meet@trade
+on_info                 = {+derevnya_bar_talk} animpoint@base
+
+[animpoint@base]
+cover_name 			    = esc_smart_novice_base_mech
+use_camp 				= false
+meet 					= meet@trade
+
+[meet@trade]
+close_anim 			    = nil
+close_victim 			= nil
+far_anim 	            = nil
+far_victim 				= nil
+close_snd_hello 		= nil
+close_snd_bye 		    = nil
+close_distance  		= 0
+far_distance 			= 0
+use 					= {=actor_enemy} false, {+derevnya_bar_talk} true, false
+allow_break 			= false
+meet_on_talking 	    = false

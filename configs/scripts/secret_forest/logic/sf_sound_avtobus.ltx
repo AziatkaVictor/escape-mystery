@@ -1,0 +1,31 @@
+[logic]
+active = sr_idle@init
+
+[sr_idle@init]
+on_info = %=disable_campfire(sf_avtobus)% sr_idle@wait
+
+[sr_idle@wait]
+on_actor_inside = %=run_postprocess(blink)% sr_idle@start
+
+[sr_idle@start]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_game_timer = 10 | %=enable_campfire(sf_avtobus) =create_subtitles(st_voice:st_avtobus_text_1)% sr_idle@tip_2
+
+[sr_idle@tip_2]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_avtobus_text_2)% sr_idle@tip_3
+
+[sr_idle@tip_3]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_avtobus_text_3)% sr_idle@tip_4
+
+[sr_idle@tip_4]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_avtobus_text_4)% sr_idle@tip_5
+
+[sr_idle@tip_5]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_avtobus_text_5)% sr_idle@tip_end
+
+[sr_idle@tip_end]
+on_signal = sound_end | %=disable_campfire(sf_avtobus) =clear_subtitles() =run_postprocess(blink) =set_weather(default_secret_forest:true)% nil

@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle@start
+
+[sr_idle@start]
+on_actor_inside = %=create_subtitles(st_esc_novice_trader:st_sidor_start_text_1) +acrot_inside_derevnya% sr_idle@end
+
+[sr_idle@end]
+on_signal = sound_end | %=clear_subtitles() +patrol_hi% nil

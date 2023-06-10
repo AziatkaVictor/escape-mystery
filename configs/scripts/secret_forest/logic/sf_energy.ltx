@@ -1,0 +1,25 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_info = {=actor_has_item(battery_for_forest)} sr_idle@start
+
+[sr_idle@start]
+on_actor_inside = %=run_tutorial(charge_battery)% sr_idle@start_tutorial
+
+[sr_idle@start_tutorial]
+on_actor_outside = %=stop_tutorial(charge_battery)% sr_idle@start
+on_info = {+charge_battery} %=stop_tutorial(charge_battery) =run_postprocess(blink) =create_squad(sf_smart_vert_zombi:sf_smart_vert)% sr_idle@teleport
+
+[sr_idle@teleport]
+on_info = %=make_actor_visible_to_squad(sf_smart_vert_zombi) =teleport_npc_by_story_id(sf_zombi_solider_2:sf_spawn_zombi_1) =teleport_npc_by_story_id(sf_zombi_solider_3:sf_spawn_zombi_1) =teleport_npc_by_story_id(sf_zombi_solider_2:sf_spawn_zombi_1) =teleport_npc_by_story_id(sf_zombi_solider_3:sf_spawn_zombi_1) =teleport_npc_by_story_id(sf_zombi_solider_4:sf_spawn_zombi_2) =teleport_npc_by_story_id(sf_zombi_solider_5:sf_spawn_zombi_2)% sr_idle@wait_death_squad
+
+[sr_idle@wait_death_squad]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_info2 = {+sf_zombi_killed} %=run_postprocess(blink) =set_weather(default_secret_forest:true) =destroy_object(story:sf_zombi_solider_1) =destroy_object(story:sf_zombi_solider_2) =destroy_object(story:sf_zombi_solider_3) =destroy_object(story:sf_zombi_solider_4) =destroy_object(story:sf_zombi_solider_5)% sr_idle@tip_after_kill
+
+[sr_idle@tip_after_kill]
+on_game_timer = 10 | %=create_subtitles(st_actor_name:st_kill_text_1)% sr_idle@tip_after_end
+
+[sr_idle@tip_after_end]
+on_signal = sound_end | %=clear_subtitles +tip_after_end =create_squad(sf_stalker_brother_squad:sf_smart_victor)% nil

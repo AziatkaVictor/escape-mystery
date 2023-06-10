@@ -1,0 +1,23 @@
+[logic]
+active = sr_idle@start
+
+[sr_idle@start]
+on_info = {+start_to_talk} %=create_subtitles(st_esc_bandit_leader_tyan:bad_bandits_talk_1)% sr_idle@tip_2
+
+[sr_idle@tip_2]
+on_signal = sound_end | %=create_subtitles(st_esc_stalker_tyan:bad_bandits_talk_2)% sr_idle@tip_3
+
+[sr_idle@tip_3]
+on_signal = sound_end | %=create_subtitles(st_esc_bandit_leader_tyan:bad_bandits_talk_3)% sr_idle@tip_4
+
+[sr_idle@tip_4]
+on_signal = sound_end | %=create_subtitles(st_esc_stalker_tyan:bad_bandits_talk_4)% sr_idle@tip_5
+
+[sr_idle@tip_5]
+on_signal = sound_end | %=create_subtitles(st_esc_bandit_leader_tyan:bad_bandits_talk_5)% sr_idle@tip_6
+
+[sr_idle@tip_6]
+on_signal = sound_end | %=create_subtitles(st_esc_stalker_tyan:bad_bandits_talk_6)% sr_idle@clear
+
+[sr_idle@clear]
+on_signal = sound_end | %=clear_subtitles() +bad_bandits_talk_end% nil

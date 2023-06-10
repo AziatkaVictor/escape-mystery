@@ -1,0 +1,42 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_info = {+science_quest_start =actor_has_item(teleport_scanner)} sr_idle@start
+
+[sr_idle@start]
+on_actor_inside = %=run_tutorial(spawn_scaner)% sr_idle@spawn
+
+[sr_idle@spawn]
+on_info = {+scanner_was_spawned} %=stop_tutorial(spawn_scaner)% sr_idle@text_1
+on_actor_outside = %=stop_tutorial(spawn_scaner)% sr_idle@start
+
+[sr_idle@text_1]
+on_game_timer = 10 | %=create_subtitles(st_actor_name:st_science_scanner_was_spawned_1)% sr_idle@text_2
+
+[sr_idle@text_2]
+on_signal = sound_end | %=create_subtitles(st_esc_scince_one:st_science_scanner_was_spawned_2)% sr_idle@clear
+
+[sr_idle@clear]
+on_signal = sound_end | %=clear_subtitles() +wait_to_go% sr_idle@save_sister_tip
+
+[sr_idle@save_sister_tip]
+on_game_timer = 30 | %=create_subtitles(st_esc_stalker_mechanic:st_save_sister_tip)% sr_idle@save_sister_tip_clear
+
+[sr_idle@save_sister_tip_clear]
+on_signal = sound_end | %=clear_subtitles() =give_task(save_tyan_sister) +save_the_tyan_sister_start% sr_idle@wait_to_go
+
+[sr_idle@wait_to_go]
+on_game_timer = 86000 | %=create_subtitles(st_esc_scince_one:st_science_ready_to_go)% sr_idle@wait_to_go_clear 
+
+[sr_idle@wait_to_go_clear]
+on_signal = sound_end | %=clear_subtitles() +ready_to_go% sr_idle@go_to_portal
+
+[sr_idle@go_to_portal]
+on_info = {+go_to_the_forest} %=turn_on(esc_teleport_light)% sr_particle
+
+[sr_particle]
+name = anomaly2\teleport_idle      
+path = esc_play_particle                  
+mode = 2 				 
+looped = true

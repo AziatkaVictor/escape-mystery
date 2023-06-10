@@ -1,0 +1,57 @@
+<w>
+    <file name="ui\sg_dialog_online">
+
+		<texture id="ui_sg_do_background_pda" x="0" y="0" width="846" height="539" />
+		<texture id="ui_sg_do_background_message_field" x="0" y="540" width="404" height="73" />
+
+		<texture id="ui_sg_do_answer_btn_d" x="861" y="0" width="1" height="1" />
+		<texture id="ui_sg_do_answer_btn_e" x="1144" y="0" width="257" height="75" />
+		<texture id="ui_sg_do_answer_btn_h" x="1144" y="0" width="257" height="75" />
+		<texture id="ui_sg_do_answer_btn_t" x="877" y="0" width="257" height="75" />		
+		
+		<texture id="ui_sg_infiltration_btn_d" x="1222" y="326" width="104" height="106" />
+		<texture id="ui_sg_infiltration_btn_e" x="879" y="326" width="104" height="106" />
+		<texture id="ui_sg_infiltration_btn_h" x="1110" y="326" width="104" height="106" />
+		<texture id="ui_sg_infiltration_btn_t" x="995" y="326" width="104" height="106" />
+		
+		
+		<texture id="ui_sg_infiltration_disable_element" x="880" y="443" width="40" height="40" />
+		<texture id="ui_sg_infiltration_active_element" x="924" y="443" width="40" height="40" />
+	
+		<texture id="ui_sg_do_pointer_i" x="1401" y="0" width="22" height="22" />
+		<texture id="ui_sg_do_pointer_a" x="1423" y="0" width="22" height="22" />
+		
+		<texture id="ui_sg_do_portait_frame" x="878" y="89" width="131" height="95" />
+		
+		<texture id="ui_sg_do_horizontal_divider" x="0" y="622" width="704" height="14" />
+		
+		<texture id="ui_sg_od_tablist_textbox_lt" x="878" y="195" width="32" height="32" />
+		<texture id="ui_sg_od_tablist_textbox_l" x="878" y="232" width="32" height="32" />
+		<texture id="ui_sg_od_tablist_textbox_lb" x="878" y="269" width="32" height="32" />
+		<texture id="ui_sg_od_tablist_textbox_b" x="914" y="269" width="32" height="32" />
+		<texture id="ui_sg_od_tablist_textbox_rb" x="950" y="269" width="32" height="32" />
+		<texture id="ui_sg_od_tablist_textbox_r" x="950" y="232" width="32" height="32" />
+		<texture id="ui_sg_od_tablist_textbox_rt" x="950" y="195" width="32" height="32" />
+		<texture id="ui_sg_od_tablist_textbox_t" x="914" y="195" width="32" height="32" />
+		<texture id="ui_sg_od_tablist_textbox_back" x="914" y="232" width="32" height="32" />
+		
+
+	    <texture id="ui_sg_pda_password_input_field_b" x="0" y="655" width="2" height="68" />
+	    <texture id="ui_sg_pda_password_input_field_back" x="2" y="655" width="418" height="68" />
+	    <texture id="ui_sg_pda_password_input_field_e" x="429" y="655" width="2" height="68" />		
+		
+		<texture id="ui_sg_pda_password_characters_back" x="0" y="730" width="328" height="23" />
+		
+		<texture id="ui_sg_pb_red" x="0" y="759" width="418" height="30" />
+		
+		<texture id="ui_sg_pb_back" x="0" y="791" width="418" height="32" />
+		<texture id="ui_sg_pb_back_alpha" x="0" y="1108" width="418" height="32" />
+		<texture id="ui_sg_pb_yellow_1" x="0" y="828" width="418" height="32" />
+		<texture id="ui_sg_pb_yellow_2" x="0" y="893" width="418" height="32" />
+		
+		<texture id="ui_sg_pb_yellow_3" x="0" y="955" width="704" height="14" />
+		
+		<texture id="ui_sg_pb_multicolor" x="0" y="1071" width="418" height="30" />
+		<texture id="ui_sg_pb_art" x="0" y="1156" width="418" height="30" />
+	</file>	
+</w>

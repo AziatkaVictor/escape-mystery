@@ -1,0 +1,1106 @@
+local articles = {
+    -- Найденные записки
+    ['cry'] = {
+        ['prev'] = 'main'
+    },
+    ['filin_note'] = {
+        ['prev'] = 'main'
+    },
+    ['army_note_2'] = {
+        ['prev'] = 'main'
+    },
+    ['army_note_3'] = {
+        ['prev'] = 'main'
+    },
+    ['quest_note'] = {
+        ['prev'] = 'main'
+    },
+    ['shapito_note'] = {
+        ['prev'] = 'main'
+    },
+    ['secret_1'] = {
+        ['prev'] = 'main'
+    },
+    ['secret_2'] = {
+        ['prev'] = 'main'
+    },
+    ['secret_3'] = {
+        ['prev'] = 'main'
+    },
+    ['secret_4'] = {
+        ['prev'] = 'main'
+    },
+    ['secret_5'] = {
+        ['prev'] = 'main'
+    },
+    ['docs_1'] = {
+        ['prev'] = 'main'
+    },
+    ['docs_2'] = {
+        ['prev'] = 'main'
+    },
+    ['docs_3'] = {
+        ['prev'] = 'main'
+    },
+    ['docs_4'] = {
+        ['prev'] = 'main'
+    },
+    -- пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    ['army'] = {
+        ['type'] = 'switcher',
+        ['next'] = 'army',
+        ['prev'] = 'main'
+    },
+    ['army_three'] = {
+        ['prev'] = 'army'
+    },
+    ['army_one'] = {
+        ['prev'] = 'army'
+    }
+}
+
+local active_articles = {}
+
+class 'sg_notebook'(CUIScriptWnd)
+
+function sg_notebook:__init()
+    super()
+    self:InitControls()
+    self:InitCallBacks()
+
+    if (has_alife_info('sg_dc_k_kruger_startgame_dialog_done') and not has_alife_info('sg_dc_start_task_notebook_done')) then
+        get_hud():AddCustomStatic('sg_notebook_introduction_hud_object', true)
+    end
+end
+
+function sg_notebook:__finalize()
+end
+
+function sg_notebook:InitControls()
+    local xml = CScriptXmlInit()
+
+    self:SetWndRect(Frect():set(0, 0, 1024, 768))
+
+    if (device().width / device().height > (1024 / 768 + 0.01)) then
+        xml:ParseFile('sg_notebook_16.xml')
+    else
+        xml:ParseFile('sg_notebook.xml')
+    end
+
+    -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    self.texture_background = xml:InitStatic('texture_background', self)
+    self:Register(self.texture_background, 'texture_background')
+
+    -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    self.section_name = xml:InitStatic('section_name', self)
+    self.section_name:TextControl():SetText(game.translate_string('sg_notebook_section_name'))
+
+    -- пїЅпїЅпїЅпїЅпїЅпїЅ
+    local s
+    for s = 1, 35 do
+        if (s ~= 18) then
+            self['line_' .. s] = xml:InitStatic('line_' .. s, self)
+        end
+    end
+
+    self.activeSection = 'main'
+
+    self.tracking_items_list = sg_craft_ingr_tracker.get_sections_list()
+
+    -- пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    self.line_toclick_36 = xml:Init3tButton('line_toclick_36', self)
+    self:Register(self.line_toclick_36, 'btn_forvard')
+    self:AddCallback('btn_forvard', ui_events.BUTTON_CLICKED, self.btn_forvard_clicked, self)
+    self.line_toclick_36:Enable(false)
+
+    -- пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    self.line_toclick_18 = xml:Init3tButton('line_toclick_18', self)
+    self:Register(self.line_toclick_18, 'btn_back')
+    self:AddCallback('btn_back', ui_events.BUTTON_CLICKED, self.btn_back_clicked, self)
+    self.line_toclick_18:Enable(false)
+
+    -- пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+    self.back = xml:Init3tButton('back', self)
+    self:Register(self.back, 'back')
+    self:AddCallback('back', ui_events.BUTTON_CLICKED, self.btn_back_main_clicked, self)
+
+    self.craft_main_texture = xml:InitStatic('craft_main_texture', self)
+    self.craft_main_texture:Show(false)
+
+    self.craft_main_texture_frame = xml:InitStatic('craft_main_texture_frame', self)
+    self.craft_main_texture:Show(false)
+
+    local ingrInx
+    for ingrInx = 1, 3 do
+        self['repair_texture_ingr_' .. ingrInx] = xml:InitStatic('repair_texture_ingr_' .. ingrInx, self)
+        self['repair_texture_ingr_' .. ingrInx .. '_frame'] =
+            xml:InitStatic('repair_texture_ingr_' .. ingrInx .. '_frame', self)
+        self['repair_texture_ingr_' .. ingrInx]:Show(false)
+        self['repair_texture_ingr_' .. ingrInx .. '_frame']:Show(false)
+    end
+
+    self.compass_texture = xml:InitStatic('compass_texture', self)
+    self.compass_texture:InitTexture('sg_notebook_picture_compass')
+    self.compass_texture:Show(false)
+
+    self.article_texture = xml:InitStatic('article_texture', self)
+    self.article_texture:Show(false)
+
+    local ingrInx
+    for ingrInx = 1, 8 do
+        self['craft_texture_ingr_' .. ingrInx] = xml:InitStatic('craft_texture_ingr_' .. ingrInx, self)
+        self['craft_texture_ingr_' .. ingrInx .. '_frame'] =
+            xml:InitStatic('craft_texture_ingr_' .. ingrInx .. '_frame', self)
+        self['craft_texture_ingr_' .. ingrInx]:Show(false)
+        self['craft_texture_ingr_' .. ingrInx .. '_frame']:Show(false)
+    end
+    -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+
+    self['craft_info_tracking_switch_on'] = xml:Init3tButton('craft_info_tracking_switch_on', self)
+    self:Register(self['craft_info_tracking_switch_on'], 'craft_info_tracking_switch_on')
+    self:AddCallback(
+        'craft_info_tracking_switch_on',
+        ui_events.BUTTON_CLICKED,
+        self['craft_info_tracking_switch_on_clicked'],
+        self
+    )
+
+    self['craft_info_tracking_switch_off'] = xml:Init3tButton('craft_info_tracking_switch_off', self)
+    self:Register(self['craft_info_tracking_switch_off'], 'craft_info_tracking_switch_off')
+    self:AddCallback(
+        'craft_info_tracking_switch_off',
+        ui_events.BUTTON_CLICKED,
+        self['craft_info_tracking_switch_off_clicked'],
+        self
+    )
+
+    self['craft_info_tracking_switch_on']:Show(false)
+    self['craft_info_tracking_switch_off']:Show(false)
+
+    self.tracking_count = 17
+    if (#self.tracking_items_list < 17) then
+        self.tracking_count = #self.tracking_items_list
+    end
+
+    local ind
+    for ind = 1, self.tracking_count do
+        self['craft_info_tracking_btn_' .. tostring(ind)] =
+            xml:Init3tButton('craft_info_tracking_btn_' .. tostring(ind), self)
+        --self['craft_info_tracking_btn_'..tostring(ind)]:TextControl():SetText(game.translate_string(items_list[ind]))
+
+        self['craft_info_tracking_btn_' .. tostring(ind) .. '_frame'] =
+            xml:InitStatic('craft_texture_ingr_tracking_texture_' .. tostring(ind), self)
+
+        self['craft_info_tracking_btn_' .. tostring(ind) .. '_item_texture'] =
+            xml:InitStatic('craft_texture_ingr_tracking_texture_' .. tostring(ind), self)
+        self['craft_info_tracking_btn_' .. tostring(ind) .. '_item_texture']:InitTexture(
+            'ui_new_craft_' .. self.tracking_items_list[ind],
+            self
+        )
+
+        self['craft_info_tracking_btn_' .. tostring(ind) .. '_target'] = self.tracking_items_list[ind]
+        self['craft_info_tracking_btn_' .. tostring(ind) .. '_state'] =
+            xr_logic.pstor_retrieve(db.actor, 'sg_craft_ingr_tracker_item_' .. self.tracking_items_list[ind], false)
+
+        self:craft_info_tracking_update_state(ind)
+
+        self:Register(self['craft_info_tracking_btn_' .. tostring(ind)], 'craft_info_tracking_btn_' .. tostring(ind))
+        self:AddCallback(
+            'craft_info_tracking_btn_' .. tostring(ind),
+            ui_events.BUTTON_CLICKED,
+            self['craft_info_tracking_btn_clicked_' .. tostring(ind)],
+            self
+        )
+
+        self['craft_info_tracking_btn_' .. tostring(ind)]:Show(false)
+        self['craft_info_tracking_btn_' .. tostring(ind) .. '_frame']:Show(false)
+        self['craft_info_tracking_btn_' .. tostring(ind) .. '_item_texture']:Show(false)
+    end
+
+    -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 1 : ... пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+    --self.section_name:TextControl():SetText(game.translate_string('sg_notebook_section_name'))
+    self:start_screen()
+end
+
+function sg_notebook:isSwitcherRelevant(topic)
+    local themes_to_check = {topic}
+
+    -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ topic.
+
+    -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ
+
+    while (true) do
+        local found_something = false
+
+        for k, v in pairs(articles) do
+            local article_name = k
+            local article_body = v
+
+            for kk, vv in pairs(themes_to_check) do
+                local check_name = vv
+
+                if (check_name ~= 'main') then
+                    --print('Compare: c ' .. tostring(check_name) .. ' && a ' .. tostring(article_body['prev']))
+                    if (check_name == article_body['prev']) then
+                        if (themes_to_check) and (article_name) then
+                            if (is_contains(themes_to_check, article_name) == false) then
+                                table.insert(themes_to_check, article_name)
+                                --print('Match!')
+                                found_something = true
+                            end
+                        end
+                    end
+                end
+            end
+        end
+
+        if (found_something == false) then
+            break
+        end
+    end
+    --[[
+    print("themes_to_check")
+    for k,v in pairs(themes_to_check) do 
+      print(v)
+    end	
+]]
+    -- пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.
+    -- пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+    local result = false
+
+    for k, v in pairs(themes_to_check) do
+        for kk, vv in pairs(articles) do
+            if (vv['prev'] == v) then
+                --print(kk..'_info')
+                if (has_alife_info(kk .. '_info') or has_alife_info('craft_info_' .. kk)) then
+                    result = true
+                end
+            end
+        end
+    end
+
+    return result
+end
+
+function is_contains(t, element)
+    for k, v in pairs(t) do
+        if (v == element) then
+            return true
+        end
+    end
+    return false
+end
+
+function sg_notebook:start_screen()
+    local xml = CScriptXmlInit()
+    if (device().width / device().height > (1024 / 768 + 0.01)) then
+        xml:ParseFile('sg_notebook_16.xml')
+    else
+        xml:ParseFile('sg_notebook.xml')
+    end
+
+    -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 1 : пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ ...
+    self.section_name:TextControl():SetText(game.translate_string('sg_notebook_section_name'))
+
+    -- пїЅпїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅ
+    local s
+    for s = 1, 35 do
+        if (s ~= 18) then
+            if (self['line_toclick_' .. s] == nil) then
+                self['line_toclick_' .. s] = xml:Init3tButton('line_toclick_' .. s, self)
+                self['line_toclick_' .. s]:Enable(false)
+                self:Register(self['line_toclick_' .. s], 'line_toclick_' .. s)
+            else
+            end
+        end
+    end
+
+    local index = 1
+    self.char_in_line = 40
+    self.pageNumber = 0
+
+    for k, v in pairs(articles) do
+        if (k == self.activeSection) then
+            self.prev = v['prev']
+        end
+
+        --get_console():execute(tostring(self.activeSection))
+        --get_console():execute(tostring(self.next))
+        --get_console():execute(tostring(self.prev))
+
+        -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        if ((v['type'] == 'switcher') and (self.activeSection == v['prev']) and (self:isSwitcherRelevant(k) == true)) then
+            if (index == 18) then
+                index = 19
+            end
+            self['line_toclick_' .. index]:TextControl():SetText(game.translate_string(k .. '_name'))
+            self['line_toclick_' .. index .. '_target'] = k
+            self['line_toclick_' .. index]:Enable(true)
+            self['line_toclick_' .. index .. '_next'] = v['next']
+            self['line_toclick_' .. index .. '_prev'] = v['prev']
+
+            index = index + 1
+        end
+
+        -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+        if ((has_alife_info(k .. '_info') or has_alife_info('craft_info_' .. k)) and (self.activeSection == v['prev'])) then
+            if (index == 18) then
+                index = 19
+            end
+
+            --news_manager.send_tip(db.actor, game.translate_string("пїЅпїЅпїЅпїЅ: ")..tostring(k)..'_info', nil, nil, 6000)
+
+            table.insert(active_articles, k)
+            self['line_toclick_' .. index]:TextControl():SetText(game.translate_string(k .. '_name'))
+            self['line_toclick_' .. index .. '_target'] = k
+            self['line_toclick_' .. index]:Enable(true)
+            self['line_toclick_' .. index .. '_next'] = nil
+            self['line_toclick_' .. index .. '_prev'] = v['prev']
+            index = index + 1
+        end
+    end
+end
+
+function sg_notebook:clear_buttons()
+    for s = 1, 35 do
+        if (s ~= 18) then
+            self['line_toclick_' .. s]:Enable(false)
+            self['line_toclick_' .. s]:TextControl():SetText('')
+            self['line_' .. s]:TextControl():SetText('')
+        end
+    end
+
+    --if (self.back ~= nil) then
+    --	self.back:Enable(false)
+    --	self.back:TextControl():SetText('')
+    --end
+    if (self.line_toclick_18 ~= nil) then
+        self.line_toclick_18:Enable(false)
+    end
+    if (self.line_toclick_36 ~= nil) then
+        self.line_toclick_36:Enable(false)
+    end
+    if (self.article_texture ~= nil) then
+        self.article_texture:InitTexture('ui_new_craft_nothing')
+    end
+    local ingrInx
+    for ingrInx = 1, 8 do
+        if (self['craft_texture_ingr_' .. ingrInx] ~= nil) then
+            self['craft_texture_ingr_' .. ingrInx]:InitTexture('ui_new_craft_nothing', self)
+            self['craft_texture_ingr_' .. ingrInx .. '_frame']:InitTexture('ui_new_craft_nothing', self)
+        end
+        if (self['repair_texture_ingr_' .. ingrInx] ~= nil) then
+            self['repair_texture_ingr_' .. ingrInx]:InitTexture('ui_new_craft_nothing', self)
+            self['repair_texture_ingr_' .. ingrInx .. '_frame']:InitTexture('ui_new_craft_nothing', self)
+        end
+    end
+    if (self.craft_main_texture ~= nil) then
+        self.craft_main_texture:InitTexture('ui_new_craft_nothing', self)
+        self.craft_main_texture_frame:InitTexture('ui_new_craft_nothing', self)
+    end
+end
+
+function sg_notebook:InitCallBacks()
+    local i
+    for i = 1, 35 do
+        if (i ~= 18) then
+            self:AddCallback('line_toclick_' .. i, ui_events.BUTTON_CLICKED, self['string_choosed_' .. i], self)
+        end
+    end
+end
+
+function sg_notebook:btn_back_main_clicked()
+    if (self.activeSection == self.prev) and (self.prev == 'main') then
+        self:Hide()
+    end
+
+    self.activeSection = self.prev
+    self:clear_buttons()
+    self:start_screen()
+
+    self:craft_info_tracking(self.activeSection)
+end
+
+function sg_notebook:btn_forvard_clicked()
+    if (self.isThereImage == true) then
+        self.pageNumber = self.pageNumber + 1
+    else
+        self.pageNumber = self.pageNumber + 2
+    end
+    self:string_choosed(self.current_article_index)
+end
+
+function sg_notebook:btn_back_clicked()
+    if (self.isThereImage == true) then
+        self.pageNumber = self.pageNumber - 1
+    else
+        self.pageNumber = self.pageNumber - 2
+    end
+    self:string_choosed(self.current_article_index)
+end
+
+local tmpLines = {}
+
+function sg_notebook:craft_info_tracking_update_state(ind)
+    local frame = self['craft_info_tracking_btn_' .. tostring(ind) .. '_frame']
+    local state = self['craft_info_tracking_btn_' .. tostring(ind) .. '_state']
+
+    if (state == true) then
+        frame:InitTexture('ui_sg_notebook_craft_ingr_tracking_btn_t', self)
+    else
+        frame:InitTexture('ui_sg_notebook_craft_ingr_tracking_btn_e', self)
+    end
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked(ind)
+    local btn = self['craft_info_tracking_btn_' .. tostring(ind)]
+    local section = self['craft_info_tracking_btn_' .. tostring(ind) .. '_target']
+
+    self['craft_info_tracking_btn_' .. tostring(ind) .. '_state'] =
+        not self['craft_info_tracking_btn_' .. tostring(ind) .. '_state']
+
+    xr_logic.pstor_store(
+        db.actor,
+        'sg_craft_ingr_tracker_item_' .. section,
+        self['craft_info_tracking_btn_' .. tostring(ind) .. '_state']
+    )
+
+    self:craft_info_tracking_update_state(ind)
+
+    sg_craft_ingr_tracker.bind()
+end
+
+function sg_notebook:craft_info_tracking_switch_on_clicked()
+    local i
+    for i = 1, self.tracking_count do
+        local btn = self['craft_info_tracking_btn_' .. tostring(i)]
+        local section = self['craft_info_tracking_btn_' .. tostring(i) .. '_target']
+
+        self['craft_info_tracking_btn_' .. tostring(i) .. '_state'] = true
+        xr_logic.pstor_store(db.actor, 'sg_craft_ingr_tracker_item_' .. section, true)
+        self:craft_info_tracking_update_state(i)
+    end
+    sg_craft_ingr_tracker.bind()
+end
+
+function sg_notebook:craft_info_tracking_switch_off_clicked()
+    local i
+    for i = 1, self.tracking_count do
+        local btn = self['craft_info_tracking_btn_' .. tostring(i)]
+        local section = self['craft_info_tracking_btn_' .. tostring(i) .. '_target']
+
+        self['craft_info_tracking_btn_' .. tostring(i) .. '_state'] = false
+        xr_logic.pstor_store(db.actor, 'sg_craft_ingr_tracker_item_' .. section, false)
+        self:craft_info_tracking_update_state(i)
+    end
+    sg_craft_ingr_tracker.bind()
+end
+
+function sg_notebook:craft_info_tracking(target)
+    -- пїЅпїЅпїЅпїЅпїЅпїЅ "craft_info_tracking"
+
+    --news_manager.send_tip(db.actor, "Current step " .. tostring(self['line_toclick_'..numb..'_target']), nil, nil, 6000)
+    --get_console():execute("Current_step[" .. tostring(target) .. ']')
+
+    local ind
+
+    if (target == 'craft_info_tracking') then
+        self['craft_info_tracking_switch_on']:Show(true)
+        self['craft_info_tracking_switch_off']:Show(true)
+        self:screen_tracking_in()
+
+        --get_console():execute('show_tracking')
+
+        -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 17 пїЅпїЅпїЅпїЅпїЅпїЅ
+        for ind = 1, self.tracking_count do
+            self['craft_info_tracking_btn_' .. tostring(ind)]:Show(true)
+            self['craft_info_tracking_btn_' .. tostring(ind) .. '_frame']:Show(true)
+            self['craft_info_tracking_btn_' .. tostring(ind) .. '_item_texture']:Show(true)
+        end
+    else
+        --get_console():execute('hide_tracking')
+        for ind = 1, self.tracking_count do
+            self['craft_info_tracking_btn_' .. tostring(ind)]:Show(false)
+            self['craft_info_tracking_btn_' .. tostring(ind) .. '_frame']:Show(false)
+            self['craft_info_tracking_btn_' .. tostring(ind) .. '_item_texture']:Show(false)
+        end
+        self['craft_info_tracking_switch_on']:Show(false)
+        self['craft_info_tracking_switch_off']:Show(false)
+        self:screen_tracking_out()
+    end
+end
+
+function sg_notebook:screen_craft_in()
+    --self.craft_main_texture:Show(true)
+    --self.craft_main_texture_frame:Show(true)
+end
+
+function sg_notebook:screen_craft_out()
+    self.craft_main_texture:Show(false)
+    self.craft_main_texture_frame:Show(false)
+
+    local ingrInx
+    for ingrInx = 1, 8 do
+        self['craft_texture_ingr_' .. ingrInx]:Show(false)
+        self['craft_texture_ingr_' .. ingrInx .. '_frame']:Show(false)
+    end
+end
+
+function sg_notebook:screen_repair_in()
+    --self.craft_main_texture:Show(true)
+    --self.craft_main_texture_frame:Show(true)
+end
+
+function sg_notebook:screen_repair_out()
+    self.craft_main_texture:Show(false)
+    self.craft_main_texture_frame:Show(false)
+
+    local ingrInx
+    for ingrInx = 1, 3 do
+        self['repair_texture_ingr_' .. ingrInx]:Show(false)
+        self['repair_texture_ingr_' .. ingrInx .. '_frame']:Show(false)
+    end
+end
+
+function sg_notebook:screen_article_in()
+    self.article_texture:Show(true)
+end
+
+function sg_notebook:screen_article_out()
+    self.article_texture:Show(false)
+end
+
+function sg_notebook:screen_tracking_in()
+    self.compass_texture:Show(true)
+end
+
+function sg_notebook:screen_tracking_out()
+    self.compass_texture:Show(false)
+end
+
+function sg_notebook:string_choosed(numb)
+    if (has_alife_info('sg_dc_k_kruger_startgame_dialog_done') and not has_alife_info('sg_dc_start_task_notebook_done')) then
+        get_hud():RemoveCustomStatic('sg_notebook_introduction_hud_object', true)
+    end
+
+    -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+    self:craft_info_tracking(self['line_toclick_' .. numb .. '_target'])
+
+    local index = 1
+    local s = game.translate_string(self['line_toclick_' .. numb .. '_target'] .. '_text')
+    local i
+    local count = 0
+    local res = ''
+    local pagesCount
+    local xml = CScriptXmlInit()
+    local pageNumberLocal = 0
+
+    --local page_sound = 'sg_notebook_pages_'..math.random(1,7)
+    --get_console():execute(tostring(game.translate_string(k..'_name')).."_is_playing")
+    --xr_effects.play_sound(db.actor,db.actor,{'page_sound'})
+    --xr_sound.set_sound_play(db.actor:id(), page_sound)
+
+    self.section_name:TextControl():SetText(game.translate_string(self['line_toclick_' .. numb .. '_target']))
+
+    -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    if (self['line_toclick_' .. numb .. '_next'] ~= nil) then
+        self.next = self['line_toclick_' .. numb .. '_next']
+        self.prev = self['line_toclick_' .. numb .. '_prev']
+
+        self.activeSection = self.next
+
+        --get_console():execute(tostring(self.next))
+        self:clear_buttons()
+
+        --if (self.back == nil) then
+        --		self.back = xml:Init3tButton("back", self)
+        --		self:Register(self.back, 'back')
+        --		self:AddCallback("back", ui_events.BUTTON_CLICKED, self.btn_back_main_clicked, self)
+        --end
+        self.back:TextControl():SetText('Back')
+        self.back:Enable(true)
+
+        self:start_screen()
+    else
+        self.prev = self['line_toclick_' .. numb .. '_prev']
+
+        if (articles[self['line_toclick_' .. numb .. '_target']]['music'] ~= nil) then
+            xr_effects.play_sound(db.actor, db.actor, {articles[self['line_toclick_' .. numb .. '_target']]['music']})
+        end
+
+        self:clear_buttons()
+        self.isThereImage =
+            articles[self['line_toclick_' .. numb .. '_target']]['image'] ~= nil or
+            articles[self['line_toclick_' .. numb .. '_target']]['ingr'] ~= nil
+
+        --if (self.back == nil) then
+        --	self.back = xml:Init3tButton("back", self)
+        --	self:Register(self.back, 'back')
+        --	self:AddCallback("back", ui_events.BUTTON_CLICKED, self.btn_back_main_clicked, self)
+        --end
+        self.back:TextControl():SetText('Back')
+        self.back:Enable(true)
+
+        self.current_article_index = numb
+
+        self.section_name:TextControl():SetText(
+            game.translate_string(self['line_toclick_' .. numb .. '_target'] .. '_name')
+        )
+
+        tmpLines = {}
+        if (string.sub(s, 1, 1) ~= nil) then
+            for i = 1, string.len(s) do
+                -- пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+                -- # - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+                if (string.sub(s, i, i) ~= '#') then
+                    -- пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅ
+                    if (count == 0 and string.sub(s, i, i) == ' ' and string.sub(s, i + 1, i + 1) ~= '-') then
+                    else
+                        res = res .. string.sub(s, i, i)
+                        count = count + 1
+                    end
+                else
+                    table.insert(tmpLines, res)
+                    res = '  '
+
+                    if (i ~= string.len(s)) then
+                        count = 0
+                    end
+                end
+                -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 15 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+                if (count > 25 and string.sub(s, i, i) == ' ') then
+                    local word_is_small_enough = false
+                    local it
+                    for it = 1, 40 - count do
+                        if (string.sub(s, i + it, i + it) == ' ') then
+                            word_is_small_enough = true
+                        end
+                    end
+                    if (word_is_small_enough == false) then
+                        table.insert(tmpLines, res)
+                        res = ''
+                        count = 0
+                    end
+                end
+
+                if (count >= self.char_in_line) or (i == string.len(s)) then
+                    table.insert(tmpLines, res)
+                    res = ''
+
+                    if (i ~= string.len(s)) then
+                        count = 0
+                    end
+                end
+            end
+        end
+
+        pagesCount = math.ceil(table.getn(tmpLines) / 17)
+
+        --news_manager.send_tip(db.actor, pagesCount)
+
+        -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+        if (self.isThereImage == false) then
+            if (pagesCount > 2) then
+                if (self.pageNumber + 1 < pagesCount) then
+                    --if (self.line_toclick_36 == nil) then
+                    --	self.line_toclick_36 = xml:Init3tButton("line_toclick_36", self)
+                    --	self:Register(self.line_toclick_36, 'btn_forvard')
+                    --	self:AddCallback("btn_forvard", ui_events.BUTTON_CLICKED, self.btn_forvard_clicked, self)
+                    --end
+                    self.line_toclick_36:Enable(true)
+                end
+
+                if (self.pageNumber >= 2) then
+                    --if (self.line_toclick_18 == nil) then
+                    --	self.line_toclick_18 = xml:Init3tButton("line_toclick_18", self)
+                    --	self:Register(self.line_toclick_18, 'btn_back')
+                    --	self:AddCallback("btn_back", ui_events.BUTTON_CLICKED, self.btn_back_clicked, self)
+                    --end
+
+                    self.line_toclick_18:Enable(true)
+                end
+            end
+        else
+            if (pagesCount >= 1) then
+                local tmp
+                if (pagesCount % 2 == 0) or (pagesCount == 1) then
+                    tmp = pagesCount - 1
+                else
+                    tmp = pagesCount
+                end
+                if (self.pageNumber < tmp) then
+                    --if (self.line_toclick_36 == nil) then
+                    --	self.line_toclick_36 = xml:Init3tButton("line_toclick_36", self)
+                    --	self:Register(self.line_toclick_36, 'btn_forvard')
+                    --	self:AddCallback("btn_forvard", ui_events.BUTTON_CLICKED, self.btn_forvard_clicked, self)
+                    --end
+                    self.line_toclick_36:Enable(true)
+                end
+
+                if (self.pageNumber >= 1) then
+                    --if (self.line_toclick_18 == nil) then
+                    --	self.line_toclick_18 = xml:Init3tButton("line_toclick_18", self)
+                    --	self:Register(self.line_toclick_18, 'btn_back')
+                    --	self:AddCallback("btn_back", ui_events.BUTTON_CLICKED, self.btn_back_clicked, self)
+                    --end
+
+                    self.line_toclick_18:Enable(true)
+                end
+            end
+        end
+
+        -- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+        local target = articles[self['line_toclick_' .. numb .. '_target']]
+
+        if (target['image'] ~= nil or target['ingr'] ~= nil) then
+            if
+                (string.find(target['prev'], 'craft') == 1 or string.find(target['prev'], 'places') == 1) and
+                    (self['line_toclick_' .. numb .. '_target'] ~= 'craft_info_start') and
+                    (self['line_toclick_' .. numb .. '_target'] ~= 'craft_info_tracking')
+             then
+                self:screen_craft_in()
+                self:screen_repair_out()
+                self:screen_tracking_out()
+                self:screen_article_out()
+                --if (self.craft_main_texture == nil) then
+                --	self.craft_main_texture = xml:InitStatic("craft_main_texture", self)
+                --end
+
+                self.craft_main_texture:Show(true)
+                self.craft_main_texture_frame:Show(true)
+
+                if (target['specialTexture'] == true) then
+                    self.craft_main_texture:InitTexture(
+                        'ui_sg_notebook_texture_' .. self['line_toclick_' .. numb .. '_target'],
+                        self
+                    )
+                else
+                    self.craft_main_texture:InitTexture(
+                        'ui_new_craft_' .. self['line_toclick_' .. numb .. '_target'],
+                        self
+                    )
+                end
+
+                --if (self.craft_main_texture_frame == nil) then
+                --	self.craft_main_texture_frame = xml:InitStatic("craft_main_texture_frame", self)
+                --end
+                self.craft_main_texture_frame:InitTexture('ui_sg_notebook_craft_frame', self)
+
+                local ingrInx
+                for ingrInx = 1, #target['ingr'] do
+                    self['craft_texture_ingr_' .. ingrInx]:Show(true)
+                    self['craft_texture_ingr_' .. ingrInx]:InitTexture('ui_new_craft_' .. target['ingr'][ingrInx], self)
+
+                    self['craft_texture_ingr_' .. ingrInx .. '_frame']:Show(true)
+                    self['craft_texture_ingr_' .. ingrInx .. '_frame']:InitTexture('ui_sg_notebook_craft_frame', self)
+                end
+            elseif (target['prev'] == 'repair') and (self['line_toclick_' .. numb .. '_target'] ~= 'repair_info_start') then
+                self:screen_craft_out()
+                self:screen_repair_in()
+                self:screen_tracking_out()
+                self:screen_article_out()
+                --if (self.craft_main_texture == nil) then
+                --	self.craft_main_texture = xml:InitStatic("craft_main_texture", self)
+                --end
+
+                self.craft_main_texture:Show(true)
+                self.craft_main_texture_frame:Show(true)
+                self.craft_main_texture:InitTexture('ui_new_craft_' .. self['line_toclick_' .. numb .. '_target'], self)
+
+                --if (self.craft_main_texture_frame == nil) then
+                --	self.craft_main_texture_frame = xml:InitStatic("craft_main_texture_frame", self)
+                --end
+
+                self.craft_main_texture_frame:InitTexture('ui_sg_notebook_craft_frame', self)
+
+                local ingrInx
+                for ingrInx = 1, #target['ingr'] do
+                    --if (self['repair_texture_ingr_'..ingrInx] == nil) then
+                    --	self['repair_texture_ingr_'..ingrInx] = xml:InitStatic("repair_texture_ingr_"..ingrInx, self)
+                    --end
+
+                    self['repair_texture_ingr_' .. ingrInx]:InitTexture(
+                        'ui_new_craft_' .. target['ingr'][ingrInx],
+                        self
+                    )
+
+                    self['repair_texture_ingr_' .. ingrInx]:Show(true)
+
+                    --if (self['repair_texture_ingr_'..ingrInx..'_frame'] == nil) then
+                    --	self['repair_texture_ingr_'..ingrInx..'_frame'] = xml:InitStatic("repair_texture_ingr_"..ingrInx..'_frame', self)
+                    --end
+                    self['repair_texture_ingr_' .. ingrInx .. '_frame']:Show(true)
+
+                    self['repair_texture_ingr_' .. ingrInx .. '_frame']:InitTexture('ui_sg_notebook_craft_frame', self)
+                end
+            elseif (self['line_toclick_' .. numb .. '_target'] == 'craft_info_tracking') then
+                self:screen_craft_out()
+                self:screen_repair_out()
+                self:screen_tracking_in()
+                self:screen_article_out()
+
+                local tracking_distance_to_print = math.sqrt(sg_craft_ingr_tracker.get_tracking_distance())
+
+                tmpLines[t.length(tmpLines)] =
+                    tmpLines[t.length(tmpLines)] ..
+                    ' ' .. tostring(tracking_distance_to_print) .. game.translate_string('sg_notebook_meters')
+            else
+                self:screen_craft_out()
+                self:screen_repair_out()
+                self:screen_tracking_out()
+                self:screen_article_in()
+
+                --self.article_texture = xml:InitStatic("article_texture", self)
+                self.article_texture:Show(true)
+                self.article_texture:InitTexture(target['image'])
+            end
+            i = 19
+        else
+            i = 1
+        end
+        --get_console():execute(tostring(self.pageNumber))
+        local indInTable = 1 + 17 * self.pageNumber
+        for k, v in pairs(tmpLines) do
+            if (i < 36) then
+                if tmpLines[indInTable] ~= nil and i ~= 18 and i ~= 36 then
+                    self['line_' .. i]:TextControl():SetText(game.translate_string(tmpLines[indInTable]))
+                    indInTable = indInTable + 1
+                end
+                i = i + 1
+            end
+        end
+    end
+end
+
+function sg_notebook:string_choosed_1()
+    self:string_choosed(1)
+end
+
+function sg_notebook:string_choosed_2()
+    self:string_choosed(2)
+end
+
+function sg_notebook:string_choosed_3()
+    self:string_choosed(3)
+end
+
+function sg_notebook:string_choosed_4()
+    self:string_choosed(4)
+end
+
+function sg_notebook:string_choosed_5()
+    self:string_choosed(5)
+end
+
+function sg_notebook:string_choosed_6()
+    self:string_choosed(6)
+end
+
+function sg_notebook:string_choosed_7()
+    self:string_choosed(7)
+end
+
+function sg_notebook:string_choosed_8()
+    self:string_choosed(8)
+end
+
+function sg_notebook:string_choosed_9()
+    self:string_choosed(9)
+end
+
+function sg_notebook:string_choosed_10()
+    self:string_choosed(10)
+end
+
+function sg_notebook:string_choosed_11()
+    self:string_choosed(11)
+end
+
+function sg_notebook:string_choosed_12()
+    self:string_choosed(12)
+end
+
+function sg_notebook:string_choosed_13()
+    self:string_choosed(13)
+end
+
+function sg_notebook:string_choosed_14()
+    self:string_choosed(14)
+end
+
+function sg_notebook:string_choosed_15()
+    self:string_choosed(15)
+end
+
+function sg_notebook:string_choosed_16()
+    self:string_choosed(16)
+end
+
+function sg_notebook:string_choosed_17()
+    self:string_choosed(17)
+end
+
+function sg_notebook:string_choosed_19()
+    self:string_choosed(19)
+end
+
+function sg_notebook:string_choosed_20()
+    self:string_choosed(20)
+end
+
+function sg_notebook:string_choosed_21()
+    self:string_choosed(21)
+end
+
+function sg_notebook:string_choosed_22()
+    self:string_choosed(22)
+end
+
+function sg_notebook:string_choosed_23()
+    self:string_choosed(23)
+end
+
+function sg_notebook:string_choosed_24()
+    self:string_choosed(24)
+end
+
+function sg_notebook:string_choosed_25()
+    self:string_choosed(25)
+end
+
+function sg_notebook:string_choosed_26()
+    self:string_choosed(26)
+end
+
+function sg_notebook:string_choosed_27()
+    self:string_choosed(27)
+end
+
+function sg_notebook:string_choosed_28()
+    self:string_choosed(28)
+end
+
+function sg_notebook:string_choosed_29()
+    self:string_choosed(29)
+end
+
+function sg_notebook:string_choosed_30()
+    self:string_choosed(30)
+end
+
+function sg_notebook:string_choosed_31()
+    self:string_choosed(31)
+end
+
+function sg_notebook:string_choosed_32()
+    self:string_choosed(32)
+end
+
+function sg_notebook:string_choosed_33()
+    self:string_choosed(33)
+end
+
+function sg_notebook:string_choosed_34()
+    self:string_choosed(34)
+end
+
+function sg_notebook:string_choosed_35()
+    self:string_choosed(35)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_1()
+    self:craft_info_tracking_btn_clicked(1)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_2()
+    self:craft_info_tracking_btn_clicked(2)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_3()
+    self:craft_info_tracking_btn_clicked(3)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_4()
+    self:craft_info_tracking_btn_clicked(4)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_5()
+    self:craft_info_tracking_btn_clicked(5)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_6()
+    self:craft_info_tracking_btn_clicked(6)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_7()
+    self:craft_info_tracking_btn_clicked(7)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_8()
+    self:craft_info_tracking_btn_clicked(8)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_9()
+    self:craft_info_tracking_btn_clicked(9)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_10()
+    self:craft_info_tracking_btn_clicked(10)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_11()
+    self:craft_info_tracking_btn_clicked(11)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_12()
+    self:craft_info_tracking_btn_clicked(12)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_13()
+    self:craft_info_tracking_btn_clicked(13)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_14()
+    self:craft_info_tracking_btn_clicked(14)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_15()
+    self:craft_info_tracking_btn_clicked(15)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_16()
+    self:craft_info_tracking_btn_clicked(16)
+end
+
+function sg_notebook:craft_info_tracking_btn_clicked_17()
+    self:craft_info_tracking_btn_clicked(17)
+end
+function sg_notebook:Hide()
+    if (has_alife_info('sg_dc_k_kruger_startgame_dialog_done') and not has_alife_info('sg_dc_start_task_notebook_done')) then
+        db.actor:give_info_portion('sg_dc_start_task_notebook_done')
+
+        get_hud():RemoveCustomStatic('sg_notebook_introduction_hud_object')
+    end
+
+    self:HideDialog()
+end
+
+function sg_notebook:OnKeyboard(dik, keyboard_action) --virtual function
+    CUIScriptWnd.OnKeyboard(self, dik, keyboard_action)
+
+    if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
+        if dik == DIK_keys.DIK_ESCAPE then
+            self:Hide()
+        end
+    end
+end
+
+function get_sections_by_name(name)
+    local res = {}
+    local current = name
+    while (articles[current]['prev'] ~= 'main') do
+        table.insert(res, 1, articles[current]['prev'])
+        current = articles[current]['prev']
+    end
+    return res
+end

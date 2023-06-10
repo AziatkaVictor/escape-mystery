@@ -1,0 +1,13 @@
+[logic]
+active = sr_particle
+
+[sr_particle]
+name = explosions\gas_light
+path = light_gas_1               
+mode = 2 				
+looped = true               
+on_info = {=actor_has_item(cry_note)} %=play_sound(light_gas_off)% sr_idle@sound
+
+[sr_idle@sound]
+on_game_timer = 15 | %=stop_sound(light_gas_off)% nil
+

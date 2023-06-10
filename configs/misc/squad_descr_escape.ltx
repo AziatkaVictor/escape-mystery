@@ -1,0 +1,251 @@
+[esc_army_trader_squad]:online_offline_group
+faction 			    = army
+npc 					= esc_army_trader
+invulnerable            = true
+target_smart 	        = {+esc_storyline_search_end} esc_smart_army_base, esc_smart_army_base_start
+
+[esc_army_mech_squad]:online_offline_group
+faction 			    = army
+npc 					= esc_army_mech
+invulnerable            = true
+target_smart	        = {+esc_storyline_search_end} esc_smart_army_base, esc_smart_army_base_start
+
+[esc_army_medic_squad]:online_offline_group
+faction 			    = army
+npc 					= esc_army_medic, esc_army_soldier_1, esc_army_soldier_2, esc_army_soldier_3, esc_army_soldier_4, esc_army_soldier_1, esc_army_soldier_2, esc_army_soldier_3
+invulnerable            = true
+target_smart 	        = {+esc_storyline_search_end} esc_smart_army_base, esc_smart_army_base_start
+
+[monster_predatory_day_1_squad]:online_offline_group   
+faction 			    = monster_predatory_day
+npc 					= dog_weak, dog_normal, dog_strong, dog_strong, dog_cute
+target_smart 	        = esc_smart_mutants_1
+
+[monster_vegetarian_2_squad]:online_offline_group
+faction 			    = monster_vegetarian
+npc 					= flesh_normal, flesh_normal, flesh_normal, flesh_strong
+target_smart 	        = esc_smart_mutants_2
+
+[monster_vegetarian_3_squad]:online_offline_group
+faction 			    = monster_vegetarian
+npc 					= boar_normal, boar_normal, boar_normal, boar_strong
+target_smart 	        = esc_smart_mutants_3
+
+[monster_vegetarian_4_squad]:online_offline_group
+faction 			    = monster_predatory_day
+npc 					= dog_weak, dog_normal, dog_strong, dog_strong, dog_cute
+target_smart 	        = esc_smart_mutants_4
+
+[monster_vegetarian_5_squad]:online_offline_group
+faction 			    = monster_vegetarian
+on_death                = %+monster_vegetarian_5_squad_is_dead%
+npc 					= flesh_normal, flesh_normal, flesh_normal, flesh_strong
+target_smart 	        = esc_smart_mutants_5
+story_id                = monster_vegetarian_5_squad
+
+[monster_vegetarian_6_squad]:online_offline_group
+faction 			    = monster_vegetarian
+npc 					= boar_normal, boar_normal, boar_normal, boar_strong
+target_smart 	        = esc_smart_mutants_6
+
+[esc_smart_post_3_spawn_dog_squad]:online_offline_group
+faction 			    = monster_predatory_day
+npc 					= dog_weak, dog_normal, dog_strong, dog_strong, dog_cute
+target_smart 	        = esc_smart_post_3
+spawn_point             = spawn_dog
+on_death                = %+spawn_dog_is_dead%
+
+[esc_smart_novice_base_mech_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_novice_mech
+target_smart 	        = esc_smart_novice_base
+
+[esc_smart_novice_base_medic_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_novice_medic
+target_smart 	        = esc_smart_novice_base
+
+[esc_smart_novice_base_barmen_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_novice_barmen, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0
+target_smart 	        = esc_smart_novice_base
+
+[esc_smart_novice_base_guard_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_novice_guard
+target_smart 	        = esc_smart_novice_base
+
+[esc_smart_novice_base_shapito_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_novice_shapito
+target_smart 	        = esc_smart_novice_base
+story_id                = esc_smart_novice_base_shapito_squad
+
+[esc_smart_novice_base_filin_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_novice_filin
+target_smart 	        = esc_smart_novice_base
+story_id 			    = esc_smart_novice_base_filin_squad
+
+[esc_smart_novice_base_horse_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_novice_horse
+target_smart 	        = esc_smart_novice_base
+story_id                = esc_smart_novice_base_horse_squad
+
+[esc_smart_novice_base_lider_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_novice_lider
+target_smart 	        = esc_smart_novice_base
+
+[esc_smart_novice_base_patrol_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_novice_patrol_one
+target_smart 	        = esc_smart_novice_base
+
+[esc_smart_post_1_squad]:online_offline_group
+faction 			    = stalker
+npc 					= sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0
+target_smart 	        = esc_smart_post_1
+
+[esc_smart_elevator_squad]:online_offline_group
+faction 			    = bandit
+on_death                = %+esc_smart_elevator_squad_is_dead%
+npc 					= sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1
+target_smart 	        = esc_smart_elevator
+story_id                = esc_smart_elevator_squad
+
+[esc_smart_elevator_sim_squad]:online_offline_group
+faction 			    = bandit
+npc 					= sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1
+target_smart 	        = esc_smart_elevator
+story_id                = esc_smart_elevator_sim_squad
+
+[esc_smart_atp_squad]:online_offline_group
+faction 			    = stalker
+relationship            = friend
+npc 					= esc_stalker_novice_atp_help, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0
+target_smart 	        = esc_smart_atp
+spawn_point	            = atp_squad_spawn_1
+story_id 			    = esc_smart_atp_squad
+
+[esc_smart_atp_squad2]:online_offline_group
+faction 			    = stalker
+npc 					= sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0
+target_smart 	        = esc_smart_atp
+
+[esc_smart_atp_bandit_squad]:online_offline_group
+faction 			    = bandit
+npc 					= esc_bandit_atp_1, esc_bandit_atp_2, esc_bandit_atp_3, esc_bandit_atp_4, esc_bandit_atp_5, esc_bandit_atp_6, esc_bandit_atp_7
+target_smart 	        = esc_smart_atp
+on_death 		        = %+atp_atack_end%
+spawn_point	            = bandit_start
+story_id 			    = esc_smart_atp_bandit_squad
+
+[esc_smart_dead_2_bloodsucker]:online_offline_group
+faction 			    = monster_predatory_night
+npc 					= bloodsucker_strong
+target_smart 	        = esc_smart_dead_2
+story_id 			    = esc_smart_dead_2_bloodsucker
+
+[esc_smart_dead_1_dogs]:online_offline_group
+faction 			    = monster_predatory_day
+npc 					= dog_weak, dog_normal, dog_strong, dog_strong, dog_cute
+target_smart 	        = esc_smart_dead_1
+story_id 			    = esc_smart_dead_1_dogs
+
+[esc_stalker_manyak_squad]:online_offline_group
+faction 			    = bandit
+npc 					= esc_stalker_manyak
+target_smart 	        = esc_smart_post_2
+spawn_point             = stalker_start
+on_death 		        = %+esc_stalker_manyak_dead%
+story_id 			    = esc_stalker_manyak_squad
+
+[esc_smart_post_2_horse_squad_manyak]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_novice_horse
+target_smart 	        = esc_smart_post_2
+story_id                = esc_smart_post_2_horse_squad_manyak
+
+[esc_smart_stalker_base_bar_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_barmen, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, esc_stalker_random_1, esc_stalker_random_2
+target_smart 	        = esc_smart_stalker_base
+
+[esc_smart_stalker_alcohol_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_alcohol
+target_smart 	        = esc_smart_stalker_base
+
+[esc_smart_stalker_base_tyan_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_tyan
+target_smart 	        = esc_smart_stalker_base
+story_id                = esc_smart_stalker_base_tyan_squad
+
+[esc_smart_stalker_mechanic_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_mechanic
+target_smart 	        = esc_smart_stalker_base
+
+[esc_smart_stalker_secret_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_secret, esc_stalker_vodka
+target_smart 	        = esc_smart_stalker_base
+
+[esc_smart_post_3_stalker_toz_prizrak]:online_offline_group
+faction                 = stalker
+relationship            = friend
+npc                     = esc_stalker_toz_prizrak
+story_id                = esc_smart_post_3_stalker_toz_prizrak_id
+target_smart            = esc_smart_post_3
+
+[esc_scince_squad]:online_offline_group
+faction                 = ecolog
+relationship            = friend
+npc                     = esc_scince_one, esc_scince_two
+story_id                = esc_scince_squad_id
+target_smart            = {+science_hi} esc_smart_stalker_base, esc_smart_post_4    
+
+[esc_bandits_for_scince_squad]:online_offline_group
+faction                 = bandit
+on_death                = %+bandits_is_dead%
+npc                     = esc_bandit_leader, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1
+story_id                = esc_bandits_for_scince_squad_id
+target_smart            = esc_smart_post_4
+
+[esc_smart_bandits_tyan_squad]:online_offline_group
+faction                 = bandit
+on_death                = %+bandits_tyan_is_dead%
+npc                     = esc_bandit_leader_tyan, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2
+story_id                = esc_smart_bandits_tyan_squad
+target_smart            = esc_smart_hutor
+
+[esc_smart_tyan_for_cutscene_squad]:online_offline_group
+faction                 = bandit
+npc                     = esc_stalker_tyan_for_cutscene
+story_id                = esc_smart_tyan_for_cutscene_squad
+target_smart            = esc_smart_hutor
+
+[esc_smart_stalker_base_sister_squad]:online_offline_group
+faction 			    = stalker
+npc 					= esc_stalker_tyan_sister
+target_smart 	        = {+stalker_tyan_sister_thanks} esc_smart_stalker_base, esc_smart_hutor
+spawn_point             = {+stalker_tyan_sister_thanks} teleport_sister, spawn_tyan_sister
+story_id                = esc_smart_stalker_base_sister_squad
+
+[esc_smart_post_5_squad]:online_offline_group
+faction                 = bandit
+npc                     = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0
+target_smart            = esc_smart_post_5
+
+[esc_smart_post_6_squad]:online_offline_group
+faction                 = bandit
+npc                     = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0
+target_smart            = esc_smart_post_6
+
+[esc_smart_post_7_squad]:online_offline_group
+faction                 = bandit
+npc                     = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1
+target_smart            = esc_smart_post_7

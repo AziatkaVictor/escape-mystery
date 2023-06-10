@@ -1,0 +1,90 @@
+<string_table>
+	<string id="st_actor_name">
+		<text>Майор Суворов</text>
+	</string>
+	<string id="st_esc_army_trader">
+		<text>Капитан Кольский</text>
+	</string>
+	<string id="st_esc_army_mech">
+		<text>Сержант Варчук</text>
+	</string>
+	<string id="st_esc_army_medic">
+		<text>Сержант Воронцов</text>
+	</string>
+	<string id="st_esc_novice_trader">
+		<text>Сидорович</text>
+	</string>
+	<string id="st_esc_stalker_novice_mech">
+		<text>Васян</text>
+	</string>
+	<string id="st_esc_stalker_novice_medic">
+		<text>Медик</text>
+	</string>
+	<string id="st_esc_stalker_novice_filin">
+		<text>Филин</text>
+	</string>
+	<string id="st_esc_stalker_novice_barmen">
+		<text>Повар</text>
+	</string>
+	<string id="st_esc_stalker_novice_shapito">
+		<text>Шапито</text>
+	</string>
+	<string id="st_esc_stalker_novice_horse">
+		<text>Конь</text>
+	</string>
+	<string id="st_esc_stalker_novice_lider">
+		<text>Вожатый</text>
+	</string>
+	<string id="st_atp_help">
+		<text>Петруха</text>
+	</string>
+	<string id="st_esc_stalker_tyan">
+		<text>Хозяйка</text>
+	</string>
+	<string id="st_esc_stalker_tyan_sister">
+		<text>Беляночка</text>
+	</string>
+	<string id="st_esc_stalker_barmen">
+		<text>Адвокат</text>
+	</string>
+	<string id="st_esc_stalker_alcohol">
+		<text>Cобрат</text>
+	</string>
+	<string id="st_esc_stalker_toz_prizrak">
+		<text>Магнат</text>
+	</string>
+	<string id="st_esc_bandit_leader">
+		<text>Бубна</text>
+	</string>
+	<string id="st_esc_stalker_mechanic">
+		<text>Хвост</text>
+	</string>
+	<string id="st_esc_stalker_secret">
+		<text>Бревно</text>
+	</string>
+	<string id="st_esc_stalker_vodka">
+		<text>Перщик</text>
+	</string>
+	<string id="st_esc_bandit_leader_tyan">
+		<text>Гильза</text>
+	</string>
+	<string id="st_esc_scince_one">
+		<text>Профессор Ковалевский</text>
+	</string>
+	<string id="st_esc_scince_two">
+		<text>Лаборант Столетов</text>
+	</string>
+	<string id="st_sf_stalker_ded">
+		<text>Дед</text>
+	</string>
+	<string id="st_sf_idiot">
+		<text>Идиот</text>
+	</string>
+	<string id="st_sf_brother">
+		<text>Братан</text>
+	</string>
+	<string id="st_sf_axe">
+		<text>Топор</text>
+	</string>
+	
+</string_table>

@@ -1,0 +1,52 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_info = {+stalker_patrol_about} %=spawn_object_in(filin_note:shron_filina)% sr_idle@tip_timer
+
+[sr_idle@tip_timer]
+on_info = {=actor_has_item(filin_note)} %+filin_dead_found% sr_idle@tip
+
+[sr_idle@found_wait]
+on_info1 = {=actor_has_item(ulika_1_item) -dead_1_note} sr_idle@tip_dead_1_1
+on_info2 = {=actor_has_item(ulika_2_item) -dead_2_note} sr_idle@tip_dead_2_1
+on_info3 = {+dead_1_note +dead_2_note} sr_idle@found_all_1
+
+[sr_idle@clear_tip]
+on_signal = sound_end | sr_idle@found_wait %=clear_subtitles()%
+
+[sr_idle@tip]
+on_game_timer = 10 | %=create_subtitles(st_actor_name:st_filin_dead_found_1)% sr_idle@tip_2
+
+[sr_idle@tip_2]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_filin_dead_found_2)% sr_idle@clear_tip
+
+[sr_idle@tip_dead_1_1]
+on_game_timer = 10 | %=create_subtitles(st_actor_name:st_filin_dead_1_found_1)% sr_idle@tip_dead_1_2
+
+[sr_idle@tip_dead_1_2]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_filin_dead_1_found_2) +dead_1_note% sr_idle@clear_tip
+
+[sr_idle@tip_dead_2_1]
+on_game_timer = 10 | %=create_subtitles(st_actor_name:st_filin_dead_2_found_1)% sr_idle@tip_dead_2_2
+
+[sr_idle@tip_dead_2_2]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_filin_dead_2_found_2) +dead_2_note% sr_idle@clear_tip
+
+[sr_idle@found_all_1]
+on_game_timer = 10 | %+notes_dead_found =create_subtitles(st_actor_name:st_filin_dead_all_found_1)% sr_idle@found_all_2
+
+[sr_idle@found_all_2]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_filin_dead_all_found_2)% sr_idle@found_all_3
+
+[sr_idle@found_all_3]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_filin_dead_all_found_3) =give_task(manyak_end) =remove_item(ulika_1_item) =remove_item(ulika_2_item) =spawn_object(usb_for_horse:spawn_pda)% sr_idle@clear
+
+[sr_idle@clear]
+on_signal = sound_end | %=clear_subtitles()% sr_idle@wait_for_pda
+
+[sr_idle@wait_for_pda]
+on_info = {=actor_has_item(usb_for_horse)} %=create_subtitles(st_actor_name:st_found_pda_1)% sr_idle@clear_again
+
+[sr_idle@clear_again]
+on_signal = sound_end | %=clear_subtitles() +actor_has_pad_shapito% nil

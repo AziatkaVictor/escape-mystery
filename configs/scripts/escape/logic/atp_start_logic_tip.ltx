@@ -1,0 +1,29 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_info = {+atp_start} sr_idle@tip_one
+
+[sr_idle@tip_one]
+on_game_timer = 60 | sr_idle@timer_1 %=create_subtitles(st_atp_bandit:st_atp_tip_1)%
+
+[sr_idle@timer_1]
+on_signal = sound_end | sr_idle@tip_two %=clear_subtitles()%
+
+[sr_idle@tip_two]
+on_game_timer = 30 | sr_idle@timer_2 %=create_subtitles(st_atp_help:st_atp_tip_2)%
+
+[sr_idle@timer_2]
+on_signal = sound_end | sr_idle@tip_three %=clear_subtitles()%
+
+[sr_idle@tip_three]
+on_game_timer = 40 | sr_idle@timer_3 %=create_subtitles(st_atp_bandit:st_atp_tip_3)%
+
+[sr_idle@timer_3]
+on_signal = sound_end | sr_idle@tip_four %=clear_subtitles()%
+
+[sr_idle@tip_four]
+on_game_timer = 60 | sr_idle@nil %=create_subtitles(st_atp_help:st_atp_tip_4)% 
+
+[sr_idle@nil]
+on_signal = sound_end | %=clear_subtitles()% nil

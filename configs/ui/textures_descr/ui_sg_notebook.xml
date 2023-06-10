@@ -1,0 +1,120 @@
+<w>
+    <file name="ui\sg_notebook">
+
+		<texture id="ui_sg_notebook_background" x="0" y="0" width="1024" height="659" />
+
+		<texture id="ui_subtitle_background" x="0" y="852" width="512" height="128" />
+
+		<texture id="ui_sg_notebook_craft_frame" x="1202" y="15" width="104" height="104" />
+		
+		<texture id="ui_sg_notebook_craft_ingr_tracking_btn_d" x="1319" y="0" width="1" height="1" />
+		<texture id="ui_sg_notebook_craft_ingr_tracking_btn_e" x="1202" y="15" width="104" height="104" />
+		<texture id="ui_sg_notebook_craft_ingr_tracking_btn_h" x="1319" y="15" width="104" height="104" />
+		<texture id="ui_sg_notebook_craft_ingr_tracking_btn_t" x="1436" y="15" width="104" height="104" />
+		
+		<texture id="ui_sg_notebook_texture_medkit_army" x="1203" y="143" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_medkit_scientic" x="1203" y="260" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_medkit" x="1203" y="370" width="100" height="100" />
+		
+		<texture id="ui_sg_notebook_texture_antirad" x="1323" y="144" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_bandage" x="1323" y="254" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_clean_medbox" x="1323" y="370" width="100" height="100" />	
+		
+		<texture id="ui_sg_notebook_texture_ammo_9x18_fmj" x="1438" y="144" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_ammo_9x19_fmj" x="1440" y="249" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_ammo_5.45x39_fmj" x="1440" y="366" width="100" height="100" />
+		
+		<texture id="ui_sg_notebook_texture_ammo_5.56x45_ss190" x="1554" y="144" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_ammo_11.43x23_fmj" x="1554" y="252" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_ammo_12x70_buck" x="1554" y="367" width="100" height="100" />
+		
+		<texture id="ui_sg_notebook_texture_ammo_12x76_dart" x="1670" y="148" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_ammo_12x76_zhekan" x="1670" y="256" width="100" height="100" />			
+
+		<texture id="ui_sg_notebook_texture_af_cr_fl_fragment" x="1205" y="503" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_af_el_flash_fragment" x="1305" y="503" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_af_gravi_fragment" x="1505" y="503" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_af_baloon_fragment" x="1405" y="503" width="100" height="100" />
+		
+		<texture id="ui_sg_notebook_texture_sg_grenade_ag_1" x="1206" y="639" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_sg_grenade_ag_2" x="1331" y="639" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_sg_grenade_ag_3" x="1463" y="640" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_sg_grenade_ag_4" x="1601" y="639" width="100" height="100" />
+		
+		<texture id="ui_sg_notebook_texture_grenade_ag_1" x="1331" y="639" width="100" height="100" />
+		
+		<texture id="ui_sg_notebook_texture_sg_x14_diary" x="1701" y="639" width="100" height="100" />
+		
+		<texture id="ui_sg_notebook_texture_esc_z34_place_article" x="0" y="728" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_esc_e100_place_article" x="100" y="728" width="100" height="100" />	
+		<texture id="ui_sg_notebook_texture_esc_d91_place_article" x="200" y="728" width="100" height="100" />	
+		<texture id="ui_sg_notebook_texture_yan_a1_place_article" x="300" y="728" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_yan_d11_place_article" x="400" y="728" width="100" height="100" />
+		<texture id="ui_sg_notebook_texture_sg_dc_qi_place_article" x="500" y="728" width="100" height="100" />
+		
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_ar_serum_big" x="1241" y="779" width="30" height="30" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_ar_serum_small_average" x="1231" y="869" width="20" height="20" />		
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_ar_serum" x="1236" y="822" width="25" height="25" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_ar_serum_small" x="1226" y="895" width="15" height="15" />
+
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_syringes_big" x="1211" y="779" width="30" height="30" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_syringes_small_average" x="1211" y="869" width="20" height="20" />		
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_syringes" x="1211" y="822" width="25" height="25" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_syringes_small" x="1211" y="895" width="15" height="15" />
+
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_dry_med_big" x="1271" y="779" width="30" height="30" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_dry_med_small_average" x="1251" y="869" width="20" height="20" />		
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_dry_med" x="1261" y="822" width="25" height="25" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_dry_med_small" x="1241" y="895" width="15" height="15" />
+
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_cloth_big" x="1301" y="779" width="30" height="30" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_cloth_small_average" x="1271" y="869" width="20" height="20" />		
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_cloth" x="1286" y="822" width="25" height="25" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_cloth_small" x="1256" y="895" width="15" height="15" />
+
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_powder_big" x="1331" y="779" width="30" height="30" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_powder_small_average" x="1291" y="869" width="20" height="20" />		
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_powder" x="1311" y="822" width="25" height="25" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_powder_small" x="1271" y="895" width="15" height="15" />
+
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_automat_big" x="1361" y="779" width="30" height="30" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_automat_small_average" x="1311" y="869" width="20" height="20" />		
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_automat" x="1336" y="822" width="25" height="25" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_automat_small" x="1286" y="895" width="15" height="15" />
+
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_pistol_big" x="1391" y="779" width="30" height="30" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_pistol_small_average" x="1331" y="869" width="20" height="20" />		
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_pistol" x="1361" y="822" width="25" height="25" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_pistol_small" x="1301" y="895" width="15" height="15" />
+
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_shotgun_big" x="1421" y="779" width="30" height="30" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_shotgun_small_average" x="1351" y="869" width="20" height="20" />		
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_shotgun" x="1386" y="822" width="25" height="25" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_shotgun_small" x="1316" y="895" width="15" height="15" />
+
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_armor_plates_big" x="1631" y="779" width="30" height="30" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_armor_plates_small_average" x="1491" y="869" width="20" height="20" />		
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_armor_plates" x="1561" y="822" width="25" height="25" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_armor_plates_small" x="1421" y="895" width="15" height="15" />
+
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_sg_cr_i_rezina_big" x="1661" y="779" width="30" height="30" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_sg_cr_i_rezina_small_average" x="1511" y="869" width="20" height="20" />		
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_sg_cr_i_rezina" x="1586" y="822" width="25" height="25" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_sg_cr_i_rezina_small" x="1436" y="895" width="15" height="15" />
+
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_sg_cr_i_electro_big" x="1691" y="779" width="30" height="30" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_sg_cr_i_electro_small_average" x="1531" y="869" width="20" height="20" />		
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_sg_cr_i_electro" x="1611" y="822" width="25" height="25" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_sg_cr_i_electro_small" x="1451" y="895" width="15" height="15" />	
+		
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_sg_x14_diary_big" x="1691" y="779" width="30" height="30" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_sg_x14_diary_small_average" x="1531" y="869" width="20" height="20" />		
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_sg_x14_diary" x="1486" y="822" width="25" height="25" />
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_sg_x14_diary_small" x="1376" y="895" width="15" height="15" />
+
+	    <texture id="ui_sg_map_spot_craft_ingr_tracker_science_small" x="1391" y="895" width="15" height="15" />
+		
+		<texture id="ui_sg_map_spot_level_changer" x="1511" y="822" width="25" height="25" />	
+		<texture id="ui_sg_map_spot_level_changer_small" x="1406" y="895" width="15" height="15" />			
+	</file>	
+</w>

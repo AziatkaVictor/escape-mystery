@@ -1,0 +1,41 @@
+[logic]
+active = sr_idle@start
+
+[sr_idle@start]
+on_actor_inside = sr_idle@wait
+
+[sr_idle@wait]
+on_info = sr_idle@tip_1 %=create_subtitles(st_esc_stalker_tyan:st_tyan_talk_1)%
+
+[sr_idle@tip_1]
+on_signal = sound_end | sr_idle@tip_2 %=create_subtitles(st_random_stalker_1:st_tyan_talk_2)%
+
+[sr_idle@tip_2]
+on_signal = sound_end | sr_idle@tip_3 %=create_subtitles(st_esc_stalker_tyan:st_tyan_talk_3)%
+
+[sr_idle@tip_3]
+on_signal = sound_end | sr_idle@tip_clear %=create_subtitles(st_random_stalker_1:st_tyan_talk_4)%
+
+[sr_idle@tip_clear]
+on_signal = sound_end | sr_idle@bandits_part_wait %=clear_subtitles() +tyan_talk_end%
+
+[sr_idle@bandits_part_wait]
+on_info = {+bandit_see_actor} %=create_subtitles(st_esc_bandit_leader:st_bandits_see_actor_1)% sr_idle@bandits_part_start_1
+
+[sr_idle@bandits_part_start_1]
+on_signal = sound_end | sr_idle@bandits_part_start_2 %=create_subtitles(st_actor_name:st_bandits_see_actor_2)%
+
+[sr_idle@bandits_part_start_2]
+on_signal = sound_end | %=clear_subtitles()% sr_idle@science_wait
+
+[sr_idle@science_wait]
+on_info = {+science_hi} sr_idle@science_ty_1 
+
+[sr_idle@science_ty_1]
+on_game_timer = 10 | %=create_subtitles(st_esc_scince_one:st_science_wait_1)% sr_idle@science_ty_2
+
+[sr_idle@science_ty_2]
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_science_wait_2)% sr_idle@clear 
+
+[sr_idle@clear]
+on_signal = sound_end | %=clear_subtitles()% nil

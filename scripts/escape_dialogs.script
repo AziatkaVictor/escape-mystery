@@ -1,0 +1,19 @@
+function remove_pda()
+	xr_effects.remove_item(actor, npc, {"usb_for_horse"})
+end
+
+function give_task_tyan()
+	task_manager.get_task_manager():give_task("save_the_scince")
+end
+
+function remove_toz()
+	xr_effects.remove_item(actor, npc, {"wpn_toz34_quest"})
+end
+
+function has_toz_quest(first_speaker, second_speaker)
+	return first_speaker:object("wpn_toz34_quest") ~= nil
+end
+
+function has_quest_artefact(first_speaker, second_speaker)
+	return first_speaker:object("af_quest_found") ~= nil
+end
