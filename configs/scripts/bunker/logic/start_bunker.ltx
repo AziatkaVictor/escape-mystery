@@ -2,10 +2,10 @@
 active = sr_idle@start
 
 [sr_idle@start]
-on_info = %=teleport_actor(lab_actor_spawn_walk:lab_actor_spawn_look) =spawn_corpse(sim_default_military_1:bun_dead_soldier_1) =spawn_corpse(sim_default_military_1:bun_dead_soldier_2) =spawn_corpse(sim_default_military_1:bun_dead_soldier_3) =spawn_corpse(sim_default_military_1:bun_dead_soldier_4) =spawn_corpse(sim_default_military_1:bun_dead_soldier_5)% sr_idle@tip_1
+on_info = {=actor_on_level(bunker)} %=teleport_actor(lab_actor_spawn_walk:lab_actor_spawn_look) =spawn_corpse(sim_default_military_1:bun_dead_soldier_1) =spawn_corpse(sim_default_military_1:bun_dead_soldier_2) =spawn_corpse(sim_default_military_1:bun_dead_soldier_3) =spawn_corpse(sim_default_military_1:bun_dead_soldier_4) =spawn_corpse(sim_default_military_1:bun_dead_soldier_5)% sr_idle@tip_1
 
 [sr_idle@tip_1]
-on_signal = sound_end | %=create_subtitles(st_actor_name:st_start_bunker_1)% sr_idle@tip_2
+on_game_timer = 10 | %=create_subtitles(st_actor_name:st_start_bunker_1)% sr_idle@tip_2
 
 [sr_idle@tip_2]
 on_signal = sound_end | %=create_subtitles(st_actor_name:st_start_bunker_2)% sr_idle@clear
