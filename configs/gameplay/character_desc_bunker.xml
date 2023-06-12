@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml>
+    <specific_character id="bun_soldier" team_default="1">
+        <name>st_bun_soldier</name>
+        <icon>ui_inGame2_Soldier_1</icon>
+        <map_icon x="1" y="0"></map_icon>
+        <class>bun_soldier</class>
+        <community>army</community>
+        <rank>60</rank>
+        <reputation>0</reputation>
+        <mechanic_mode>1</mechanic_mode>
+        <visual>actors\stalker_soldier\stalker_soldier_1</visual>
+        <money min="2500" max="5000" infinitive="0"></money>
+        <snd_config>characters_voice\human_01\military\</snd_config>
+        <crouch_type></crouch_type>
+        <supplies>
+            [spawn] \n
+        </supplies>
+        <start_dialog>soldier_hi</start_dialog>
+        <actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+</xml>

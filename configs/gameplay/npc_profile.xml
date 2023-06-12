@@ -183,6 +183,10 @@
 	<character id="sf_axe">
 		<class>sf_axe</class>
 	</character>
+	
+	<character id="bun_soldier">
+		<class>bun_soldier</class>
+	</character>
 
 	<character id="actor">
 		<class>Actor</class>
