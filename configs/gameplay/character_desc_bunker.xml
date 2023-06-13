@@ -16,7 +16,7 @@
         <supplies>
             [spawn] \n
         </supplies>
-        <start_dialog>soldier_hi</start_dialog>
+        <start_dialog>dead_soldier_hi</start_dialog>
         <actor_dialog>actor_break_dialog</actor_dialog>
     </specific_character>
 </xml>

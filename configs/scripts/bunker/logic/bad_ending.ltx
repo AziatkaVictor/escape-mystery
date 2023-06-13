@@ -2,6 +2,6 @@
 active = sr_idle@end
  
 [sr_idle@end]
-on_actor_inside = %=run_tutorial(outro_game)% sr_idle@stop
+on_actor_inside = %=run_tutorial(outro_game) +game_end% sr_idle@stop
 
 [sr_idle@stop]

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<game_dialogs>
+  <dialog id="dead_soldier_hi">
+    <phrase_list>
+      <phrase id="0">
+        <text>dead_soldier_hi_0</text>
+        <next>1</next>
+      </phrase>
+      <phrase id="1">
+        <text>dead_soldier_hi_1</text>
+        <next>2</next>
+      </phrase>
+      <phrase id="2">
+        <text>dead_soldier_hi_2</text>
+        <next>3</next>
+      </phrase>
+      <phrase id="3">
+        <text>dead_soldier_hi_3</text>
+        <next>4</next>
+      </phrase>
+      <phrase id="4">
+        <text>dead_soldier_hi_4</text>
+        <next>5</next>
+      </phrase>
+      <phrase id="5">
+        <text>dead_soldier_hi_5</text>
+        <next>6</next>
+      </phrase>
+      <phrase id="6">
+        <text>dead_soldier_hi_6</text>
+        <next>7</next>
+      </phrase>
+      <phrase id="7">
+        <text>dead_soldier_hi_7</text>
+        <next>8</next>
+      </phrase>
+      <phrase id="8">
+        <text>dead_soldier_hi_8</text>
+        <next>9</next>
+      </phrase>
+      <phrase id="9">
+        <text>dead_soldier_hi_9</text>
+        <next>10</next>
+      </phrase>
+      <phrase id="10">
+        <text>dead_soldier_hi_10</text>
+        <next>11</next>
+      </phrase>
+      <phrase id="11">
+        <text>dead_soldier_hi_11</text>
+        <next>12</next>
+      </phrase>
+      <phrase id="12">
+        <text>dead_soldier_hi_12</text>
+        <next>13</next>
+        <action>notes.soldier_give_items</action>
+      </phrase>
+      <phrase id="13">
+        <text>dead_soldier_hi_13</text>
+        <next>14</next>
+      </phrase>
+      <phrase id="14">
+        <text>dead_soldier_hi_14</text>
+        <next>15</next>
+      </phrase>
+      <phrase id="15">
+        <text>dead_soldier_hi_15</text>
+        <give_info>dead_soldier_hi</give_info>
+        <action>dialogs.break_dialog</action>
+        <action>notes.kill_soldier</action>
+      </phrase>
+    </phrase_list>
+  </dialog>
+</game_dialogs>

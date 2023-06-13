@@ -11,7 +11,7 @@ on_info     = {+button_1_pressed +button_2_pressed +button_3_pressed} ph_button@
 anim_blend  = true
 anim        = idle
 tooltip     = bunker_main_button_end_press
-on_press    = ph_button@off %+good_ending =disable_ui =run_cam_effector(earthquake) =run_postprocess(alcohol) =play_sound(surge_earthquake_sound)%
+on_press    = ph_button@off %+good_ending =disable_ui =run_cam_effector(earthquake) =run_postprocess(alcohol) =play_sound(surge_earthquake_sound) +game_end%
 
 [ph_button@off]
 anim_blend  = true

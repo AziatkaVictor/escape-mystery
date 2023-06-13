@@ -147,7 +147,7 @@ function go_to_base_with_sister()
 end
 
 function add_science_device()
-	xr_effects.give_item(nil, nil, {"device_from_scince", "actor"})
+	xr_effects.give_actor(nil, nil, {"device_from_scince"})
 end
 
 function remove_pda_shapito()
@@ -215,7 +215,16 @@ function spawn_himera()
 end
 
 function idiot_give_items(first_speaker, second_speaker)
-	xr_effects.give_item(nil, nil, {"battery_for_forest", "actor"})
-	xr_effects.give_item(nil, nil, {"docs_3", "actor"})
+	xr_effects.give_actor(nil, nil, {"battery_for_forest"})
+	xr_effects.give_actor(nil, nil, {"docs_3"})
 	xr_effects.kill_npc(nil, nil, {"sf_idiot"})
+end
+
+function soldier_give_items(first_speaker, second_speaker)
+	xr_effects.give_actor(nil, nil, {"main_quest_item"})
+	xr_effects.give_actor(nil, nil, {"bunkers_door_key"})
+end
+
+function kill_soldier(first_speaker, second_speaker)
+	xr_effects.kill_npc(nil, nil, {"bun_soldier"})
 end

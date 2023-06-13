@@ -11,19 +11,4 @@ on_game_timer = 10 | %=create_subtitles(st_actor_name:st_start_bunker_1)% sr_idl
 on_signal = sound_end | %=create_subtitles(st_actor_name:st_start_bunker_2)% sr_idle@clear
 
 [sr_idle@clear]
-on_signal = sound_end | %=clear_subtitles =give_task(escape_from_lab)% sr_idle@wait_for_item
-
-[sr_idle@wait_for_item]
-on_info = {=actor_has_item(main_quest_item)} %=create_subtitles(st_actor_name:st_found_docs_1)% sr_idle@wait_for_item_2
-
-[sr_idle@wait_for_item_2]
-on_signal = sound_end | %=create_subtitles(st_actor_name:st_found_docs_2)% sr_idle@wait_for_item_3
-
-[sr_idle@wait_for_item_3]
-on_signal = sound_end | %=create_subtitles(st_actor_name:st_found_docs_3)% sr_idle@wait_for_item_4
-
-[sr_idle@wait_for_item_4]
-on_signal = sound_end | %=create_subtitles(st_actor_name:st_found_docs_4)% sr_idle@wait_for_item_clear
-
-[sr_idle@wait_for_item_clear]
-on_signal = sound_end | %=clear_subtitles +found_docs% nil
+on_signal = sound_end | %=clear_subtitles =give_task(escape_from_lab)% nil
