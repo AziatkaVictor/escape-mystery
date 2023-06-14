@@ -321,24 +321,6 @@
 		<text>Идиот!</text>
 	</string>
 
-	<!-- Братья возле автобуса -->
-
-	<string id="st_avtobus_text_1">
-		<text>Братан, смотри. Помнишь, ездили на таких? Красавец, сфоткать бы.</text>
-	</string>
-	<string id="st_avtobus_text_2">
-		<text>Думаю, будь у тебя фотоапарат, звали бы тебя "Саня Фотограф".</text>
-	</string>
-	<string id="st_avtobus_text_3">
-		<text>Так у меня он был!</text>
-	</string>
-	<string id="st_avtobus_text_4">
-		<text>Конечно был... Месяц назад. Ты его в карты проиграл.</text>
-	</string>
-	<string id="st_avtobus_text_5">
-		<text>Так эта сука жульничала! Реально!</text>
-	</string>
-
 	<!-- Братья возле речки -->
 
 	<string id="st_brich_text_1">
@@ -564,31 +546,11 @@
 		<text>Стоит оглядеться. Но мне не по себе от этого места.</text>
 	</string>
 
-	<string id="st_found_docs_1">
-		<text>Да ну нафиг... Серьезно? Что тут забыл кейс, который мне было положено найти?</text>
-	</string>
-	<string id="st_found_docs_2">
-		<text>Ладно, нашел и нашел, остальное не важно. Стоит проверить содержимое, на всякий случай.</text>
-	</string>
-	<string id="st_found_docs_3">
-		<text>Что за?.. Да ну, бред какой-то... Машина для Телепортации? Монолит? Что за чушь?</text>
-	</string>
-	<string id="st_found_docs_4">
-		<text>Не знаю, правда ли это... Но если да, то мне стоит решить, что делать с этим. Но для начала, стоит найти выход отсюда.</text>
-	</string>
-
 	<string id="st_enter_main_lab_1">
 		<text>А вот и оно, главное помещение... Так, надо определиться.</text>
 	</string>
 	<string id="st_enter_main_lab_2">
 		<text>Либо я сейчас уничтожаю установку, либо сваливаю. Как же мне поступить?</text>
-	</string>
-
-	<string id="st_found_dead_soldiers_1">
-		<text>Твою мать... А вот и военные, это же кто их так...</text>
-	</string>
-	<string id="st_found_dead_soldiers_2">
-		<text>Они точно с КПП... Еще не хватало, чтобы я не кончил так же.</text>
 	</string>
 
 </string_table>
