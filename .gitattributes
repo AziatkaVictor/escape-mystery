@@ -1,2 +1,3 @@
+*.*     export-ignore
 *.ltx   text = auto     working-tree-encoding=cp1251
 *.xml   text = auto     working-tree-encoding=cp1251
