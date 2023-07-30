@@ -17,7 +17,23 @@ on_signal = sound_end | %=create_subtitles(st_voice:st_brich_text_2)% sr_idle@ti
 
 [sr_idle@tip_3]
 on_info = %=set_weather(default_secret_forest_foggy:true)%
-on_signal = sound_end | %=create_subtitles(st_voice:st_brich_text_3)% sr_idle@tip_end
+on_signal = sound_end | %=create_subtitles(st_voice:st_brich_text_3)% sr_idle@tip_4
+
+[sr_idle@tip_4]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_brich_text_4)% sr_idle@tip_5
+
+[sr_idle@tip_5]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_brich_text_5)% sr_idle@tip_6
+
+[sr_idle@tip_6]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_brich_text_6)% sr_idle@tip_7
+
+[sr_idle@tip_7]
+on_info = %=set_weather(default_secret_forest_foggy:true)%
+on_signal = sound_end | %=create_subtitles(st_voice:st_brich_text_7)% sr_idle@tip_end
 
 [sr_idle@tip_end]
 on_signal = sound_end | %=disable_campfire(sf_brich) =clear_subtitles() =run_postprocess(blink) =set_weather(default_secret_forest:true)% nil
