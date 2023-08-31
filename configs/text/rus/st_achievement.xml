@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
-	<string id="st_philosophy_name">
-		<text>Философ</text>
-	</string>
-	<string id="st_philosophy_descr">
-		<text>Вы заметили сидящего в одиночестве сталкера, который никак не вписывался в окружение. Не смотря не все, вы дали ему выговориться.</text>
-	</string>
-	<string id="st_philosophy_hint">
-		<text>Спасибо</text>
-	</string>
-
 	<string id="st_get_achievement">
 		<text>Получено достижение:</text>
 	</string>
