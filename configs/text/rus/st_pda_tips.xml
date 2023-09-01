@@ -32,6 +32,31 @@
 		<text>Туннель (Электрическая аномалия)</text>
 	</string>
 
+	<string id="st_sf_1_spot">
+		<text>Автобусная остановка</text>
+	</string>
+	<string id="st_sf_2_spot">
+		<text>Ферма</text>
+	</string>
+	<string id="st_sf_3_spot">
+		<text>Мост (Гравитационная аномалия)</text>
+	</string>
+	<string id="st_sf_4_spot">
+		<text>Деревня</text>
+	</string>
+	<string id="st_sf_5_spot">
+		<text>Церковь</text>
+	</string>
+	<string id="st_sf_6_spot">
+		<text>Лес (Термическая аномалия)</text>
+	</string>
+	<string id="st_sf_7_spot">
+		<text>Комплекс</text>
+	</string>
+	<string id="st_sf_8_spot">
+		<text>Упавший вертолёт (Пси-аномалия)</text>
+	</string>
+
 	<string id="st_radio_off">
 		<text>Включить ($$ACTION_USE$$)</text>
 	</string>

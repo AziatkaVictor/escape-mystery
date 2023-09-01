@@ -226,7 +226,15 @@ local primary_objects_tbl =
 	{target="esc_7_spot",		hint="st_esc_7_spot"},
 	{target="esc_8_spot",		hint="st_esc_8_spot"},
 	{target="esc_9_spot",		hint="st_esc_9_spot"},
-	{target="esc_10_spot",		hint="st_esc_10_spot"}
+	{target="esc_10_spot",		hint="st_esc_10_spot"},
+	{target="sf_spot_1",		hint="st_sf_1_spot"},
+	{target="sf_spot_2",		hint="st_sf_2_spot"},
+	{target="sf_spot_3",		hint="st_sf_3_spot"},
+	{target="sf_spot_4",		hint="st_sf_4_spot"},
+	{target="sf_spot_5",		hint="st_sf_5_spot"},
+	{target="sf_spot_6",		hint="st_sf_6_spot"},
+	{target="sf_spot_7",		hint="st_sf_7_spot"},
+	{target="sf_spot_8",		hint="st_sf_8_spot"},
 }
 
 local change_objects_tbl =
