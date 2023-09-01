@@ -26,9 +26,9 @@
 	<texture id="ui_inGame2_FindArtefact" x="83" y="0" width="83" height="47" />
 	<texture id="ui_inGame2_ChargeBattery" x="83" y="47" width="83" height="47" />
 	<texture id="ui_inGame2_EscapeFromForest" x="83" y="94" width="83" height="47" />
-	<texture id="ui_inGame2_Issledovatelskaya_gruppa" x="83" y="141" width="83" height="47" />
-	<texture id="ui_inGame2_Istoriya_dolga" x="83" y="188" width="83" height="47" />
-	<texture id="ui_inGame2_Ischeznovenie_stalkerov" x="83" y="235" width="83" height="47" />
+	<texture id="ui_inGame2_GoToComplex" x="83" y="141" width="83" height="47" />
+	<texture id="ui_inGame2_HelpIdiot" x="83" y="188" width="83" height="47" />
+	<texture id="ui_inGame2_EscapeFromLab" x="83" y="235" width="83" height="47" />
 	<texture id="ui_inGame2_Karti_mestnosti" x="83" y="282" width="83" height="47" />
 	<texture id="ui_inGame2_Kontrakt_s_uchenimi" x="83" y="329" width="83" height="47" />
 	<texture id="ui_inGame2_Kopachi" x="83" y="376" width="83" height="47" />
