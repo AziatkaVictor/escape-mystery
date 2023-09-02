@@ -75,7 +75,7 @@
       		<main_wnd>
         		<auto_static start_time="0" length_sec="15.9" x="0" y="32" width="1024" height="576" stretch="1">
           			<widescreen_rect width="1024" height="768"/>
-          			<texture width="638" height="358">outro\20a_kovalski_live</texture>
+          			<texture width="638" height="358"></texture>
    				</auto_static>
         		<auto_static start_time="0" length_sec="15.9" x="500" y="870" width="870" height="500" alignment="c" stretch="1"
 					light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
@@ -92,7 +92,7 @@
       		<main_wnd>
         		<auto_static start_time="0" length_sec="15.9" x="0" y="32" width="1024" height="576" stretch="1">
           			<widescreen_rect width="1024" height="768"/>
-          			<texture width="638" height="358">outro\20a_kovalski_live</texture>
+          			<texture width="638" height="358"></texture>
    				</auto_static>
         		<auto_static start_time="0" length_sec="15.9" x="500" y="870" width="870" height="500" alignment="c" stretch="1"
 					light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
@@ -109,11 +109,127 @@
       		<main_wnd>
         		<auto_static start_time="0" length_sec="17.4" x="0" y="32" width="1024" height="576" stretch="1">
           			<widescreen_rect width="1024" height="768"/>
-          			<texture width="638" height="358">outro\20b_kovalski_die</texture>
+          			<texture width="638" height="358"></texture>
    				</auto_static>
         		<auto_static start_time="0" length_sec="17.4" x="500" y="870" width="870" height="500" alignment="c" stretch="1"
 					light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
           			<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_bad_ending</text>
+        		</auto_static>
+			</main_wnd>
+		</item>
+		
+		<!-- good_ending_wife -->
+		<item>
+			<length_sec>15.9</length_sec>
+      		<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_a</sound> -->
+      		<function_check_start>outro_cond.is_good_ending</function_check_start>
+      		<main_wnd>
+        		<auto_static start_time="0" length_sec="15.9" x="0" y="32" width="1024" height="576" stretch="1">
+          			<widescreen_rect width="1024" height="768"/>
+          			<texture width="638" height="358"></texture>
+   				</auto_static>
+        		<auto_static start_time="0" length_sec="15.9" x="500" y="870" width="870" height="500" alignment="c" stretch="1"
+					light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
+          			<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_good_ending_wife</text>
+        		</auto_static>
+			</main_wnd>
+		</item>
+
+		<!-- bad_ending_wife -->
+		<item>
+			<length_sec>17.4</length_sec>
+      		<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_b</sound> -->
+      		<function_check_start>outro_cond.is_bad_ending</function_check_start>
+      		<main_wnd>
+        		<auto_static start_time="0" length_sec="17.4" x="0" y="32" width="1024" height="576" stretch="1">
+          			<widescreen_rect width="1024" height="768"/>
+          			<texture width="638" height="358"></texture>
+   				</auto_static>
+        		<auto_static start_time="0" length_sec="17.4" x="500" y="870" width="870" height="500" alignment="c" stretch="1"
+					light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
+          			<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_bad_ending_wife</text>
+        		</auto_static>
+			</main_wnd>
+		</item>
+
+		<!-- question -->
+		<item>
+			<length_sec>17.4</length_sec>
+      		<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_b</sound> -->
+      		<main_wnd>
+        		<auto_static start_time="0" length_sec="17.4" x="0" y="32" width="1024" height="576" stretch="1">
+          			<widescreen_rect width="1024" height="768"/>
+          			<texture width="638" height="358"></texture>
+   				</auto_static>
+        		<auto_static start_time="0" length_sec="17.4" x="500" y="870" width="870" height="500" alignment="c" stretch="1"
+					light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
+          			<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_question</text>
+        		</auto_static>
+			</main_wnd>
+		</item>
+
+		<!-- manyak -->
+		<item>
+			<length_sec>17.4</length_sec>
+      		<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_b</sound> -->
+      		<main_wnd>
+        		<auto_static start_time="0" length_sec="17.4" x="0" y="32" width="1024" height="576" stretch="1">
+          			<widescreen_rect width="1024" height="768"/>
+          			<texture width="638" height="358"></texture>
+   				</auto_static>
+        		<auto_static start_time="0" length_sec="17.4" x="500" y="870" width="870" height="500" alignment="c" stretch="1"
+					light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
+          			<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_manyak</text>
+        		</auto_static>
+			</main_wnd>
+		</item>
+		
+		<!-- good_tyan -->
+		<item>
+			<length_sec>15.9</length_sec>
+      		<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_a</sound> -->
+      		<function_check_start>outro_cond.is_good_tyan</function_check_start>
+      		<main_wnd>
+        		<auto_static start_time="0" length_sec="15.9" x="0" y="32" width="1024" height="576" stretch="1">
+          			<widescreen_rect width="1024" height="768"/>
+          			<texture width="638" height="358"></texture>
+   				</auto_static>
+        		<auto_static start_time="0" length_sec="15.9" x="500" y="870" width="870" height="500" alignment="c" stretch="1"
+					light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
+          			<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_good_tyan</text>
+        		</auto_static>
+			</main_wnd>
+		</item>
+
+		<!-- bad_tyan -->
+		<item>
+			<length_sec>17.4</length_sec>
+      		<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_b</sound> -->
+      		<function_check_start>outro_cond.is_bad_tyan</function_check_start>
+      		<main_wnd>
+        		<auto_static start_time="0" length_sec="17.4" x="0" y="32" width="1024" height="576" stretch="1">
+          			<widescreen_rect width="1024" height="768"/>
+          			<texture width="638" height="358"></texture>
+   				</auto_static>
+        		<auto_static start_time="0" length_sec="17.4" x="500" y="870" width="870" height="500" alignment="c" stretch="1"
+					light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
+          			<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_bad_tyan</text>
+        		</auto_static>
+			</main_wnd>
+		</item>
+
+		<!-- end -->
+		<item>
+			<length_sec>17.4</length_sec>
+      		<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_b</sound> -->
+      		<main_wnd>
+        		<auto_static start_time="0" length_sec="17.4" x="0" y="32" width="1024" height="576" stretch="1">
+          			<widescreen_rect width="1024" height="768"/>
+          			<texture width="638" height="358"></texture>
+   				</auto_static>
+        		<auto_static start_time="0" length_sec="17.4" x="500" y="870" width="870" height="500" alignment="c" stretch="1"
+					light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
+          			<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_end</text>
         		</auto_static>
 			</main_wnd>
 		</item>
@@ -162,396 +278,146 @@
 
 #include "ui\ui_credits.xml"
 
-<intro_logo>
+	<intro_logo>
 	<global_wnd width="1024" height="768">
 	</global_wnd>
 		<item>
 			<main_wnd>
 			</main_wnd>
 		</item>
-</intro_logo>
+	</intro_logo>
 
-<intro_game>
-   <global_wnd width="1024" height="768">
+	<intro_game>
+	<global_wnd width="1024" height="768">
 	</global_wnd>
 		<item>
 			<main_wnd>
 			</main_wnd>
 		</item>
-</intro_game>
-
-<!--
-#Phrase|string_count|coordinate
-1	4 (890)
-2	2 (920)
-3	2 (920)
-4	3 (910)
-5	4 (890)
-6	3 (910)
-7	4 (890)
-8	3 (910)
-9	4 (890)
-10	5 (870)
-11	2 (920)
-12	2 (920)
--->
-	<jup_b32_scanner>
-		<global_wnd/>
-
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">xr_effects.jup_b32_place_scanner</action>
-			<guard_key>use</guard_key>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
-							la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">jup_b209_scanner_place_tips</text>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</jup_b32_scanner>
-
-	<pri_b306_generator>
-		<global_wnd/>
-
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">xr_effects.pri_b306_generator_start</action>
-			<guard_key>use</guard_key>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
-							la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">pri_b306_generator_use</text>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</pri_b306_generator>
-
-	<jup_b206_plant>
-		<global_wnd/>
-
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">xr_effects.jup_b206_get_plant</action>
-			<guard_key>use</guard_key>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
-							la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">jup_b206_use_plant</text>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</jup_b206_plant>
-
-	<pas_b400_switcher>
-		<global_wnd/>
-
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">xr_effects.pas_b400_switcher</action>
-			<guard_key>use</guard_key>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
-							la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">pas_b400_tip_switcher</text>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</pas_b400_switcher>
-
-	<pri_a18_use_idol>
-		<global_wnd/>
-
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">xr_effects.pri_a18_use_idol</action>
-			<guard_key>use</guard_key>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
-							la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">pri_a18_use_idol</text>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</pri_a18_use_idol>
-
-	<jup_b209_monster_scanner_placed>
-		<global_wnd/>
-
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">xr_effects.jup_b209_place_scanner</action>
-			<guard_key>use</guard_key>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
-							la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">jup_b209_scanner_place_tips</text>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</jup_b209_monster_scanner_placed>
-
-	<jup_b9_heli_1>
-		<global_wnd/>
-
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">xr_effects.jup_b9_heli_1_searching</action>
-			<guard_key>use</guard_key>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
-							la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">st_search_helicopter</text>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</jup_b9_heli_1>
-
-	<jup_b8_heli_4>
-		<global_wnd/>
-
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">xr_effects.jup_b8_heli_4_searching</action>
-			<guard_key>use</guard_key>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
-							la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">st_search_helicopter</text>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</jup_b8_heli_4>
-
-	<jup_b10_ufo_tutor>
-		<global_wnd/>
-
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">xr_effects.jup_b10_ufo_searching</action>
-			<guard_key>use</guard_key>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
-							la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">jup_b10_ufo_searching_tips</text>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</jup_b10_ufo_tutor>
-
-
-	<zat_b101_heli_5>
-		<global_wnd/>
-
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">xr_effects.zat_b101_heli_5_searching</action>
-			<guard_key>use</guard_key>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
-							la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">st_search_helicopter</text>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</zat_b101_heli_5>
-
-	<zat_b28_heli_3>
-		<global_wnd/>
-
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">xr_effects.zat_b28_heli_3_searching</action>
-			<guard_key>use</guard_key>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
-							la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">st_search_helicopter</text>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</zat_b28_heli_3>
-
-	<zat_b100_heli_2>
-		<global_wnd/>
-
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">xr_effects.zat_b100_heli_2_searching</action>
-			<guard_key>use</guard_key>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
-							la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">st_search_helicopter</text>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</zat_b100_heli_2>
-
-	<zat_b33_snag_container>
-		<global_wnd/>
-
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">xr_effects.zat_b33_pic_snag_container</action>
-			<guard_key>use</guard_key>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
-							la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">zat_b33_car_searching_tip</text>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</zat_b33_snag_container>
+	</intro_game>
 
 	<tutorial_sleep>
-		<global_wnd/>
+	<global_wnd/>
 
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">xr_effects.sleep</action>
-<!--			<function_on_stop>xr_effects.sleep</function_on_stop> -->
-			<guard_key>use</guard_key>
-			<disabled_key>quit</disabled_key>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
-							la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">sleep_zone_tip</text>
-				</auto_static>
-			</main_wnd>
-		</item>
+	<item>
+		<disabled_key>quit</disabled_key>
+		<length_sec/>
+		<action id="use" finalize="1">xr_effects.sleep</action>
+	<!--			<function_on_stop>xr_effects.sleep</function_on_stop> -->
+		<guard_key>use</guard_key>
+		<disabled_key>quit</disabled_key>
+		<grab_input>0</grab_input>
+		<main_wnd>
+			<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1"
+						la_cyclic="1" la_texture="1" la_alpha="1">
+				<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">sleep_zone_tip</text>
+			</auto_static>
+		</main_wnd>
+	</item>
 	</tutorial_sleep>
 
 	<add_artefact>
-		<global_wnd/>
+	<global_wnd/>
 
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">notes.add_artefact</action>
-			<guard_key>use</guard_key>
+	<item>
+		<disabled_key>quit</disabled_key>
+		<length_sec/>
+		<action id="use" finalize="1">notes.add_artefact</action>
+		<guard_key>use</guard_key>
 
-			<disabled_key>quit</disabled_key>
-			<grab_input>0</grab_input>
+		<disabled_key>quit</disabled_key>
+		<grab_input>0</grab_input>
 
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">add_artefact_tip</text>
-				</auto_static>
-			</main_wnd>
-		</item>
+		<main_wnd>
+			<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
+				<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">add_artefact_tip</text>
+			</auto_static>
+		</main_wnd>
+	</item>
 
 	</add_artefact>
 
 	<add_battery>
-		<global_wnd/>
+	<global_wnd/>
 
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">notes.add_battery</action>
-			<guard_key>use</guard_key>
+	<item>
+		<disabled_key>quit</disabled_key>
+		<length_sec/>
+		<action id="use" finalize="1">notes.add_battery</action>
+		<guard_key>use</guard_key>
 
-			<disabled_key>quit</disabled_key>
-			<grab_input>0</grab_input>
+		<disabled_key>quit</disabled_key>
+		<grab_input>0</grab_input>
 
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">add_battery_tip</text>
-				</auto_static>
-			</main_wnd>
-		</item>
+		<main_wnd>
+			<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
+				<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">add_battery_tip</text>
+			</auto_static>
+		</main_wnd>
+	</item>
 
 	</add_battery>
 
 	<charge_battery>
-		<global_wnd/>
+	<global_wnd/>
 
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">notes.charge_battery</action>
-			<guard_key>use</guard_key>
+	<item>
+		<disabled_key>quit</disabled_key>
+		<length_sec/>
+		<action id="use" finalize="1">notes.charge_battery</action>
+		<guard_key>use</guard_key>
 
-			<disabled_key>quit</disabled_key>
-			<grab_input>0</grab_input>
+		<disabled_key>quit</disabled_key>
+		<grab_input>0</grab_input>
 
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">charge_battery_tip</text>
-				</auto_static>
-			</main_wnd>
-		</item>
+		<main_wnd>
+			<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
+				<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">charge_battery_tip</text>
+			</auto_static>
+		</main_wnd>
+	</item>
 
 	</charge_battery>
 
 	<start_teleport>
-		<global_wnd/>
+	<global_wnd/>
 
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">notes.start_teleport</action>
-			<guard_key>use</guard_key>
+	<item>
+		<disabled_key>quit</disabled_key>
+		<length_sec/>
+		<action id="use" finalize="1">notes.start_teleport</action>
+		<guard_key>use</guard_key>
 
-			<disabled_key>quit</disabled_key>
-			<grab_input>0</grab_input>
+		<disabled_key>quit</disabled_key>
+		<grab_input>0</grab_input>
 
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">start_teleport_tip</text>
-				</auto_static>
-			</main_wnd>
-		</item>
+		<main_wnd>
+			<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
+				<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">start_teleport_tip</text>
+			</auto_static>
+		</main_wnd>
+	</item>
 
 	</start_teleport>
 
 	<spawn_scaner>
-		<global_wnd/>
+	<global_wnd/>
 
-		<item>
-			<disabled_key>quit</disabled_key>
-			<length_sec/>
-			<action id="use" finalize="1">notes.spawn_scaner</action>
-			<guard_key>use</guard_key>
+	<item>
+		<disabled_key>quit</disabled_key>
+		<length_sec/>
+		<action id="use" finalize="1">notes.spawn_scaner</action>
+		<guard_key>use</guard_key>
 
-			<disabled_key>quit</disabled_key>
-			<grab_input>0</grab_input>
+		<disabled_key>quit</disabled_key>
+		<grab_input>0</grab_input>
 
-			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">spawn_scaner_tip</text>
-				</auto_static>
-			</main_wnd>
-		</item>
+		<main_wnd>
+			<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
+				<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">spawn_scaner_tip</text>
+			</auto_static>
+		</main_wnd>
+	</item>
 
 	</spawn_scaner>
 

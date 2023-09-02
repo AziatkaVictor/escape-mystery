@@ -6,6 +6,12 @@ end
 function is_bad_ending()
 	return not has_alife_info("good_ending")
 end
+function is_good_tyan()
+	return has_alife_info("stalker_sister_save_end")
+end
+function is_bad_tyan()
+	return not has_alife_info("stalker_sister_save_end")
+end
 
 
 class "outro_sound"
