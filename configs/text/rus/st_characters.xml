@@ -86,5 +86,8 @@
 	<string id="st_sf_axe">
 		<text>Топор</text>
 	</string>
+	<string id="st_bun_soldier">
+		<text>Раненный Военный</text>
+	</string>
 	
 </string_table>
