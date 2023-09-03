@@ -128,40 +128,41 @@
 		<indik_psi x="9999" y="146" width="19" height="22" stretch="1" />
 		<indik_acid x="9999" y="164" width="19" height="22" stretch="1" />
 
-		<back x="901" y="638" width="115" height="120" stretch="1">
+		<back x="860" y="670" width="180" height="100" stretch="1">
+			<texture>ui_inGame2_Patroni_HUD_main_window</texture>
 		</back>
 
-		<progress_bar_health x="890" y="750" width="110" height="4" horz="1" min="0" max="100" pos="0" stretch="1">
+		<progress_bar_health x="900" y="750" width="110" height="4" horz="1" min="0" max="100" pos="0" stretch="1">
 			<progress stretch="1">
 				<texture>ui_inGame2_Patroni_HUD_red_bar</texture>
 			</progress>
 		</progress_bar_health>
 
-		<progress_bar_stamina x="890" y="758" width="110" height="3" horz="1" min="0" max="100" pos="0" stretch="1">
+		<progress_bar_stamina x="900" y="758" width="110" height="3" horz="1" min="0" max="100" pos="0" stretch="1">
 			<progress stretch="1">
 				<texture>ui_inGame2_Patroni_HUD_blue_bar</texture>
 			</progress>
 		</progress_bar_stamina>
 
-		<static_cur_ammo x="855" y="715" width="50" height="37">
+		<static_cur_ammo x="865" y="715" width="50" height="37">
 			<text complex_mode="0" font="graffiti32" color="ui_7" align="r" vert_align="c">ammo</text>
 		</static_cur_ammo>
 
-		<static_fmj_ammo x="910" y="730" width="26" height="15">
+		<static_fmj_ammo x="920" y="730" width="26" height="15">
 			<text align="l" complex_mode="0" font="letterica16" r="240" g="217" b="182" a="200">fmj</text>
 		</static_fmj_ammo>
 
-		<static_ap_ammo x="910" y="716" width="26" height="15">
+		<static_ap_ammo x="920" y="716" width="26" height="15">
 			<text align="l" complex_mode="0" font="letterica16" r="238" g="155" b="23" a="150">ap</text>
 		</static_ap_ammo>
 
-		<static_grenade x="990" y="730" width="14" height="19">
+		<static_grenade x="1000" y="730" width="14" height="19">
 			<text align="l" complex_mode="0" font="letterica16" color="ui_3" vert_align="c">gr</text>
 		</static_grenade>
 
-		<static_wpn_icon x="958" y="725" width="34" height="29" align="c" alignment="c" stretch="1" />
+		<static_wpn_icon x="968" y="725" width="34" height="29" align="c" alignment="c" stretch="1" />
 
-		<static_fire_mode x="990" y="706" width="14" height="19">
+		<static_fire_mode x="1000" y="706" width="14" height="19">
 			<text font="letterica16" r="240" g="217" b="182" a="200" align="l" vert_align="c" />
 		</static_fire_mode>
 	</hud_states>
