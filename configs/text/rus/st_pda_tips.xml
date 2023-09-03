@@ -58,6 +58,9 @@
 	</string>
 
 	<string id="st_radio_off">
+		<text>Выключить ($$ACTION_USE$$)</text>
+	</string>
+	<string id="st_radio_on">
 		<text>Включить ($$ACTION_USE$$)</text>
 	</string>
 	<string id="bunker_main_button_press">
@@ -68,9 +71,6 @@
 	</string>
 	<string id="bunker_main_button_wait">
 		<text>Ожидается отключения предохранителей</text>
-	</string>
-	<string id="st_radio_on">
-		<text>Выключить ($$ACTION_USE$$)</text>
 	</string>
 	<string id="st_kill_rei">
 		<text>Плюшевая Рей! ($$ACTION_USE$$)</text>
