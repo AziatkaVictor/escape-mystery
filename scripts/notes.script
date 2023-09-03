@@ -38,18 +38,18 @@ function create_prizrak_toz()
 end
 
 function give_the_scanner(first_speaker, second_speaker)
-	task_manager.get_task_manager():give_task("search_teleport")
 	dialogs.relocate_item_section(second_speaker, "teleport_scanner", "in")
+	task_manager.get_task_manager():give_task("search_teleport")
 end
 
 function find_filin()
-	xr_effects.spawn_corpse(nil, nil, {"esc_stalker_novice_filin","dead_filin"})		-- РЎРїР°РІРЅРёРј С‚СЂСѓРї, Р° "shron_filina" СЌС‚Рѕ РЅР°Р·РІР°РЅРёРµ СЃС…СЂРѕРЅР°
+	xr_effects.spawn_corpse(nil, nil, {"esc_stalker_novice_filin","dead_filin"})		-- Спавним труп, а "shron_filina" это название схрона
 	xr_effects.spawn_object_in(nil, nil, {"stalker_outfit_top","shron_filina"})
 end
 
 function start_quest_atp()
-	task_manager.get_task_manager():give_task("sidor_quest")
 	xr_effects.create_squad(nil, nil, {"esc_smart_atp_squad","esc_smart_atp"})
+	task_manager.get_task_manager():give_task("sidor_quest")
 end
 
 function spawn_dead_stalkers()
@@ -94,7 +94,6 @@ function start_vodkas_quest()
 	xr_effects.run_postprocess(nil, nil, {"fade_in_out"})
 	xr_effects.relocate_actor_inventory_to_box(db.actor, nil, {"esc_vodka_box"})
 	xr_effects.teleport_actor(nil, nil, {"tp_actor_after_vodka_walk", "tp_actor_after_vodka_look"})
-	task_manager.get_task_manager():give_task("vodka_side_quest")
 
 	xr_effects.give_item(nil, nil, {"medkit", "actor"})
 	xr_effects.give_item(nil, nil, {"medkit", "actor"})
@@ -106,6 +105,8 @@ function start_vodkas_quest()
 	xr_effects.give_item(nil, nil, {"ammo_9x18_fmj", "actor"})
 	xr_effects.give_item(nil, nil, {"conserva", "actor"})
 	xr_effects.give_item(nil, nil, {"conserva", "actor"})
+
+	task_manager.get_task_manager():give_task("vodka_side_quest")
 end
 
 function eat_vodka_script()
@@ -178,7 +179,7 @@ function action_timer()
 end
 
 function atp_end()
-	xr_effects.remove_squad(nil, nil, {"esc_smart_novice_base_filin_squad"})		-- РЈРґР°Р»СЏРµРј Р¤РёР»РёРЅР°
+	xr_effects.remove_squad(nil, nil, {"esc_smart_novice_base_filin_squad"})		-- Удаляем Филина
 end
 
 function spawn_scaner(actor)

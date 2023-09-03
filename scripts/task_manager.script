@@ -52,8 +52,17 @@ function CRandomTask:give_task(task_id)
     self.task_info[task_id]:give_task()
 
 	if IsImportantSave() then
-		local save_param = user_name() .. " - " .. game.translate_string(self.task_info[task_id].current_title)
-		get_console():execute("save "..save_param)
+        local iTimer = time_global() + 2000
+	
+        local function check_timer()
+            return time_global() > iTimer
+        end
+        local function action_timer()
+            local save_param = user_name() .. " - " .. game.translate_string(self.task_info[task_id].current_title)
+		    get_console():execute("save "..save_param)
+        end
+
+        level.add_call(check_timer, action_timer)
 	end
 end
 -- ' Проверяем, не выполнен ли таск

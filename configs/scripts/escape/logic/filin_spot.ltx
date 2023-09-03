@@ -40,10 +40,10 @@ on_game_timer = 10 | %+notes_dead_found =create_subtitles(st_actor_name:st_filin
 on_signal = sound_end | %=create_subtitles(st_actor_name:st_filin_dead_all_found_2)% sr_idle@found_all_3
 
 [sr_idle@found_all_3]
-on_signal = sound_end | %=create_subtitles(st_actor_name:st_filin_dead_all_found_3) =give_task(manyak_end) =remove_item(ulika_1_item) =remove_item(ulika_2_item) =spawn_object(usb_for_horse:spawn_pda)% sr_idle@clear
+on_signal = sound_end | %=create_subtitles(st_actor_name:st_filin_dead_all_found_3) =remove_item(ulika_1_item) =remove_item(ulika_2_item) =spawn_object(usb_for_horse:spawn_pda)% sr_idle@clear
 
 [sr_idle@clear]
-on_signal = sound_end | %=clear_subtitles()% sr_idle@wait_for_pda
+on_signal = sound_end | %=clear_subtitles() =give_task(manyak_end)% sr_idle@wait_for_pda
 
 [sr_idle@wait_for_pda]
 on_info = {=actor_has_item(usb_for_horse)} %=create_subtitles(st_actor_name:st_found_pda_1)% sr_idle@clear_again

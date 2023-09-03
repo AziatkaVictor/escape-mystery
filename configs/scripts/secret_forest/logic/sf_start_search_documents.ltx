@@ -14,4 +14,4 @@ on_signal = sound_end | %=create_subtitles(st_actor_name:st_search_documents_2)%
 on_signal = sound_end | %=create_subtitles(st_actor_name:st_search_documents_3)% sr_idle@tip_end
 
 [sr_idle@tip_end]
-on_signal = sound_end | %=clear_subtitles() =give_task(escape_from_the_forest) +start_search_documents% nil
+on_signal = sound_end | %=clear_subtitles() +start_search_documents =give_task(escape_from_the_forest)% nil

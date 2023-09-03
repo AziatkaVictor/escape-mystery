@@ -52,4 +52,4 @@ on_info = %=set_weather(default_secret_forest_foggy:true)%
 on_signal = sound_end | %=create_subtitles(st_voice:st_sf_kompass_8)% sr_idle@end
 
 [sr_idle@end]
-on_signal = sound_end | %=clear_subtitles() =give_task(charge_battery) +charge_battery_start =set_weather(default_secret_forest:true)% nil
+on_signal = sound_end | %=clear_subtitles() +charge_battery_start =set_weather(default_secret_forest:true) =give_task(charge_battery)% nil
