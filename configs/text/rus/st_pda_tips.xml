@@ -57,6 +57,10 @@
 		<text>Упавший вертолёт (Пси-аномалия)</text>
 	</string>
 
+	<string id="st_ui_pda_legend_vip">
+		<text>Важный персонаж</text>
+	</string>
+
 	<string id="st_radio_off">
 		<text>Выключить ($$ACTION_USE$$)</text>
 	</string>
