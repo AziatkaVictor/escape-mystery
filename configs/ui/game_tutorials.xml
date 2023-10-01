@@ -1,26 +1,4 @@
 <window>
-	<talk_ssu>
-		<render_prio>5</render_prio>
-		<global_wnd width="1024" height="768">
-			<pause_state>off</pause_state>
-			<auto_static width="1024" height="768" stretch="1">
-				<texture>intro\intro_back</texture>
-			</auto_static>
-			<function_on_stop>xr_effects.pri_a28_talk_ssu_video_end</function_on_stop>
-		</global_wnd>
-		<item>
-			<length_sec>60</length_sec>
-			<disabled_key>quit</disabled_key>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="61" x="0" y="96" width="1024" height="576"
-					stretch="1">
-					<widescreen_rect width="1024" height="768" />
-					<texture width="638" height="358">intro\video_talk_with_ssu</texture>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</talk_ssu>
-
 	<manyak>
 		<render_prio>5</render_prio>
 		<global_wnd width="1024" height="768">
@@ -63,8 +41,7 @@
 			<function_on_frame>outro_cond.update_bk_sound_fade_start</function_on_frame>
 
 			<main_wnd>
-				<auto_static start_time="0" length_sec="8" x="0" y="32" width="1024" height="576"
-					stretch="1">
+				<auto_static start_time="0" length_sec="8" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
 					<texture width="638" height="358">outro\0_pause</texture>
 				</auto_static>
@@ -73,200 +50,163 @@
 
 		<!-- about_monolith -->
 		<item>
-			<length_sec>15.9</length_sec>
-			<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_a</sound> -->
+			<length_sec>10</length_sec>
+			<sound>subtitles\outro\st_endgame_about_monolith</sound>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="15.9" x="0" y="32" width="1024" height="576"
-					stretch="1">
+				<auto_static start_time="0" length_sec="10" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
 					<texture width="638" height="358"></texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="15.9" x="500" y="870" width="870"
-					height="500" alignment="c" stretch="1"
-					light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
-					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">
-	st_endgame_about_monolith</text>
+				<auto_static start_time="0" length_sec="10" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
+					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_about_monolith</text>
 				</auto_static>
 			</main_wnd>
 		</item>
 
 		<!-- good_ending -->
 		<item>
-			<length_sec>15.9</length_sec>
-			<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_a</sound> -->
+			<length_sec>10</length_sec>
+			<sound>subtitles\outro\st_endgame_good_ending</sound>
 			<function_check_start>outro_cond.is_good_ending</function_check_start>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="15.9" x="0" y="32" width="1024" height="576"
-					stretch="1">
+				<auto_static start_time="0" length_sec="10" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
 					<texture width="638" height="358"></texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="15.9" x="500" y="870" width="870"
-					height="500" alignment="c" stretch="1"
-					light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
-					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">
-	st_endgame_good_ending</text>
+				<auto_static start_time="0" length_sec="10" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
+					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_good_ending</text>
 				</auto_static>
 			</main_wnd>
 		</item>
 
 		<!-- bad_ending -->
 		<item>
-			<length_sec>17.4</length_sec>
-			<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_b</sound> -->
+			<length_sec>11</length_sec>
+			<sound>subtitles\outro\st_endgame_bad_ending</sound>
 			<function_check_start>outro_cond.is_bad_ending</function_check_start>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="17.4" x="0" y="32" width="1024" height="576"
-					stretch="1">
+				<auto_static start_time="0" length_sec="11" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
 					<texture width="638" height="358"></texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="17.4" x="500" y="870" width="870"
-					height="500" alignment="c" stretch="1"
-					light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
-					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">
-	st_endgame_bad_ending</text>
+				<auto_static start_time="0" length_sec="11" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
+					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_bad_ending</text>
 				</auto_static>
 			</main_wnd>
 		</item>
 
 		<!-- good_ending_wife -->
 		<item>
-			<length_sec>15.9</length_sec>
-			<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_a</sound> -->
+			<length_sec>9</length_sec>
+			<sound>subtitles\outro\st_endgame_good_ending_wife</sound>
 			<function_check_start>outro_cond.is_good_ending</function_check_start>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="15.9" x="0" y="32" width="1024" height="576"
-					stretch="1">
+				<auto_static start_time="0" length_sec="9" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
 					<texture width="638" height="358"></texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="15.9" x="500" y="870" width="870"
-					height="500" alignment="c" stretch="1"
-					light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
-					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">
-	st_endgame_good_ending_wife</text>
+				<auto_static start_time="0" length_sec="9" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
+					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_good_ending_wife</text>
 				</auto_static>
 			</main_wnd>
 		</item>
 
 		<!-- bad_ending_wife -->
 		<item>
-			<length_sec>17.4</length_sec>
-			<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_b</sound> -->
+			<length_sec>9</length_sec>
+			<sound>subtitles\outro\st_endgame_bad_ending_wife</sound>
 			<function_check_start>outro_cond.is_bad_ending</function_check_start>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="17.4" x="0" y="32" width="1024" height="576"
-					stretch="1">
+				<auto_static start_time="0" length_sec="9" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
 					<texture width="638" height="358"></texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="17.4" x="500" y="870" width="870"
-					height="500" alignment="c" stretch="1"
-					light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
-					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">
-	st_endgame_bad_ending_wife</text>
+				<auto_static start_time="0" length_sec="9" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
+					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_bad_ending_wife</text>
 				</auto_static>
 			</main_wnd>
 		</item>
 
 		<!-- question -->
 		<item>
-			<length_sec>17.4</length_sec>
-			<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_b</sound> -->
+			<length_sec>7</length_sec>
+			<sound>subtitles\outro\st_endgame_question</sound>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="17.4" x="0" y="32" width="1024" height="576"
-					stretch="1">
+				<auto_static start_time="0" length_sec="7" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
 					<texture width="638" height="358"></texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="17.4" x="500" y="870" width="870"
-					height="500" alignment="c" stretch="1"
-					light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
-					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">
-	st_endgame_question</text>
+				<auto_static start_time="0" length_sec="7" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
+					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_question</text>
 				</auto_static>
 			</main_wnd>
 		</item>
 
 		<!-- manyak -->
 		<item>
-			<length_sec>17.4</length_sec>
-			<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_b</sound> -->
+			<length_sec>11</length_sec>
+			<sound>subtitles\outro\st_endgame_manyak</sound>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="17.4" x="0" y="32" width="1024" height="576"
-					stretch="1">
+				<auto_static start_time="0" length_sec="11" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
 					<texture width="638" height="358"></texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="17.4" x="500" y="870" width="870"
-					height="500" alignment="c" stretch="1"
-					light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
-					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">
-	st_endgame_manyak</text>
+				<auto_static start_time="0" length_sec="11" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
+					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_manyak</text>
 				</auto_static>
 			</main_wnd>
 		</item>
 
 		<!-- good_tyan -->
 		<item>
-			<length_sec>15.9</length_sec>
-			<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_a</sound> -->
+			<length_sec>9</length_sec>
+			<sound>subtitles\outro\st_endgame_good_tyan</sound>
 			<function_check_start>outro_cond.is_good_tyan</function_check_start>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="15.9" x="0" y="32" width="1024" height="576"
-					stretch="1">
+				<auto_static start_time="0" length_sec="9" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
 					<texture width="638" height="358"></texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="15.9" x="500" y="870" width="870"
-					height="500" alignment="c" stretch="1"
-					light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
-					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">
-	st_endgame_good_tyan</text>
+				<auto_static start_time="0" length_sec="9" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
+					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_good_tyan</text>
 				</auto_static>
 			</main_wnd>
 		</item>
 
 		<!-- bad_tyan -->
 		<item>
-			<length_sec>17.4</length_sec>
-			<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_b</sound> -->
+			<length_sec>11</length_sec>
+			<sound>subtitles\outro\st_endgame_bad_tyan</sound>
 			<function_check_start>outro_cond.is_bad_tyan</function_check_start>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="17.4" x="0" y="32" width="1024" height="576"
-					stretch="1">
+				<auto_static start_time="0" length_sec="11" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
 					<texture width="638" height="358"></texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="17.4" x="500" y="870" width="870"
-					height="500" alignment="c" stretch="1"
-					light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
-					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">
-	st_endgame_bad_tyan</text>
+				<auto_static start_time="0" length_sec="11" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
+					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_bad_tyan</text>
 				</auto_static>
 			</main_wnd>
 		</item>
 
 		<!-- end -->
 		<item>
-			<length_sec>17.4</length_sec>
-			<!-- <sound>characters_voice\scenario\pripyat\pri_a28_outro_phrase_20_b</sound> -->
+			<length_sec>12</length_sec>
+			<sound>subtitles\outro\st_endgame_end</sound>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="17.4" x="0" y="32" width="1024" height="576"
-					stretch="1">
+				<auto_static start_time="0" length_sec="12" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
 					<texture width="638" height="358"></texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="17.4" x="500" y="870" width="870"
-					height="500" alignment="c" stretch="1"
-					light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
+				<auto_static start_time="0" length_sec="12" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
 					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_end</text>
 				</auto_static>
 			</main_wnd>
 		</item>
 	</outro_game>
-	#include "ui\ui_credits.xml" <game_over>
+#include "ui\ui_credits.xml"
+
+	<game_over>
 		<global_wnd />
 
 		<item>
@@ -278,20 +218,17 @@
 			<sound />
 			<grab_input>1</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="10000" x="350" y="360" width="300"
-					height="60">
+				<auto_static start_time="0" length_sec="10000" x="350" y="360" width="300" height="60">
 					<text font="graffiti50" r="255" g="0" b="0" a="255" align="c">st_game_over</text>
 				</auto_static>
-				<auto_static start_time="3" length_sec="10000" x="350" y="660" width="300"
-					height="60" light_anim="ui_pda_contacts" la_cyclic="1" la_text="1" la_alpha="1">
-					<text font="graffiti22" r="255" g="0" b="0" a="255" align="c">
-	st_game_over_press_jump</text>
+				<auto_static start_time="3" length_sec="10000" x="350" y="660" width="300" height="60" light_anim="ui_pda_contacts" la_cyclic="1" la_text="1" la_alpha="1">
+					<text font="graffiti22" r="255" g="0" b="0" a="255" align="c">st_game_over_press_jump</text>
 				</auto_static>
 			</main_wnd>
 		</item>
 	</game_over>
 
-  <game_loaded>
+  	<game_loaded>
 		<global_wnd>
 			<pause_state>on</pause_state>
 		</global_wnd>
@@ -302,16 +239,15 @@
 			<grab_input>1</grab_input>
 			<main_wnd>
 
-				<auto_static start_time="0" length_sec="10000" alignment="c" x="512" y="545"
-					width="600" height="30" light_anim="ui_slow_blinking_alpha" la_cyclic="1"
-					la_text="1" la_alpha="1">
-					<text font="letterica18" r="255" g="150" b="0" a="255" align="c">
-	st_press_any_key</text>
+				<auto_static start_time="0" length_sec="10000" alignment="c" x="512" y="545" width="600" height="30" light_anim="ui_slow_blinking_alpha" la_cyclic="1" la_text="1" la_alpha="1">
+					<text font="letterica18" r="255" g="150" b="0" a="255" align="c">st_press_any_key</text>
 				</auto_static>
 			</main_wnd>
 		</item>
 	</game_loaded>
-	#include "ui\ui_credits.xml" <intro_logo>
+#include "ui\ui_credits.xml"
+
+	<intro_logo>
 		<global_wnd width="1024" height="768">
 		</global_wnd>
 		<item>
@@ -360,9 +296,7 @@
 			<disabled_key>quit</disabled_key>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300"
-					height="60" alignment="c" stretch="1"
-					la_cyclic="1" la_texture="1" la_alpha="1">
+				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
 					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">sleep_zone_tip</text>
 				</auto_static>
 			</main_wnd>
@@ -382,10 +316,8 @@
 			<grab_input>0</grab_input>
 
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300"
-					height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">
-	add_artefact_tip</text>
+				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
+					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">add_artefact_tip</text>
 				</auto_static>
 			</main_wnd>
 		</item>
@@ -405,10 +337,8 @@
 			<grab_input>0</grab_input>
 
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300"
-					height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">
-	add_battery_tip</text>
+				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
+					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">add_battery_tip</text>
 				</auto_static>
 			</main_wnd>
 		</item>
@@ -428,10 +358,8 @@
 			<grab_input>0</grab_input>
 
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300"
-					height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">
-	charge_battery_tip</text>
+				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
+					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">charge_battery_tip</text>
 				</auto_static>
 			</main_wnd>
 		</item>
@@ -451,10 +379,8 @@
 			<grab_input>0</grab_input>
 
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300"
-					height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">
-	start_teleport_tip</text>
+				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
+					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">start_teleport_tip</text>
 				</auto_static>
 			</main_wnd>
 		</item>
@@ -474,10 +400,8 @@
 			<grab_input>0</grab_input>
 
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300"
-					height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
-					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">
-	spawn_scaner_tip</text>
+				<auto_static start_time="0" length_sec="5000" x="512" y="660" width="300" height="60" alignment="c" stretch="1" la_cyclic="1" la_texture="1" la_alpha="1">
+					<text font="graffiti22" r="225" g="225" b="250" a="255" align="c">spawn_scaner_tip</text>
 				</auto_static>
 			</main_wnd>
 		</item>
