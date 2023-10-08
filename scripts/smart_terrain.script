@@ -1200,14 +1200,16 @@ function surge_stats()
 						["jupiter"] = {},
 						["pripyat"] = {},
 						["escape"] = {},
-						["secret_forest"] = {}
+						["secret_forest"] = {},
+						["bunker"] = {}
 		}
 	local sim_smarts = {
 						["zaton"] = {},
 						["jupiter"] = {},
 						["pripyat"] = {},
 						["escape"] = {},
-						["secret_forest"] = {}						
+						["secret_forest"] = {},
+						["bunker"] = {}						
 		}
 	for k,v in pairs(sim_obj_registry) do
 		if v:clsid() == clsid.smart_terrain and tonumber(v.props["surge"]) > 0 then

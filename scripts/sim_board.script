@@ -12,7 +12,8 @@ local group_id_by_levels = {zaton = 1,
 							labx8 = 4,
 							jupiter_underground = 5,
 							escape = 6,
-							secret_forest = 7}
+							secret_forest = 7,
+							bunker = 8}
 
 local board = nil
 
