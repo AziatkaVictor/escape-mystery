@@ -43,7 +43,7 @@
 			<main_wnd>
 				<auto_static start_time="0" length_sec="8" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
-					<texture width="638" height="358">outro\0_pause</texture>
+					<texture width="638" height="358"></texture>
 				</auto_static>
 			</main_wnd>
 		</item>
@@ -55,7 +55,7 @@
 			<main_wnd>
 				<auto_static start_time="0" length_sec="10" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
-					<texture width="638" height="358"></texture>
+					<texture width="1280" height="720">outro\about_monolith</texture>
 				</auto_static>
 				<auto_static start_time="0" length_sec="10" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
 					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_about_monolith</text>
@@ -71,7 +71,7 @@
 			<main_wnd>
 				<auto_static start_time="0" length_sec="10" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
-					<texture width="638" height="358"></texture>
+					<texture width="1280" height="720">outro\good_ending</texture>
 				</auto_static>
 				<auto_static start_time="0" length_sec="10" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
 					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_good_ending</text>
@@ -87,7 +87,7 @@
 			<main_wnd>
 				<auto_static start_time="0" length_sec="11" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
-					<texture width="638" height="358"></texture>
+					<texture width="1280" height="720">outro\bad_ending</texture>
 				</auto_static>
 				<auto_static start_time="0" length_sec="11" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
 					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_bad_ending</text>
@@ -103,7 +103,7 @@
 			<main_wnd>
 				<auto_static start_time="0" length_sec="9" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
-					<texture width="638" height="358"></texture>
+					<texture width="1280" height="720">outro\ending_wife</texture>
 				</auto_static>
 				<auto_static start_time="0" length_sec="9" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
 					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_good_ending_wife</text>
@@ -119,7 +119,7 @@
 			<main_wnd>
 				<auto_static start_time="0" length_sec="9" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
-					<texture width="638" height="358"></texture>
+					<texture width="1280" height="720">outro\ending_wife</texture>
 				</auto_static>
 				<auto_static start_time="0" length_sec="9" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
 					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_bad_ending_wife</text>
@@ -134,7 +134,7 @@
 			<main_wnd>
 				<auto_static start_time="0" length_sec="7" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
-					<texture width="638" height="358"></texture>
+					<texture width="1280" height="720">outro\question</texture>
 				</auto_static>
 				<auto_static start_time="0" length_sec="7" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
 					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_question</text>
@@ -149,7 +149,7 @@
 			<main_wnd>
 				<auto_static start_time="0" length_sec="11" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
-					<texture width="638" height="358"></texture>
+					<texture width="1280" height="720">outro\manyak</texture>
 				</auto_static>
 				<auto_static start_time="0" length_sec="11" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
 					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_manyak</text>
@@ -165,7 +165,7 @@
 			<main_wnd>
 				<auto_static start_time="0" length_sec="9" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
-					<texture width="638" height="358"></texture>
+					<texture width="1280" height="720">outro\good_tyan</texture>
 				</auto_static>
 				<auto_static start_time="0" length_sec="9" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20a" la_cyclic="0" la_texture="1" la_alpha="1">
 					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_good_tyan</text>
@@ -181,7 +181,7 @@
 			<main_wnd>
 				<auto_static start_time="0" length_sec="11" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
-					<texture width="638" height="358"></texture>
+					<texture width="1280" height="720">outro\bad_tyan</texture>
 				</auto_static>
 				<auto_static start_time="0" length_sec="11" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
 					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_bad_tyan</text>
@@ -196,7 +196,7 @@
 			<main_wnd>
 				<auto_static start_time="0" length_sec="12" x="0" y="32" width="1024" height="576" stretch="1">
 					<widescreen_rect width="1024" height="768" />
-					<texture width="638" height="358"></texture>
+					<texture width="1280" height="720">outro\end</texture>
 				</auto_static>
 				<auto_static start_time="0" length_sec="12" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="pri_a28_phrase_20b" la_cyclic="0" la_texture="1" la_alpha="1">
 					<text align="c" font="graffiti22" r="255" g="255" b="255" a="255">st_endgame_end</text>
