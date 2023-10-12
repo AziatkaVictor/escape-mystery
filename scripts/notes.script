@@ -211,10 +211,6 @@ function start_teleport()
 	db.actor:give_info_portion("start_teleport")
 end
 
-function spawn_himera()
-	xr_effects.create_squad(nil, nil, {"sf_himera_squad", "sf_smart_himera"})
-end
-
 function idiot_give_items(first_speaker, second_speaker)
 	xr_effects.give_actor(nil, nil, {"battery_for_forest"})
 	xr_effects.give_actor(nil, nil, {"docs_3"})
