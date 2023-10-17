@@ -6,6 +6,7 @@ on_info = {+stalker_patrol_about} %=spawn_object_in(filin_note:shron_filina)% sr
 
 [sr_idle@tip_timer]
 on_info = {=actor_has_item(filin_note)} %+filin_dead_found% sr_idle@tip
+on_info2 = {+filin_note_info} %+filin_dead_found% sr_idle@tip
 
 [sr_idle@found_wait]
 on_info1 = {=actor_has_item(ulika_1_item) -dead_1_note} sr_idle@tip_dead_1_1
