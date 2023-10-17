@@ -66,10 +66,10 @@ close_snd_hello 		            = nil
 close_snd_bye 		                = nil
 close_distance  		            = 0
 far_distance 			            = 0
-use 						        = {=actor_enemy} false, true
-allow_break 			            = false
+use 						        = {-bandits_tyan_is_dead =actor_enemy} false, true
 snd_on_use				            = meet_use_no_default
 abuse					            = false
+allow_break 			            = false
 trade_enable                        = false
 
 [animpoint@esc_stalker_tyan_sister]
@@ -79,7 +79,7 @@ combat_ignore_cond                  = true
 combat_ignore_keep_when_attacked    = true
 use_camp 				            = false
 gather_items_enabled                = false
-meet 						        = {+bandits_tyan_is_dead} meet@trade, no_meet
+meet 						        = meet@trade
 
 [walker@walker_1]
 path_walk                           = walker_1_walk
