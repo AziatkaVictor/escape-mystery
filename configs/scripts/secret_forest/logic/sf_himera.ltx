@@ -8,4 +8,7 @@ on_actor_inside = {+charge_battery_start} %=create_subtitles(st_voice:st_help_id
 on_signal = sound_end | %=clear_subtitles =give_task(help_idiot) =create_squad(sf_stalker_idiot_squad:sf_smart_himera)% sr_idle@wait_for_spawn
 
 [sr_idle@wait_for_spawn]
-on_info = {+sf_himera_spawned} %=create_squad(sf_himera_squad:sf_smart_himera) =make_actor_visible_to_squad(sf_himera_squad)% nil
+on_info = {+sf_himera_spawned} %=create_squad(sf_himera_squad:sf_smart_himera)% sr_idle@visible
+
+[sr_idle@visible]
+on_info = %=make_actor_visible_to_squad(sf_himera_squad)% nil
