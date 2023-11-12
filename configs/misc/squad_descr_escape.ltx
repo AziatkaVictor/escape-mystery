@@ -206,7 +206,15 @@ faction                 = ecolog
 relationship            = friend
 npc                     = esc_scince_one, esc_scince_two
 story_id                = esc_scince_squad_id
-target_smart            = {+science_hi} esc_smart_stalker_base, esc_smart_post_4    
+target_smart            = esc_smart_post_4    
+
+[esc_smart_stalker_base_scince_squad]:online_offline_group
+faction                 = ecolog
+relationship            = friend
+npc                     = esc_scince_base_one, esc_scince_base_two
+story_id                = esc_scince_base_squad_id
+spawn_point             = science_spawn
+target_smart            = esc_smart_stalker_base    
 
 [esc_bandits_for_scince_squad]:online_offline_group
 faction                 = bandit

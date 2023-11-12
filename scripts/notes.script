@@ -137,7 +137,19 @@ end
 function go_to_base()
 	xr_effects.run_postprocess(nil, nil, {"fade_in_out"})
 	xr_effects.teleport_actor(nil, nil, {"esc_end_quest_bandirs_walk", "esc_end_quest_bandirs_look"})
-	xr_effects.teleport_squad(nil, nil, {"esc_scince_squad_id", "science_spawn"})
+	local iTimer = time_global() + 200
+	
+	local function check_timer()
+		return time_global() > iTimer
+    end
+
+    level.add_call(check_timer, go_to_base_squad)
+end
+
+function go_to_base_squad()
+	xr_effects.remove_squad(nil, nil, {"esc_scince_squad_id"})
+	xr_effects.create_squad(nil, nil, {"esc_smart_stalker_base_scince_squad", "esc_smart_stalker_base"})
+	xr_effects.teleport_squad(nil, nil, {"esc_scince_base_squad_id", "science_spawn"})
 end
 
 function go_to_base_with_sister()
