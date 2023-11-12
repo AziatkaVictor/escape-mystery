@@ -263,6 +263,40 @@
 		<text>Enix</text>
 	</string>
 
+	<string id="st_donate_emmis">
+		<text>Emmis</text>
+	</string>
+	<string id="st_donate_fladar">
+		<text>Fladarr</text>
+	</string>
+	<string id="st_donate_supremee">
+		<text>Supremee</text>
+	</string>
+	<string id="st_donate_sled">
+		<text>Sled</text>
+	</string>
+	<string id="st_donate_boomer">
+		<text>Its Boomer</text>
+	</string>
+	<string id="st_donate_andrew">
+		<text>Андрюха со Става</text>
+	</string>
+	<string id="st_donate_arkmore">
+		<text>Arkmore</text>
+	</string>
+	<string id="st_donate_anonim">
+		<text>Аноним</text>
+	</string>
+	<string id="st_donate_banloder">
+		<text>BAN_LODER-223</text>
+	</string>
+	<string id="st_donate_veles">
+		<text>Велес</text>
+	</string>
+	<string id="st_donate_dmitro">
+		<text>Дмитрий</text>
+	</string>
+
 	<string id="st_credit_end">
 		<text>На этом всё. Хочу поблагодарить каждого, кто хоть как-то помог проекту и заранее извиняюсь, если кого-то забыл упомянуть. Это был крайне долгий путь к релизу и мне помогло так много людей, что каждого и не запомнить. Я очень рад, что смог получить такой опыт. Даже не смотря на то, что моддинг это очень сложное и выматывающее хобби, я получил столько приятных воспоминаний и ценного опыта. Надеюсь, я смог кого-то вдохновить, ровно так же, как и сам раньше был вдохновлён другими модмейкерами. Удачной охоты!</text>
 	</string>
