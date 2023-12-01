@@ -233,7 +233,6 @@ end
 function soldier_give_items(first_speaker, second_speaker)
 	dialogs.relocate_item_section(second_speaker, "main_quest_item", "in")
 	dialogs.relocate_item_section(second_speaker, "bunkers_door_key", "in")
-	xr_effects.send_tip_new(db.actor, nil, {nil, "st_items_added"})
 end
 
 function kill_soldier(first_speaker, second_speaker)
