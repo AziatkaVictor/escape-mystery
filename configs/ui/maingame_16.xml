@@ -20,13 +20,14 @@
 	</weapon_jammed_static>
 
 	<indicator_torch_battery x="9999" y="658" width="15" height="20" stretch="1" />
-	<indicator_starvation x="9999" y="658" width="15" height="20" stretch="1" />
 	<indicator_helmet_broken x="9999" y="658" width="15" height="20" stretch="1" />
 	<indicator_outfit_broken x="9999" y="658" width="15" height="20" stretch="1" />
 	<indicator_weapon_broken x="9999" y="658" width="15" height="20" stretch="1" />
-	<indicator_overweight x="9999" y="658" width="15" height="20" stretch="1" />
-	<indicator_radiation x="9999" y="658" width="15" height="20" stretch="1" />
-	<indicator_bleeding x="9999" y="658" width="15" height="20" stretch="1" />
+
+	<indicator_starvation 	x="900" y="745" width="15" height="20" stretch="1" />
+	<indicator_overweight 	x="880" y="745" width="15" height="20" stretch="1" />
+	<indicator_radiation 	x="860" y="745" width="15" height="20" stretch="1" />
+	<indicator_bleeding 	x="840" y="745" width="15" height="20" stretch="1" />
 
 	<indicator_booster_psy x="9999" y="167" width="14" height="21" stretch="1">
 		<texture>ui_inGame2_shield_Psy</texture>
