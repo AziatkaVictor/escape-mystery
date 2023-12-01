@@ -1,0 +1,9 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_actor_inside = {-sidor_tyan_quest} %=create_subtitles(stalker:st_go_away)% sr_idle@sound
+on_info2 = {+sidor_tyan_quest} nil
+
+[sr_idle@sound]
+on_signal = sound_end | %=clear_subtitles% nil
