@@ -30,7 +30,7 @@ end
 
 function create_dogs()
 	db.actor:give_info_portion("create_dogs")
-	xr_effects.create_squad(nil, nil, {"esc_smart_post_3_spawn_dog_squad","esc_smart_post_3"})
+	xr_effects.create_squad(nil, nil, {"esc_smart_post_3_spawn_dog_squad", "esc_smart_post_3"})
 end
 
 function create_prizrak_toz()
@@ -224,14 +224,16 @@ function start_teleport()
 end
 
 function idiot_give_items(first_speaker, second_speaker)
-	xr_effects.give_actor(nil, nil, {"battery_for_forest"})
-	xr_effects.give_actor(nil, nil, {"docs_3"})
+	dialogs.relocate_item_section(second_speaker, "battery_for_forest", "in")
+	dialogs.relocate_item_section(second_speaker, "docs_3", "in")
+	xr_effects.send_tip_new(db.actor, nil, {nil, "st_items_added"})
 	xr_effects.kill_npc(nil, nil, {"sf_idiot"})
 end
 
 function soldier_give_items(first_speaker, second_speaker)
-	xr_effects.give_actor(nil, nil, {"main_quest_item"})
-	xr_effects.give_actor(nil, nil, {"bunkers_door_key"})
+	dialogs.relocate_item_section(second_speaker, "main_quest_item", "in")
+	dialogs.relocate_item_section(second_speaker, "bunkers_door_key", "in")
+	xr_effects.send_tip_new(db.actor, nil, {nil, "st_items_added"})
 end
 
 function kill_soldier(first_speaker, second_speaker)

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
+	<string id="st_items_added">
+		<text>Вы получили новые предметы</text>
+	</string>
 	<string id="Time">
 		<text>Время</text>
 	</string>
